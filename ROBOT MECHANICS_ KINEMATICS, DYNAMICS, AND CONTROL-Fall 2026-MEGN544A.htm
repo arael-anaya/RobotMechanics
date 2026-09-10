@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#21314d">
+  
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="apple-itunes-app" content="app-id=480883488"><link rel="manifest" href="/web-app-manifest/manifest.json">
+  <meta name="sentry-trace" content="e7d306cc6f994f7fbe031f3e2a319b58-5a735fa510ae46cf-0"/>
+  <title>ROBOT MECHANICS: KINEMATICS, DYNAMICS, AND CONTROL-Fall 2026-MEGN544A</title>
+
+  <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Regular-bd03a2cc27.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Bold-cccb897485.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Italic-4eb103b4d1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-eb4a10fb18.css" media="screen" />
+  <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/8079f9a690197dfa70bd41e1162ae67a/variables-9dec371ad57e3dd0396f0b2eddb63479.css" media="all" />
+  <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-7faef57a1a.css" media="all" />
+  <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/dashboard-bb19c48e68.css" media="screen" /><link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/react_todo_sidebar-df089b77a5.css" media="screen" /><link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/syllabus-ef3e53583a.css" media="screen" /><link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/tinymce-2fa1ac147f.css" media="screen" /><link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/course_show-1b363a7344.css" media="screen" /><link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/course_show_secondary-cdb1b416c5.css" media="screen" /><link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/syllabus-ef3e53583a.css" media="screen" />
+  <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+  <link rel="icon" type="image/x-icon" href="https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/5146501/Canvas_Bug_Color_RGB.png" />
+    <link rel="alternate" type="application/atom+xml" title="Course Atom Feed" href="/feeds/courses/enrollment_3tsocrJcWsAj51rquPrKO8LvOC9kOJHWAvjbEtc6.atom" />
+  <link rel="stylesheet" href="https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/7108474/dp.css" media="all" />
+  
+  <script>if (navigator.userAgent.match(/(MSIE|Trident\/)/)) location.replace('/ie-is-not-supported.html')</script>
+  <script>
+    INST = {"environment":"production","allowMediaComments":true,"kalturaSettings":{"domain":"nv.instructuremedia.com","resource_domain":"nv.instructuremedia.com","rtmp_domain":"iad.rtmp.instructuremedia.com","partner_id":"9","subpartner_id":"0","player_ui_conf":"0","kcw_ui_conf":"0","upload_ui_conf":"0","max_file_size_bytes":534773760,"do_analytics":false,"hide_rte_button":false,"js_uploader":true},"logPageViews":true,"editorButtons":[{"name":"Commons Favorites","id":20,"favorite":false,"url":"https://lor.instructure.com/api/lti/favorite-resources","icon_url":"https://lor.instructure.com/img/icon_commons.png","canvas_icon_class":null,"width":800,"height":400,"use_tray":true,"on_by_default":false,"description":"\u003cp\u003eFind and share course content\u003c/p\u003e\n"},{"name":"MERLOT","id":24,"favorite":false,"url":"https://www.merlot.org/merlot/lti.htm","icon_url":"https://www.merlot.org/merlot/images/merlot_lti.gif","canvas_icon_class":null,"width":590,"height":450,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eMERLOT is a curated collection of free and open online teaching, learning, and faculty development services contributed and used by an international education community.\u003c/p\u003e\n"},{"name":"Google Apps","id":120,"favorite":false,"url":"https://google-drive-lti-iad-prod.instructure.com/lti/rce-content-selection","icon_url":"https://google-drive-lti-iad-prod.instructure.com/icon.png","canvas_icon_class":null,"width":700,"height":600,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eAllows you to pull in documents from Google Drive to Canvas\u003c/p\u003e\n"},{"name":"Vimeo","id":159,"favorite":false,"url":"https://www.edu-apps.org/lti_public_resources/?tool_id=vimeo","icon_url":"https://www.edu-apps.org/assets/lti_public_resources/vimeo_icon.png","canvas_icon_class":null,"width":560,"height":600,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eVimeo is a video sharing website on which users can upload, share, and view videos. The community of Vimeo includes indie, professional, and novice filmmakers.\u003c/p\u003e\n"},{"name":"DropBox","id":162,"favorite":false,"url":"https://www.edu-apps.org/tool_redirect?id=dropbox","icon_url":"http://www.edu-apps.org/tools/dropbox/icon.png","canvas_icon_class":null,"width":400,"height":200,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eThis lightweight integration lets Dropbox users select and link to files within course content or in conjunction with homework submissions.\u003c/p\u003e\n\n\u003cp\u003eDropbox is a file hosting service offering cloud storage, file synchronization, and client software. Files placed in a Dropbox folder also are accessible through a website and mobile phone applications.\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\"https://googledrive.com/host/0B5ghu5Vrh0j7X3FCOERVQ1dLSms/dropbox.png\" target=\"_blank\"\u003e \u003cimg src=\"https://googledrive.com/host/0B5ghu5Vrh0j7X3FCOERVQ1dLSms/dropbox.png\" alt=\"Dropbox insert video demonstration image.\"\u003e \u003c/a\u003e\u003c/p\u003e\n\n\u003cp\u003eThe current integration does require that users login to Dropbox each time.\u003c/p\u003e\n"},{"name":"YouTube","id":1593,"favorite":false,"url":"https://www.edu-apps.org/lti_public_resources/?tool_id=youtube","icon_url":"https://www.edu-apps.org/assets/lti_public_resources/youtube_icon.png","canvas_icon_class":null,"width":560,"height":600,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eSearch publicly available YouTube videos. A new icon will show up in your course rich editor letting you search YouTube and click to embed videos in your course material.\u003c/p\u003e\n"},{"name":"Office365","id":22656,"favorite":true,"url":"https://office365-iad-prod.instructure.com/lti/rce-content-item","icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png","canvas_icon_class":null,"width":900,"height":600,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eAllows you to pull in documents from Office 365 to Canvas\u003c/p\u003e\n"},{"name":"Insert EquatIO Equation","id":23197,"favorite":false,"url":"https://equatio-lti.texthelp.com","icon_url":"https://m.equat.io/client/icon_16x16.png","canvas_icon_class":null,"width":800,"height":520,"use_tray":false,"on_by_default":false,"description":""},{"name":"Insert a Wiley Resource","id":44005,"favorite":false,"url":"https://lti.education.wiley.com/wpng/api/v1/lti/resourcediscoverytool","icon_url":"https://education.wiley.com/assets/images/wp.svg","canvas_icon_class":null,"width":1160,"height":660,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eOutcomes-based learning.\u003c/p\u003e\n"},{"name":"Microsoft OneDrive","id":55828,"favorite":false,"url":"https://onedrivelti.microsoft.com/tool","icon_url":"https://onedrivelti.microsoft.com/favicon-1.ico","canvas_icon_class":null,"width":800,"height":400,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eMicrosoft OneDrive LTI 1.3\u003c/p\u003e\n"},{"name":"Pearson Links","id":56562,"favorite":false,"url":"https://interop.pearson.com/launch","icon_url":"https://www.pearson.com/us/content/dam/one-dot-com/one-dot-com/us/en/images/PearsonThumbprint-RGB-127x138.png/_jcr_content/renditions/cq5dam.web.1600.9600.png","canvas_icon_class":null,"width":800,"height":400,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eAccess Pearson\u003c/p\u003e\n"},{"name":"Library Guides \u0026amp; Resources","id":57211,"favorite":false,"url":"https://mines.libapps.com/libapps/lti1p3/launch/43369","icon_url":"https://libapps.s3.amazonaws.com/apps/libapps/images/favicon_lti.png","canvas_icon_class":"icon-lti","width":800,"height":400,"use_tray":false,"on_by_default":false,"description":""},{"name":"Insert Whiteboard or Diagram","id":58122,"favorite":true,"url":"https://integration.lucid.app/canvas/lti/launchTool","icon_url":"https://cdn-cashy-static-assets.lucidchart.com/lucid/logos/Lucid-L.svg","canvas_icon_class":{"text":"Insert Whiteboard or Diagram","labels":{"da":"Insert Whiteboard or Diagram","de":"Whiteboard oder Diagramm einfügen","en":"Insert Whiteboard or Diagram","es":"Inserta pizarra o diagrama","fr":"Insérer un tableau blanc ou un diagramme","ja":"ホワイトボードまたは図を挿入","ko":"화이트보드 또는 다이어그램 삽입","nl":"Voeg een whiteboard of diagram toe.","no":"Insert Whiteboard or Diagram","pt":"Insira quadro branco ou diagrama","ru":"Вставьте доску или схему","zh":"Insert Whiteboard or Diagram","es-LA":"Inserta pizarra o diagrama","fr-FR":"Insérer un tableau blanc ou un diagramme","it-IT":"Inserisci lavagna o diagramma","pl-PL":"Wstaw tablicę lub diagram","pt-BR":"Insira quadro branco ou diagrama","sv-SE":"Infoga whiteboard eller diagram","zh-CN":"Insert Whiteboard or Diagram","zh-TW":"Insert Whiteboard or Diagram"},"icon_url":"https://cdn-cashy-static-assets.lucidchart.com/lucid/logos/Lucid-L.svg","placement":"editor_button","message_type":"LtiDeepLinkingRequest","custom_fields":{},"target_link_uri":"https://integration.lucid.app/canvas/lti/rce/create"},"width":1200,"height":800,"use_tray":null,"on_by_default":true,"description":"\u003cp\u003eInsert Lucid documents in Canvas\u003c/p\u003e\n"},{"name":"Embed MediaSpace Video","id":58191,"favorite":true,"url":"https://kaf.mines.edu","icon_url":"https://cdnsecakmi.kaltura.com/content/static/kalturalogo.png","canvas_icon_class":null,"width":800,"height":400,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eKaltura Video\u003c/p\u003e\n"},{"name":"Cidi Labs Upload/Embed Image","id":58337,"favorite":false,"url":"https://uei.ciditools.com/","icon_url":"https://uei.ciditools.com/editorIcon.png","canvas_icon_class":null,"width":750,"height":600,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eDesignPLUS image upload and embed tool\u003c/p\u003e\n"},{"name":"SAGE Vantage","id":58573,"favorite":false,"url":"https://vantage.sagepub.com/lti1p3/tool/TBEzdjmY0FplDXvq","icon_url":"https://vantage.sagepub.com/images/sagent/Bird-blue-right.svg","canvas_icon_class":null,"width":1000,"height":1000,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eSAGE Vantage 1.3 Tool\u003c/p\u003e\n"},{"name":"Macmillan Learning Editor Button","id":58662,"favorite":false,"url":"https://lmslink.bfwpub.com?custom_action=toc","icon_url":"https://lmslink.bfwpub.com/images/icons/macmillan-logo-16px.png","canvas_icon_class":null,"width":1200,"height":650,"use_tray":false,"on_by_default":false,"description":""},{"name":"Macmillan Learning Editor Button","id":58665,"favorite":false,"url":"https://lmslink.bfwpub.com?custom_action=toc","icon_url":"https://lmslink.bfwpub.com/images/icons/macmillan-logo-16px.png","canvas_icon_class":null,"width":1200,"height":650,"use_tray":false,"on_by_default":false,"description":""},{"name":"Microsoft Education","id":58929,"favorite":false,"url":"https://m365lti.edu.cloud.microsoft","icon_url":"https://res-sdf.cdn.office.net/onedrivelti/public/favicon-32x32.png","canvas_icon_class":null,"width":950,"height":650,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eMicrosoft 365 LTI\u003c/p\u003e\n"},{"name":"Google Drive (LTI 1.3)","id":58976,"favorite":false,"url":"https://assignments.google.com/lti/a","icon_url":"https://www.gstatic.com/images/branding/productlogos/drive_2026/v2/web-96dp/logo_drive_2026_color_2x_web_96dp.png","canvas_icon_class":null,"width":690,"height":530,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eCollect, analyze, and grade student work with Google Assignments\u003c/p\u003e\n"},{"name":"Google Gemini","id":58978,"favorite":false,"url":"https://lti.gemini.google.com/lti/gemini/embed","icon_url":"https://www.gstatic.com/images/branding/productlogos/gemini_2026/v1/web-96dp/logo_gemini_2026_color_2x_web_96dp.png","canvas_icon_class":null,"width":900,"height":640,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003eGemini LTI™ brings a collection of product experiences powered by Gemini, like the Gemini app and NotebookLM, into your LMS\u003c/p\u003e\n"},{"name":"Import Citations","id":58982,"favorite":false,"url":"https://mines.alma.exlibrisgroup.com/lti/v3/launch/01COLSCHL_INST/LMS_CANVAS_2","icon_url":"https://mines.alma.exlibrisgroup.com/lti/images/editor-btn.png","canvas_icon_class":null,"width":900,"height":650,"use_tray":false,"on_by_default":false,"description":"\u003cp\u003e\"Course Readings\" in Canvas is designed to help instructors incorporate library materials in their Canvas courses. Instructors can use the tool to build reading lists that include books and articles owned by the library, videos, web resources, and more.\u003c/p\u003e\n"}]};
+    ENV = {"ASSET_HOST":"https://du11hjcvx0uqb.cloudfront.net","active_brand_config_json_url":"https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/8079f9a690197dfa70bd41e1162ae67a/variables-9dec371ad57e3dd0396f0b2eddb63479.json","active_brand_config":{"md5":"8079f9a690197dfa70bd41e1162ae67a","variables":{"ic-brand-primary":"#21314d","ic-link-color":"#006EAD","ic-brand-global-nav-bgd":"#21314d","ic-brand-global-nav-ic-icon-svg-fill":"#ced5dd","ic-brand-global-nav-ic-icon-svg-fill--active":"#CC4628","ic-brand-global-nav-menu-item__text-color":"#ced5dd","ic-brand-global-nav-menu-item__text-color--active":"#CC4628","ic-brand-global-nav-avatar-border":"#ced5dd","ic-brand-global-nav-menu-item__badge-text":"#ced5dd","ic-brand-global-nav-logo-bgd":"#21314d","ic-brand-header-image":"https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/5221284/_Mines-Logo-stacked-white.png","ic-brand-watermark-opacity":"1","ic-brand-favicon":"https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/5146501/Canvas_Bug_Color_RGB.png","ic-brand-right-sidebar-logo":"https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/5221288/Mines-Logo-wordmark-blue.jpg","ic-brand-Login-body-bgd-color":"#21314d","ic-brand-Login-body-bgd-shadow-color":"#21314d","ic-brand-Login-logo":"https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/5259017/CanvasGuest%20Login1.png"},"share":false,"name":null,"created_at":"2025-08-18T11:22:19-06:00","js_overrides":"https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/8079008/CanvasTheme_Edited-8-18.js","css_overrides":"https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/7108474/dp.css","mobile_js_overrides":"https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/7108467/dp_app%20%25281%2529.js","mobile_css_overrides":"https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/7108468/dp_app3.css","parent_md5":null},"confetti_branding_enabled":false,"url_to_what_gets_loaded_inside_the_tinymce_editor_css":["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/8079f9a690197dfa70bd41e1162ae67a/variables-9dec371ad57e3dd0396f0b2eddb63479.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/what_gets_loaded_inside_the_tinymce_editor-a9d2316957.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-eb4a10fb18.css"],"url_for_high_contrast_tinymce_editor_css":["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/default/variables-high_contrast-9dec371ad57e3dd0396f0b2eddb63479.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_high_contrast/bundles/what_gets_loaded_inside_the_tinymce_editor-97ab6cfd40.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/fonts-eb4a10fb18.css"],"captcha_site_key":"6LftyLgZAAAAAC10tel8XGucbApMIY8-uFB_yVcN","current_user_id":"37004","current_user_global_id":"98020000000037004","current_user_uuid":"ohmnLPcLMPIDaYJVTc34Z5bEBJglpxHqcZwMuupz","current_user_usage_metrics_id":"78dd2936cebdaa49cc25cecb7624daf3785b4c7edbae5edbf0fb76478421211a","current_user_roles":["user","student"],"current_user_granular_roles":["user","student"],"current_user_is_student":true,"current_user_types":[],"current_user_disabled_inbox":false,"current_user_visited_tabs":null,"discussions_reporting":true,"portfolio_notifications":false,"files_domain":"cluster206.canvas-user-content.com","group_information":null,"DOMAIN_ROOT_ACCOUNT_ID":"98020000000000001","DOMAIN_ROOT_ACCOUNT_UUID":"IkqjBLBARZnXwUkDgXXYf4h6UyEEKgM860qWF434","CAREER_THEME_URL":null,"CAREER_DARK_THEME_URL":null,"k12":false,"help_link_name":"Help \u0026 Resources","help_link_icon":"information","ADA_CHATBOT_ENABLED":false,"use_high_contrast":false,"auto_show_cc":false,"disable_celebrations":false,"disable_keyboard_shortcuts":false,"LTI_LAUNCH_FRAME_ALLOWANCES":["geolocation *","microphone *","camera *","midi *","encrypted-media *","autoplay *","clipboard-write *","display-capture *","fullscreen *"],"DEEP_LINKING_POST_MESSAGE_ORIGIN":"https://elearning.mines.edu","comment_library_suggestions_enabled":false,"SETTINGS":{"open_registration":false,"collapse_global_nav":false,"release_notes_badge_disabled":false,"can_add_pronouns":true,"show_sections_in_course_tray":true,"enable_content_a11y_checker":false,"suppress_assignments":false},"RAILS_ENVIRONMENT":"production","use_dyslexic_font":false,"widget_dashboard_overridable":false,"IN_PACED_COURSE":false,"SENTRY_FRONTEND":{"dsn":"https://355a1d96717e4038ac25aa852fa79a8f@relay-iad.sentry.insops.net/388","org_slug":"instructure","base_url":"https://sentry.insops.net","normalized_route":null,"errors_sample_rate":"0.005","traces_sample_rate":"0.005","url_deny_pattern":"instructure-uploads.*amazonaws.com","revision":"canvas-lms@20260812.555"},"DATA_COLLECTION_ENDPOINT":"https://canvas-frontend-data-iad-prod.inscloudgate.net/submit","DOMAIN_ROOT_ACCOUNT_SFID":"001A00000086WvYIAU","DIRECT_SHARE_ENABLED":false,"CAN_VIEW_CONTENT_SHARES":false,"FEATURES":{"account_level_blackout_dates":false,"assignment_edit_placement_not_on_announcements":false,"a11y_checker_ga2_features":true,"block_content_editor_toolbar_reorder":false,"clarify_developer_key_token_count":true,"commons_new_quizzes":true,"create_external_apps_side_tray_overrides":false,"dashboard_graphql_integration":false,"developer_key_user_agent_alert":true,"disallow_threaded_replies_fix_alert":true,"disallow_threaded_replies_manage":true,"discussion_ai_survey_link":false,"discussion_checkpoints":false,"discussion_permalink":true,"enhanced_course_creation_account_fetching":false,"explicit_latex_typesetting":false,"feature_flag_ui_sorting":true,"files_a11y_rewrite":true,"files_a11y_rewrite_toggle":true,"files_a11y_folder_duplicates":true,"horizon_course_setting":false,"instui_for_import_page":true,"instui_header":false,"media_links_use_attachment_id":true,"multiselect_gradebook_filters":true,"new_quizzes_media_type":true,"new_quizzes_navigation_updates":true,"non_admin_access_token_expiration":true,"permanent_page_links":true,"rce_a11y_resize":true,"rce_find_replace":true,"require_mfa_verification_for_removal":false,"render_both_to_do_lists":false,"scheduled_feedback_releases":true,"speedgrader_studio_media_capture":true,"validate_call_to_action":false,"block_content_editor_ai_alt_text":true,"ux_list_concluded_courses_in_bp":true,"a11y_checker_ga1":false,"accessibility_automatic_scanning":false,"account_level_mastery_scales":false,"ai_rubrics":false,"ams_root_account_integration":false,"ams_advanced_content_organization":false,"buttons_and_icons_root_account":false,"canvas_apps_sub_account_access":true,"checkpoints_grading_periods":false,"cookie_consent_necessary":false,"course_backup_reminders":false,"course_pace_allow_bulk_pace_assign":false,"course_pace_download_document":false,"course_pace_draft_state":false,"course_pace_pacing_status_labels":false,"course_pace_pacing_with_mastery_paths":false,"course_pace_time_selection":false,"course_pace_weighted_assignments":false,"course_paces_skip_selected_days":false,"create_course_subaccount_picker":true,"disable_iframe_sandbox_file_show":false,"discussion_insights":false,"discussion_summary":false,"extended_submission_state":false,"file_verifiers_for_quiz_links":true,"grading_rubrics_pagination":false,"institutional_tags":false,"instui_nav":false,"login_registration_ui_identity":false,"lock_lti_registrations":true,"lti_apps_page_instructors":false,"lti_asset_processor":true,"lti_asset_processor_discussions":false,"lti_deactivate_registrations":true,"lti_link_to_apps_from_developer_keys":true,"lti_registrations_next":true,"lti_registrations_templates":false,"lti_registrations_usage_data":true,"lti_registrations_usage_data_dev":false,"lti_registrations_usage_data_low_usage":false,"lti_registrations_usage_tab":false,"lti_toggle_placements":true,"substitution_variable_display":false,"mobile_offline_mode":false,"modules_requirements_allow_percentage":false,"nav_menu_links":true,"new_quizzes_ai_quiz_generation":false,"non_scoring_rubrics":true,"oak_for_admins":false,"oak_for_teachers":false,"product_tours":false,"project_lhotse":false,"rce_asr_captioning_improvements":false,"rce_lite_enabled_speedgrader_comments":true,"rce_transform_loaded_content":false,"react_discussions_post":true,"restrict_student_access":false,"rubric_criterion_range":true,"rubrics_page_pagination":false,"scheduled_page_publication":true,"send_usage_metrics":true,"send_usage_metrics_after_consent":false,"smart_search":false,"top_navigation_placement":false,"translate_inbox_messages":false,"translation":false,"youtube_migration":false,"educator_dashboard":false,"widget_dashboard":true,"default_discussion_options":false,"course_navigation_and_feature_options_permissions":false,"developer_key_public_client_ui":true,"api_scopes_text_paste":true,"account_survey_notifications":true,"embedded_release_notes":true,"pendo_extended":false,"ai_experiences":false,"canvas_k6_theme":false,"lti_asset_processor_course":false,"new_math_equation_handling":true,"youtube_overlay":false,"rce_studio_embed_improvements":true,"a11y_checker_ai_table_caption_generation":false,"a11y_checker_ai_alt_text_generation":false,"a11y_checker_close_issues":true,"a11y_checker_additional_resources":true,"peer_review_allocation_and_grading":false},"EXPECTED_USAGE_METRICS_BEHAVIOR":"track_usage","PRE_COOKIE_CONSENT":"true","PENDO_APP_ID":"1ca366f1-739e-4565-52d2-9e6f6a8d438f","PENDO_APP_ENV":"io","current_user":{"id":"37004","anonymous_id":"sjw","display_name":"Ari Anaya","avatar_image_url":"https://elearning.mines.edu/images/thumbnails/9458358/WmEFVWgm1VrJfHvY3wS5IGyF7ULWJIOUDtQH4dhV","html_url":"https://elearning.mines.edu/about/37004","pronouns":"He/him/his","avatar_is_fallback":false,"email":"arael_anaya@mines.edu"},"current_user_is_admin":false,"page_view_update_url":"/page_views/9dc0ddba-f965-4a94-a987-5cd4e25949b4?page_view_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpIjoiOWRjMGRkYmEtZjk2NS00YTk0LWE5ODctNWNkNGUyNTk0OWI0IiwidSI6OTgwMjAwMDAwMDAwMzcwMDQsImMiOiIyMDI2LTA4LTI0VDIxOjUyOjQ5LjEyWiJ9.WaGmCJ9fFcEBVxlwzedDUGNBB-bVOhRF7WgkUv0YxBI","context_asset_string":"course_81000","ping_url":"https://elearning.mines.edu/api/v1/courses/81000/ping","TIMEZONE":"America/Denver","CONTEXT_TIMEZONE":"America/Denver","LOCALES":["en"],"BIGEASY_LOCALE":"en_US","FULLCALENDAR_LOCALE":"en","MOMENT_LOCALE":"en","rce_auto_save_max_age_ms":86400000,"K5_USER":false,"USE_CLASSIC_FONT":false,"K5_HOMEROOM_COURSE":false,"K5_SUBJECT_COURSE":false,"OAK_SESSION_KEY":"igniteAgent","LOCALE_TRANSLATION_FILE":"https://du11hjcvx0uqb.cloudfront.net/dist/javascripts/translations/en-a40de20d70.json","ACCOUNT_ID":"410","user_cache_key":"4a19f81bb40f551e2037a0bf3f138311a4588e8216eb9bde460ad3abef2a6a891893fe2980907063a9c547841fc80c2423578737d6f26026c67af451a2ad7d86","horizon_course":false,"HORIZON_ACCOUNT":false,"USAGE_METRICS_AWS_REGION":"us-east-1","current_context":{"id":"81000","name":"ROBOT MECHANICS: KINEMATICS, DYNAMICS, AND CONTROL-Fall 2026-MEGN544A","type":"Course","url":"https://elearning.mines.edu/courses/81000"},"OBSERVER_OPTIONS":{"OBSERVED_USERS_LIST":[{"id":"37004","name":"Ari Anaya","created_at":"2023-05-26T12:34:38-06:00","sortable_name":"Anaya, Ari","short_name":"Ari Anaya","pronouns":"He/him/his","avatar_url":"https://elearning.mines.edu/images/thumbnails/9458358/WmEFVWgm1VrJfHvY3wS5IGyF7ULWJIOUDtQH4dhV"}],"CAN_ADD_OBSERVEE":false},"INCOMPLETE_REGISTRATION":null,"USER_EMAIL":"arael_anaya@mines.edu","badge_counts":{"submissions":0},"NEW_USER_TUTORIALS":{"is_enabled":false},"NEW_USER_TUTORIALS_ENABLED_AT_ACCOUNT":{"is_enabled":true},"COURSE":{"id":"81000","long_name":"ROBOT MECHANICS: KINEMATICS, DYNAMICS, AND CONTROL-Fall 2026-MEGN544A - Fall 2026.MEGN544A.80474","pages_url":"https://elearning.mines.edu/courses/81000/pages","is_student":true,"is_instructor":false,"is_published":true,"front_page_title":null,"default_view":"syllabus"},"RICH_CONTENT_APP_HOST":"rich-content-iad.inscloudgate.net","JWT":"ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJSME5OSWl3aWNtVm5hVzl1SWpvaWRYTXRaV0Z6ZEMweElpd2laVzUyYVhKdmJtMWxiblFpT2lKd2NtOWtkV04wYVc5dUluMC4uYlRNSWNpRGI3aWNEVTAxby5PNVRjUmZCRldFT1BQNHVCdWowb1ZQU003cUVnenBUVG1DZ2htaWU2T1dVbno0THJnaTB0R0VMNkYwUTVCNDhrbEY4VWlzUkMtODZJeU9xVElPYjBHdXpQdjZVN2h1U3Zfbm94a2ZqZllNbk53TnFaVnM4cFlZY1hMazRpR3l5T1dfNElFMHozN3UtMFY2VGNYZDNjem9uZ1FOWktjZFNFWVF4NlVMYWFyMDVjZGtqSTYxb1h0RHZraHp2a3NVMGJ4SEgzbjFONHpkX1hNTzFGLURjN0JGQ0dOZ1RobzBkeVprX2hJYTY0MDdPTVF1Tm1ONGVRRFVOeXJ6MXlrOUhRb21nMWRWTzB6dmdCUVNsZVc1c21oRWtaUnJoVnJJSnJ4bGtqQ1NNb3lNd3ZVcFlOaEM4eXMtTEZpNUx2UUpZT0xiNlNWRzNfT0tXelFWNVFjbWE0U0U4ZXhEUlpyTFhmV1lXdTB3MjlJRmJsQjBNWlNjZDN2Wm9yMnZTM2dILW03ZV9VZ0F0cmlEdGNhYlBXZkRQN0dUTnB2XzM0WThic2Z6bXNIMDgtV2NpdnNfb2pWV0x6RnhiOWM1VGRKeC1BUFpidkZuMWVTalpnQk1ZeTVDbnVtTFFEeVY3eVJpZTNvdnAtSTVXZUdpVTNsV3hFX2pnOHJ3Z08wYUkxV2hfY055NkpCdFpNXzdidlEwWnAtYUIzR0FibFpRMjhwakpHUWUwZ0tnRWJkV1RCQkRUTXhfN0pmNVFMc05HaGljcFNoVVR1T3ZJUjUxR3NyeW1VNVFGQXIwZnNTTnR1UXpyRlZiaTRURDJUSGlVUm9wUkNxU3ZZajlBS3A5OTRqbS1hUTA0N0RfQmlmOWhGUnNzc2dMRDBGYjl2OElnamNEOFRVdjJhOU9HUHE3RDVkM3E0QmxnbF9ja2FPWEJBMmFkcHJSSHg3dXZpSkxBQWFDRTRZNkl2X0xZV3hfOHZnU0NUd1RmNUxIUjlVQVJfU1o1M2hLTHZvRnZFSmpWM1dEVGZzUmhLM3pULTJHYnNfOV9SWVJDR1BYeXBmTUtranNkM0czeWhjQlgxRDNidHBoVVYycnh0LTk5NlFKRFp6dm1sUWw0VE01RFRFSThOS1ZCbHNPUVRvZWc3NktSTmpZRDh6dUNyU1Z2U1ZJUHhXV0ZraWlhVXpKUlRmd0VmbG9lOThZQkN1MnRlckxiSkJxV25XM2t2ckotM0lKUTVWSy1QQXpwcUtOMVdWUWMuR0dCRkFGSGFpY2VWRmVsNThnU0dIdw==","RICH_CONTENT_CAN_UPLOAD_FILES":false,"RICH_CONTENT_CAN_EDIT_FILES":false,"RICH_CONTENT_FILES_TAB_DISABLED":false,"RICH_CONTENT_INST_RECORD_TAB_DISABLED":false,"CAN_READ":true,"SYLLABUS_BODY":"\u003ch3\u003eMEGN544/ROBO554 Robot Mechanics: Kinematics, Dynamics, and Control\u003c/h3\u003e\n\u003ctable style=\"width: 104.016%; height: 215px;\" width=\"100%\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"height: 53px;\"\u003e\n\u003ctd style=\"width: 24.1231%; height: 53px;\" width=\"33%\"\u003e\n\u003cp\u003e\u003cstrong\u003eInstructor\u003c/strong\u003e\u003c/p\u003e\n\u003c/td\u003e\n\u003ctd style=\"width: 30.8162%; height: 53px;\" width=\"33%\"\u003e\n\u003cp\u003e\u003cstrong\u003eEmail\u003c/strong\u003e\u003c/p\u003e\n\u003c/td\u003e\n\u003ctd style=\"width: 24.1231%; height: 53px;\" width=\"33%\"\u003e\n\u003cp\u003e\u003cstrong\u003eLocation \u0026amp; Time\u003c/strong\u003e\u003c/p\u003e\n\u003c/td\u003e\n\u003ctd style=\"width: 20.9159%; height: 53px;\"\u003e\n\u003cp\u003e\u003cstrong\u003eOffice Hours\u003c/strong\u003e\u003c/p\u003e\n\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 77px;\"\u003e\n\u003ctd style=\"width: 24.1231%; height: 77px;\" width=\"33%\"\u003e\n\u003cp\u003e\u003cstrong\u003eDr. George Kontoudis\u003c/strong\u003e\u003c/p\u003e\n\u003c/td\u003e\n\u003ctd style=\"width: 30.8162%; height: 77px;\" width=\"33%\"\u003e\n\u003cp\u003e\u003ca href=\"mailto:george.kontoudis@mines.edu\"\u003egeorge.kontoudis@mines.edu\u003c/a\u003e\u003c/p\u003e\n\u003c/td\u003e\n\u003ctd style=\"width: 24.1231%; height: 77px;\" width=\"33%\"\u003e\n\u003cp\u003e\u003cspan\u003eBerthoud Hall 106\u003c/span\u003e\u003cbr\u003eTTh 12:30pm-1:45pm\u003c/p\u003e\n\u003c/td\u003e\n\u003ctd style=\"width: 20.9159%; height: 77px;\"\u003e\n\u003cp\u003e\u003cspan\u003eT 9-10am,\u003cbr\u003eTh 4-5pm\u003cbr\u003eRoom: BB280C\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan\u003eTA: M 11:00am-12:30pm\u003cbr\u003eRoom: 206\u003c/span\u003e\u003c/p\u003e\n\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eDescription\u003c/h3\u003e\n\u003cp\u003eMathematical representation of robot structures. Mechanical analysis including kinematics, dynamics, and design of robot manipulators. Representations for trajectories and path planning for robots. Fundamentals of robot control including, linear, nonlinear, and force control methods. Introduction to off-line programming techniques and simulation. Prerequisites: EENG307 and MEGN441, or grad standing. 3 hours lecture; 3 semester hours.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003cem\u003e\u003cspan class=\"mark5gbwe9qa5\" data-markjs=\"true\" data-ogac=\"\" data-ogab=\"\" data-ogsc=\"\" data-ogsb=\"\" data-olk-copy-source=\"MessageBody\"\u003eRobo\u003c/span\u003etics students should register for\u0026nbsp;\u003cspan class=\"mark5gbwe9qa5\" data-markjs=\"true\" data-ogac=\"\" data-ogab=\"\" data-ogsc=\"\" data-ogsb=\"\"\u003eROBO\u003c/span\u003e554 and all others for MEGN544\u003c/em\u003e.\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eSchedule\u003c/h3\u003e\n\u003cp\u003eA tentative schedule can be found \u003ca class=\"instructure_file_link instructure_scribd_file inline_disabled\" title=\"MEGN544_Schedule_Fall26.xlsx\" href=\"/courses/81000/files/9489783?location=course_syllabus_81000\u0026amp;wrap=1\" target=\"_blank\"\u003ehere\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eRequired Textbook\u003c/h3\u003e\n\u003cp\u003eHollerbach, J. (2003). \u003cem\u003eIntroduction to Robotics.\u003c/em\u003e [\u003ca class=\"instructure_file_link instructure_scribd_file inline_disabled\" title=\"Hollerbach Course Notes.pdf\" href=\"/courses/81000/files/9489689?location=course_syllabus_81000\u0026amp;wrap=1\" target=\"_blank\"\u003epdf\u003c/a\u003e]\u003c/p\u003e\n\u003ch4\u003eOptional Textbook (used for control part)\u003c/h4\u003e\n\u003cp\u003e\u003cspan style=\"color: var(--ic-brand-font-color-dark); font-size: 1rem;\"\u003eSiciliano, B., Sciavicco, L., Villani, L., \u0026amp; Oriolo G. (2009). \u003cem\u003eRobotics: Modelling, Planning and Control\u003c/em\u003e. \u003c/span\u003e\u003cspan style=\"color: var(--ic-brand-font-color-dark); font-size: 1rem;\"\u003eSpringer. \u003c/span\u003e\u003cspan\u003e[available online through \u003ca class=\"inline_disabled\" title=\"Link\" href=\"https://library.mines.edu/\" target=\"_blank\"\u003eArthur Lakes Library\u003c/a\u003e with ISBN:\u0026nbsp;1846-28641-7]\u003c/span\u003e\u003c/p\u003e\n\u003ch3\u003eAdditional Suggested Resources\u003c/h3\u003e\n\u003cp\u003e\u003cspan class=\"instructure_file_holder link_holder instructure_file_link_holder\"\u003eMurray, R. M., Li, Z., \u0026amp; Sastry, S. (2017). \u003ci\u003eA Mathematical Introduction to Robotic Manipulation\u003c/i\u003e. CRC Press. [\u003ca class=\"instructure_file_link instructure_scribd_file inline_disabled\" title=\"Murry Li Sastry - A Mathematical Introduction to Robotic Manipulation.pdf\" href=\"/courses/81000/files/9489653?location=course_syllabus_81000\u0026amp;wrap=1\" target=\"_blank\"\u003epdf\u003c/a\u003e]\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan class=\"instructure_file_holder link_holder instructure_file_link_holder\"\u003e\u003cspan\u003eLynch, K. M., \u0026amp; Park, F. C. (2017).\u0026nbsp;\u003ci\u003eModern Robotics\u003c/i\u003e. Cambridge University Press. [\u003ca class=\"instructure_file_link instructure_scribd_file inline_disabled\" title=\"Lynch and Park - Introduction to Modern Robotics.pdf\" href=\"/courses/81000/files/9489711?location=course_syllabus_81000\u0026amp;wrap=1\" target=\"_blank\"\u003epdf\u003c/a\u003e]\u003c/span\u003e\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan class=\"instructure_file_holder link_holder instructure_file_link_holder\"\u003e\u003cspan\u003eSiciliano, B., Khatib, O., \u0026amp; Kröger, T. (Eds.). (2008). \u003c/span\u003e\u003ci\u003eHandbook of Robotics\u003c/i\u003e\u003cspan\u003e. Berlin: Springer. [\u003ca class=\"instructure_file_link instructure_scribd_file inline_disabled\" title=\"Handbook of Robotics.pdf\" href=\"/courses/81000/files/9489641?location=course_syllabus_81000\u0026amp;wrap=1\" target=\"_blank\"\u003epdf\u003c/a\u003e]\u003c/span\u003e\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan class=\"instructure_file_holder link_holder instructure_file_link_holder\"\u003e\u003cspan\u003eJia, Y.-B. (2013). \u003cem\u003eDual quaternions.\u003c/em\u003e Iowa State University: Ames, IA, USA. [\u003ca class=\"instructure_file_link instructure_scribd_file inline_disabled\" title=\"dual-quaternion_Yan-Bin_Jia.pdf\" href=\"/courses/81000/files/9489703?location=course_syllabus_81000\u0026amp;wrap=1\" target=\"_blank\"\u003epdf\u003c/a\u003e]\u003c/span\u003e\u003c/span\u003e\u003cstrong\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ch3\u003eOffice Hours\u003c/h3\u003e\n\u003cul style=\"list-style-type: disc;\"\u003e\n\u003cli\u003eTuesday 9:00am-10:00am, Brown Hall BB 280C\u003c/li\u003e\n\u003cli\u003eThursday 4:00pm-5:00pm, Brown Hall BB 280C\u003c/li\u003e\n\u003cli\u003eOther time in-person or virtual meeting by appointment\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eTA \u0026amp; Office Hours\u003c/h3\u003e\n\u003cp\u003eThe teaching assistant for this class is Aaron Fanganello \u0026lt;afangane@mines.edu\u0026gt;. Eugene is responsible to grade homeworks and hold office hours to answer questions about homework assignments and grading. TA office hours:\u003c/p\u003e\n\u003cul style=\"list-style-type: disc;\"\u003e\n\u003cli\u003eMonday 11:00am-12:30pm, Room 206\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eGrading Policy\u003c/h3\u003e\n\u003cp\u003eGrades will be calculated on the student's performance as described in the following table.\u003c/p\u003e\n\u003ctable style=\"border-collapse: collapse; width: 97.1391%; height: 202.713px; border-color: #ecf0f1; border-style: none;\" border=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"height: 28.9915px;\"\u003e\n\u003ctd style=\"width: 50.8006%; height: 28.9915px;\"\u003e\u003cstrong\u003eCourse Activity\u003c/strong\u003e\u003c/td\u003e\n\u003ctd style=\"width: 49.153%; height: 28.9915px;\"\u003e\u003cstrong\u003ePercentage of Grade (102%)\u003c/strong\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 28.8778px;\"\u003e\n\u003ctd style=\"width: 50.8006%; height: 28.8778px;\"\u003eParticipation (at least 20 out of 25 lectures)\u003c/td\u003e\n\u003ctd style=\"width: 49.153%; height: 28.8778px;\"\u003e2%\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 28.9915px;\"\u003e\n\u003ctd style=\"width: 50.8006%; height: 28.9915px;\"\u003eHomework Assignments (best 8 out of 10)\u003c/td\u003e\n\u003ctd style=\"width: 49.153%; height: 28.9915px;\"\u003e15%\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 28.9915px;\"\u003e\n\u003ctd style=\"width: 50.8006%; height: 28.9915px;\"\u003eQuizzes (best 8 out of 10)\u003c/td\u003e\n\u003ctd style=\"width: 49.153%; height: 28.9915px;\"\u003e15%\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 28.9915px;\"\u003e\n\u003ctd style=\"width: 50.8006%; height: 28.9915px;\"\u003eProgramming Assignments\u003c/td\u003e\n\u003ctd style=\"width: 49.153%; height: 28.9915px;\"\u003e20%\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 28.8778px;\"\u003e\n\u003ctd style=\"width: 50.8006%; height: 28.8778px;\"\u003eMid-term Exam (in class)\u003c/td\u003e\n\u003ctd style=\"width: 49.153%; height: 28.8778px;\"\u003e20%\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 28.9915px;\"\u003e\n\u003ctd style=\"width: 50.8006%; height: 28.9915px;\"\u003eProject (4 deliverables)\u003c/td\u003e\n\u003ctd style=\"width: 49.153%; height: 28.9915px;\"\u003e30%\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eEach activity is summarized below, and details of homeworks, quizzes, and the project can be found on our Canvas page.\u003c/p\u003e\n\u003ch4\u003e\u003cstrong\u003eParticipation (2%)\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003eActive participation is an essential part of this course. To encourage engagement and provide immediate feedback, we will use iClicker during lectures. Participation grades will be based on responding to in-class iClicker questions, \u003cstrong\u003e\u003cem\u003eregardless of whether the answers are correct\u003c/em\u003e\u003c/strong\u003e. This ensures that you receive credit for being present, attentive, and involved in the learning process. Occasional absences are expected; thus 20% of missed lectures will be automatically excused.\u003c/p\u003e\n\u003ch4\u003e\u003cstrong\u003eHomework Assignments (15%)\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003e\u003cspan\u003eHomework should be prepared with a type-setting program such as LaTeX or Word. Teamwork is allowed with a complementary report from each team member on their contribution to the homework. Your written work will be submitted online through Canvas. Please submit your homework as a PDF. All homework is due by midnight, no exceptions. Note that Canvas will mark your assignment late if you submit at 12:01 am. \u003c/span\u003eYour submission should represent the pride and professionalism you wish to demonstrate as a roboticist.\u0026nbsp; Neatness, organization, and clarity are essential skills for graduate students.\u0026nbsp;\u003c/p\u003e\n\u003cp\u003eShow \u003cstrong\u003eall\u003c/strong\u003e work clearly and neatly. Write out each step as if you were explaining your thought process to another person. It is always good practice to include a drawing and a problem statement.\u0026nbsp; A complete solution should include:\u003c/p\u003e\n\u003col\u003e\n\u003cli style=\"list-style-type: none;\"\u003e\n\u003col\u003e\n\u003cli\u003eStatement of your approach to solving the problem\u003c/li\u003e\n\u003cli\u003eGoverning equations\u003c/li\u003e\n\u003cli\u003eConsistent problem-solving steps so your work can be followed\u003c/li\u003e\n\u003cli\u003eBoxed or underlined final answers\u003c/li\u003e\n\u003cli\u003eAssessment of answer (i.e., does it seem reasonable and why?)\u003c/li\u003e\n\u003c/ol\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cstrong\u003e\u003cem\u003eYou will be assigned 10 homeworks and for your grade I will consider the best eight.\u003c/em\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003ch4\u003e\u003cstrong\u003eQuizzes (15%)\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003eQuizzes will take place on most Thursdays (see schedule for exact date and topic) at the end of the class. Every Quiz must be done by hand and independently. A calculator is only allowed for scalar arithmetic.\u0026nbsp;\u003c/p\u003e\n\u003cp\u003eAfter you finish your Quiz, you are responsible to: i) take a picture of it; ii) upload it on the Canvas assignment page; and ii) self-grade it. The solution of the Quiz and a rubric will be posted on Canvas after the class. Your grades will be reviewed and adjusted accordingly.\u0026nbsp;\u003c/p\u003e\n\u003cp\u003e\u003cem\u003e\u003cstrong\u003eYou will be assigned 10 quizzes and I will consider the best eight for your final grade.\u0026nbsp;\u003c/strong\u003e\u003c/em\u003e\u003c/p\u003e\n\u003ch4\u003e\u003cstrong\u003eProgramming Assignments (20%)\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003eThere will be four programming assignments throughout the semester, all of which must be completed using MATLAB. These assignments are designed to help you apply course concepts, develop problem-solving skills, and gain proficiency in computational tools commonly used in engineering practice. A testing script will be provided for each assignment to help you verify the correctness and formatting of your solutions before submission. While the testing script is a valuable resource, it is not a substitute for thorough debugging and clear documentation of your code.\u003c/p\u003e\n\u003ch4\u003e\u003cstrong\u003eMid-term Exam (20%)\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003e\u003cspan\u003eYou are allowed a graphing calculator (TI-89 equivalent or less) and 1 sheet (8.5x11\") hand-written with notes/equations on both sides. The midterm will be held during our regular class period on October 16th.\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\n\u003ch4\u003e\u003cstrong\u003eProject (30%)\u003c/strong\u003e\u003c/h4\u003e\n\u003cp\u003eThe project is intended to advance your skill set from the in-class activities. You will complete a semester-long project in groups of 3–4. The project is intended to provide hands-on experience in applying course concepts to a larger, open-ended problem. Each group will be responsible for \u003cem\u003e\u003cstrong\u003efour deliverables\u003c/strong\u003e\u003c/em\u003e:\u003c/p\u003e\n\u003col style=\"list-style-type: decimal;\"\u003e\n\u003cli\u003e\u003cem\u003e\u003cstrong data-start=\"437\" data-end=\"457\"\u003eProject Proposal\u003c/strong\u003e\u003c/em\u003e – One-page document (double-column IEEE format) outlining the problem statement, objectives, and approach. [20%]\u003c/li\u003e\n\u003cli\u003e\u003cem\u003e\u003cstrong data-start=\"582\" data-end=\"596\"\u003eMid-Review\u003c/strong\u003e\u003c/em\u003e – One-page document (double-column IEEE format) presenting progress and receiving feedback. [15%]\u003c/li\u003e\n\u003cli\u003e\u003cem\u003e\u003cstrong data-start=\"824\" data-end=\"840\"\u003eFinal Report\u003c/strong\u003e\u003c/em\u003e – Four-page document (double-column IEEE format) detailing the project outcomes. [60%]\u003c/li\u003e\n\u003cli\u003e\u003cem\u003e\u003cstrong data-start=\"939\" data-end=\"960\"\u003eIndividual Report\u003c/strong\u003e \u003c/em\u003e– Summary (not more than one page) describing each team member’s specific contributions and responsibilities. [5%]\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eAll group members are expected to contribute meaningfully, and both the quality of deliverables and the effectiveness of teamwork will be considered in grading. \u003cspan\u003eLate submissions will result in penalty of 1\u003cspan class=\"fontstyle0\"\u003e0% per (24 hour) day.\u003c/span\u003e\u003c/span\u003e\u003c/p\u003e\n\u003ch3\u003eLate Submission Policy for Homework Assignments Only\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e1\u003cspan class=\"fontstyle0\"\u003e0% off per (24 hour) day that the assignment is late. \u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eCases 1-3 do not require to give me a prior notice (although I very much appreciate it, when possible)\u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eCases 4-6 require to \u003c/span\u003e\u003cspan class=\"fontstyle2\"\u003egive me notice at least 1 week in advance\u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eCase 7 is because sometimes unexpected things happen\u003c/span\u003e\u003cbr\u003e\n\u003col style=\"list-style-type: decimal;\"\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eReligious holidays/observances \u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eEmergencies (crashed car, death in the family, house burned down, etc.) \u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eUnexpected Illness (note: I will require a note from your doctor if this becomes a frequent occurrence)\u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eTravel \u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eAthletic related activities \u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eEmployment related activities\u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan class=\"fontstyle0\"\u003eEvery student gets one \"no questions asked\" extension per semester\u003c/span\u003e\u0026nbsp;\u003c/li\u003e\n\u003c/ol\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eGenerative Artificial Intelligence\u003c/h3\u003e\n\u003cp\u003eThe Office of the Provost encourages the entire University community to explore the uses and impacts of GenAI technologies, whether through critical discussions or creative applications. Based on a review of the most recent \u003ca href=\"https://www.mines.edu/academic-affairs/genai\"\u003eGuidelines for Using Generative Artificial Intelligence at Colorado School of Mines\u003c/a\u003e, the GenAI policy for this course will be: \u003cem\u003eBy submitting work for evaluation in this course, you represent it as your own intellectual product.\u0026nbsp;Submitting content for evaluation (e.g., ideas, text, code, images) that was generated, in whole or in part, by Generative Artificial Intelligence tools (including, but not limited to, ChatGPT and other large language models) would be considered Academic Misconduct in violation of \u003c/em\u003e\u003cspan\u003e\u003ca role=\"link\" href=\"https://www.mines.edu/policy-library/academic-integrity-policy/\"\u003eMines Academic Integrity/Misconduct Policy\u003c/a\u003e\u003c/span\u003e\u003cspan\u003e.\u003c/span\u003e\u003c/p\u003e\n\u003cp\u003e\u003cspan\u003eGenAI tools are \u003cem\u003e\u003cstrong\u003enot permitted for solving or completing homework or programming assignments\u003c/strong\u003e\u003c/em\u003e in this course.\u003cbr\u003eHowever, you are encouraged to use them as a resource for \u003cem\u003e\u003cstrong\u003epracticing problems, reviewing concepts,\u003c/strong\u003e\u003c/em\u003e\u003cbr\u003e\u003cem\u003e\u003cstrong\u003eor preparing for the mid-term exam\u003c/strong\u003e\u003c/em\u003e, provided the work you submit for evaluation is entirely your own. This\u003cbr\u003edistinction ensures that GenAI supports your learning process without compromising academic integrity.\u003cbr\u003e\u003c/span\u003e\u003c/p\u003e\n\u003ch3\u003eAttendance Policy\u003c/h3\u003e\n\u003cp\u003eAttendance is expected and \u003cem\u003e\u003cstrong\u003ewill be rewarded with an additional 2%\u003c/strong\u003e\u003c/em\u003e (see Participation in Grading Policy Section). You are responsible for all information presented in class whether or not you are in attendance. Moreover, it is much more fun for the Instructor to teach a class when all students attend the lectures. Lectures contain active learning moments to benefit students that are attending the lectures.\u003c/p\u003e\n\u003cp\u003e\u003cspan\u003eYou are expected to engage in all course activities, tasks, and assignment as a graduate student. On average it is expected to spend between 8 hours for this course each week during out-of-class time, in addition to actively participating during the class-time each week.\u003c/span\u003e\u003c/p\u003e\n\u003ch3\u003eAbsences\u003c/h3\u003e\n\u003cp\u003eMines students are expected to fulfill their academic requirements through attendance and/or participation. Class attendance is required of all students unless the student has an excused absence granted by the school or the student’s professor. An excused absence awarded by the school or professor comes after a student's request or initiative. To review the Excused Absence Policy and/or to request an excused absence, please visit\u0026nbsp;\u003ca href=\"https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.mines.edu%2Fstudent-life%2Fstudent-absences%2F\u0026amp;data=05%7C02%7Ccartermoulton%40mines.edu%7Cdaadc6b19a7a4b6ae7cb08dc000c8db2%7C997209e009b346239a4d76afa44a675c%7C0%7C0%7C638385301119588312%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C\u0026amp;sdata=W3LTwmq9Q4XJMvYrBv2rGZIhUiAMAEFPhU%2BO4IgaSP4%3D\u0026amp;reserved=0\"\u003ehttps://www.mines.edu/student-life/student-absences/\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e\u003cem\u003eInformation to provide in email to instructor:\u003c/em\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cem\u003eName and CWID\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eClass day missed\u003c/em\u003e\u003c/li\u003e\n\u003cli\u003e\u003cem\u003eDo you certify that you are indeed not feeling well and that after submitting this request will be limiting your activity to recover and/or lessen exposure to others as much as possible until you feel better?\u003c/em\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3\u003eRequired Technology\u003c/h3\u003e\n\u003cp\u003eMATLAB is available for download to all students, faculty, and researchers. For installation on a personal computer you must first create an account on the \u003ca href=\"https://www.mathworks.com/academia/tah-portal/colorado-school-of-mines-40579029.html\"\u003eMATLAB portal\u003c/a\u003e. It is the students’ responsibility to download and install MATLAB on their computers.\u0026nbsp;\u003c/p\u003e\n\u003chr\u003e\n\u003ch3\u003eDiversity and Inclusion\u003c/h3\u003e\n\u003cp\u003eAt Colorado School of Mines, we understand that a diverse and inclusive learning environment inspires creativity and innovation, which are essential to the engineering process. We also know that in order to address current and emerging national and global challenges, it is important to learn with and from people who have different backgrounds, thoughts, and experiences.\u003c/p\u003e\n\u003cp\u003eOur students represent every state in the nation and more than 90 countries around the world, and we continue to make progress in the areas of diversity and inclusion by providing \u003ca href=\"https://www.mines.edu/diversity/\"\u003eDiversity and Inclusion programs and services\u003c/a\u003e to support these efforts.\u003c/p\u003e\n\u003ch3\u003eCenter for Academic Services and Advising (CASA)\u003c/h3\u003e\n\u003cp\u003eCASA provides a variety of services to support students during their time at Mines. Please see \u003ca href=\"http://www.mines.edu/casa\"\u003ewww.mines.edu/casa\u003c/a\u003e for a complete list of current support services.\u003c/p\u003e\n\u003ch3\u003ePreferred First Name Project\u003c/h3\u003e\n\u003cp\u003eMines recognizes members of the campus community may prefer to use a first name other than their legal name to identify themselves. Many services on campus, like Canvas, utilize and display preferred first names. Additional information on preferred name, including how to update your preferred name, is available at the \u003ca href=\"https://www.mines.edu/institutional-equity-title-ix/preferred-first-name/\"\u003eOffice For Institutional Equity website\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003ePregnant and Parenting\u003c/h3\u003e\n\u003cp\u003eIf you are a pregnant or parenting student, you have the right to reasonable, non-disability related modifications. Please contact the Title IX Coordinator in the Office for Institutional Equity at \u003ca href=\"mailto:oie@mines.edu\"\u003eoie@mines.edu\u003c/a\u003e for more information and to request modifications.\u003c/p\u003e\n\u003ch3\u003eSexual Misconduct, Discrimination, and Retaliation\u003c/h3\u003e\n\u003cp\u003eDiscrimination, Harassment, and Sexual Misconduct of any type, including sex discrimination, sex based harassment (sexual assault, dating violence, domestic violence, and stalking), and discrimination based on protected characteristics l, are prohibited under the Policy Prohibiting Sexual Misconduct, Discrimination, and Retaliation. For more information on prohibited conduct, reporting, and resources, please see the \u003ca href=\"https://www.mines.edu/policy-library/policy-prohibiting-sexual-misconduct-discrimination-and-retaliation/\"\u003ePolicy Prohibiting Sexual Misconduct, Discrimination, and Retaliation\u003c/a\u003e and/or contact the Office for Institutional Equity at \u003ca href=\"mailto:oie@mines.edu\"\u003eoie@mines.edu\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eAs your instructor, it is my responsibility to foster a learning environment that supports diversity of thoughts, perspectives and experiences, honors your identities, and is free of discrimination. Please feel free to speak to me if the class is not living up to these standards. Please note that I am also a mandatory reporter as an instructor at Mines, and if I receive a disclosure of Discrimination, Harassment, and/or Sexual Misconduct, I am required to report it to the Title IX Coordinator.\u003c/p\u003e\n\u003ch3\u003eAcademic Integrity\u003c/h3\u003e\n\u003cp\u003eColorado School of Mines affirms the principle that all individuals associated with the Mines academic community have a responsibility for establishing, maintaining, and fostering an understanding and appreciation for academic integrity. In broad terms, this implies protecting the environment of mutual trust within which scholarly exchange occurs, supporting the ability of the faculty to fairly and effectively evaluate every student’s academic achievements, and giving credence to the university’s educational mission, its scholarly objectives, and the substance of the degrees it awards. We desire an environment free of any and all forms of academic misconduct and expects students to act with integrity at all times. Please read the \u003ca href=\"https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.mines.edu%2Fpolicy-library%2Facademic-integrity-policy%2F\u0026amp;data=05%7C01%7Ckcallan%40mines.edu%7C46b67f04c769496574f008db89610043%7C997209e009b346239a4d76afa44a675c%7C0%7C0%7C638254821936483524%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C\u0026amp;sdata=SooTXUpiof9XWpaiHTASlzakGTD6QOlsTQ3h%2BwCcaSM%3D\u0026amp;reserved=0\"\u003efull academic misconduct/integrity policy\u003c/a\u003e for full definitions of academic misconduct. Additionally, please use \u003ca href=\"https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.mines.edu%2Fstudent-life%2Fcommunity-standards%2Facademic-integrity%2F\u0026amp;data=05%7C01%7Ckcallan%40mines.edu%7C46b67f04c769496574f008db89610043%7C997209e009b346239a4d76afa44a675c%7C0%7C0%7C638254821936483524%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C\u0026amp;sdata=USar0SFpCt3ixBc3NfMxjc7bu4ZaqvC3TfjXEfDm5bo%3D\u0026amp;reserved=0\"\u003eresources provided by the Office of Community Standards\u003c/a\u003e for guidance should you need to know more about the procedures of the policy for academic misconduct/integrity.\u003c/p\u003e\n\u003ch3\u003eCourse Issues and Concerns\u003c/h3\u003e\n\u003cp\u003eAs part of good professional practice, students are encouraged to speak with the faculty directly to raise issues and concerns with regards to the course professionally in compliance with the student code of conduct. Students can also reach out to the course coordinator, Dr. George Kontoudis, or the head of the department, Dr. Anthony Petrella. The department head can investigate and work with the faculty member to resolve course-related concerns. Students’ final point of contact is the college Dean John Berger who can make any final decisions.\u003c/p\u003e\n\u003ch3\u003eDisability Support Services\u003c/h3\u003e\n\u003cp\u003eDisability Support Services (DSS) works collaboratively with students, faculty, and staff to minimize barriers and support an accessible campus community. When barriers to access occur, Disability Support Services works one-on-one with students to determine accommodations and facilitate access to programs and services. If you've been approved for accommodations through Disability Support Services, please contact your professor to confirm receipt of your accommodation letter and to discuss the implementation of accommodations in this course. Please visit \u003ca href=\"https://www.mines.edu/disability-support-services/\"\u003emines.edu/disability-support-services\u003c/a\u003e for more information or to request accommodations.\u003c/p\u003e\n\u003ch3\u003eDigital Accessibility\u003c/h3\u003e\n\u003cp\u003eThe Colorado School of Mines is committed to supporting an accessible digital environment for all members of our community, including students with disabilities. If you have an accessibility concern with Canvas or any digital materials or software used in this course, please contact your professor or request support from Information \u0026amp; Technology Solutions. Please visit \u003ca href=\"https://www.mines.edu/accessibility/\"\u003ehttps://www.mines.edu/accessibility/\u003c/a\u003e for more information.\u003c/p\u003e\n\u003ch3\u003eStudent Outreach \u0026amp; Support (SOS) Resources\u003c/h3\u003e\n\u003cp\u003eIf you feel overwhelmed, anxious, depressed, distressed, mentally or physically unhealthy, or concerned about your wellbeing overall, there are resources both on- and off-campus available to you. If you need assistance, please ask for help from a trusted faculty or staff member, fellow student, or submit a referral for yours. As a community of care, we can help one another get through difficult times. If you are concerned for another student, offer assistance and/or ask for help on their behalf. Students seeking resources for themselves or others should visit \u003ca href=\"https://www.mines.edu/student-life/student-outreach-and-support/\"\u003emines.edu/sos\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eStudent Outreach and Support can help connect you with a variety of resources; some of those might include:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eCounseling Center – \u003ca href=\"https://www.mines.edu/counseling-center/\"\u003ehttps://www.mines.edu/counseling-center/\u003c/a\u003e or students may call to make an appointment. There are also online resources for students on the website. Located in the Wellness Center 2nd floor. Located at 1770 Elm St.\u003c/li\u003e\n\u003cli\u003eHealth Center - \u003ca href=\"https://www.mines.edu/student-health/\"\u003ehttps://www.mines.edu/student-health/\u003c/a\u003e or students may call to make an appointment. Located in Wellness Center 1st floor.\u003c/li\u003e\n\u003cli\u003eColorado Crisis Services - For crisis support 24 hrs/7 days, either by phone, text, or in person, Colorado Crisis Services is a great confidential resource, available to anyone. \u003ca href=\"http://coloradocrisisservices.org\"\u003ehttp://coloradocrisisservices.org\u003c/a\u003e, 1-844-493-8255, or text “TALK” to 38255. Walk-in location addresses are posted on the website.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIn an emergency, you should call 911, and they will dispatch a Mines or Golden PD officer to assist.\u003c/p\u003e\n\u003ch3\u003eThe Writing Center\u003c/h3\u003e\n\u003cp\u003eThe Writing Center is a free academic support service for undergraduate and graduate students. Professional consultants and peer tutors provide support with all forms of communication including technical and scientific reports, academic essays, and oral presentations. Students can make an online or in-person appointment at any stage of their project, from brainstorming to final revisions.\u003c/p\u003e\n\u003cp\u003eTo learn more about their services and to make an appointment, please visit \u003ca href=\"https://writing.mines.edu/\"\u003ewriting.mines.edu\u003c/a\u003e. For questions, please e-mail \u003ca href=\"mailto:writing@mines.edu\"\u003ewriting@mines.edu\u003c/a\u003e.\u003c/p\u003e\n\u003ch3\u003eExpectations of online etiquette or netiquette\u003c/h3\u003e\n\u003cp\u003eHere are few do's and don'ts about communicating in your course through emails or in online discussion forums:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eDo…\n\u003cul\u003e\n\u003cli\u003eAsk questions and engage in conversations as often as possible—feel free to contact the instructor via the discussion forum for questions or via email or other communication.\u003c/li\u003e\n\u003cli\u003eBe patient and respectful of others and their ideas and opinions they post online.\u003c/li\u003e\n\u003cli\u003eRemember to be thoughtful and use professional language. Keep in mind that things often come across differently in written text, so review your writing before posting.\u003c/li\u003e\n\u003cli\u003eBe prepared for some delays in response time, as \"virtual\" communication tends to be slower than \"face-to-face\" communication.\u003c/li\u003e\n\u003cli\u003eContact the instructor if you feel that inappropriate content or behavior has occurred as part of the course.\u003c/li\u003e\n\u003cli\u003eCheck the syllabus and course policies stated by your instructor to know what to expect about your instructor's turnaround time for responding.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cul\u003e\n\u003cli\u003eDo NOT…\n\u003cul\u003e\n\u003cli\u003eUse inappropriate language—this includes, but is not limited to, the use of curse words, swearing, or language that is derogatory.\u003c/li\u003e\n\u003cli\u003ePost inappropriate materials—for example, accidentally posting/showing a picture that is not appropriate for the course content.\u003c/li\u003e\n\u003cli\u003ePost in ALL CAPS, as this is perceived as shouting, and avoid abbreviations and informal language (\"I'll C U L8R\").\u003c/li\u003e\n\u003cli\u003eSend heated messages even if you are provoked. Likewise, if you should happen to receive a heated message, do not respond to it.\u003c/li\u003e\n\u003cli\u003eSend an email or post to the entire class, unless you feel that everyone must read it.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e","notices":[],"active_context_tab":"syllabus"};
+    BRANDABLE_CSS_HANDLEBARS_INDEX = [["new_styles_normal_contrast","new_styles_high_contrast","new_styles_normal_contrast_rtl","new_styles_high_contrast_rtl","new_styles_normal_contrast_dyslexic","new_styles_high_contrast_dyslexic","new_styles_normal_contrast_dyslexic_rtl","new_styles_high_contrast_dyslexic_rtl"],{"10":["908ffbc673",0,"d5c9044c6e",2,0,0,2,2],"15":["c8540c43a4",0,"0a2196be1d",2,0,0,2,2],"19":["df5777ed9c"],"61":["a59552c3a9","f422322d14","02f07b6f81","11cd014ca5",0,1,2,3],"67":["5ccf03149a",0,"8353320b7e",2,0,0,2,2],"71":["fbcc288ac6","a8457d691f","4d67034074","0af11e68eb",0,1,2,3],"06":["ba28819778",0,"96b99aafe5",2,0,0,2,2],"f0":["b349f31f5e",0,0,0,0,0,0,0],"c8":["e491a7fa98","a8dd47600a","7dea8eec45","7fa17eb83a",0,1,2,3],"1e":["a09f0d6787","4259d41d1d","980eba8f31","eebc7f4cb4",0,1,2,3],"0c":["4dae5befd2",0,"c18876be89",2,0,0,2,2],"da":["b5a7f9cd8f","6e65f5abf7","773390ae11","6481b459be",0,1,2,3],"1d":["2128789890",0,"e568085637",2,0,0,2,2],"08":["64bff5a97d"],"e2":["79d37f210d"],"9f":["d39b291ba6",0,0,0,0,0,0,0],"2b":["a296da0dea","ba8d07e773","b5215c2cd5","7534d3090c",0,1,2,3],"c2":["402203a2ae"],"c5":["b5d5bef953","09b4a0b487","27a133737e","2098769aea",0,1,2,3],"f2":["51574f9b13"],"2c":["8a926fc28b",0,0,0,0,0,0,0]}];
+      Object.defineProperty(window, 'REMOTES', {
+        value: (function deepFreeze(o) {
+          if (o && typeof o === 'object') {
+            for (var k in o) deepFreeze(o[k]);
+            Object.freeze(o);
+          }
+          return o;
+        })({}),
+        writable: false,
+        configurable: false,
+        enumerable: true,
+      });
+  </script>
+  <script type="text/javascript">
+    window.CANVAS_COOKIE_CONSENT_STATE = true;
+  </script>
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/8079f9a690197dfa70bd41e1162ae67a/variables-9dec371ad57e3dd0396f0b2eddb63479.js" defer="defer"></script><script src="https://du11hjcvx0uqb.cloudfront.net/dist/timezone/America/Denver-8b016888d3.js" defer="defer"></script><script src="https://du11hjcvx0uqb.cloudfront.net/dist/timezone/America/Denver-8b016888d3.js" defer="defer"></script><script src="https://du11hjcvx0uqb.cloudfront.net/dist/timezone/en_US-80a0ce259b.js" defer="defer"></script>
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/708095-entry-34219e6b4fd4e4ec.js" crossorigin="anonymous" defer="defer"></script><script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/react-entry-a5fb72e8fa941b39.js" crossorigin="anonymous" defer="defer"></script><script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/main-entry-1df6e4f76b61ffdd.js" crossorigin="anonymous" defer="defer"></script>
+<script>
+//<![CDATA[
+(window.deferredBundles || (window.deferredBundles = [])).push('syllabus');
+(window.bundles || (window.bundles = [])).push('course');
+(window.bundles || (window.bundles = [])).push('course_show');
+(window.bundles || (window.bundles = [])).push('course_show_secondary');
+(window.bundles || (window.bundles = [])).push('navigation_header');
+//]]>
+</script>
+  
+</head>
+
+<body class="with-left-side course-menu-expanded with-right-side syllabus primary-nav-expanded context-course_81000 responsive_student_grades_page">
+
+<noscript>
+  <div role="alert" class="ic-flash-static ic-flash-error">
+    <div class="ic-flash__icon" aria-hidden="true">
+      <i class="icon-warning"></i>
+    </div>
+    <h1>You need to have JavaScript enabled in order to access this site.</h1>
+  </div>
+</noscript>
+
+
+
+
+<div id="flash_message_holder"></div>
+<div id="flash_screenreader_holder"></div>
+
+<div id="application" class="ic-app ">
+  
+
+
+
+
+<header id="mobile-header" class="no-print">
+  <button type="button" class="Button Button--icon-action-rev Button--large mobile-header-hamburger">
+    <i class="icon-solid icon-hamburger"></i>
+    <span id="mobileHeaderInboxUnreadBadge" class="menu-item__badge" style="min-width: 0; top: 12px; height: 12px; right: 6px; display:none;"></span>
+    <span class="screenreader-only">Global Navigation Menu</span>
+  </button>
+  <div class="mobile-header-space"></div>
+    <a class="mobile-header-title expandable" href="https://elearning.mines.edu/courses/81000" role="button" aria-controls="mobileContextNavContainer">
+      <div>Fall 2026.MEGN544A.80474</div>
+        <div>Syllabus</div>
+    </a>
+
+  <div id="nutrition_facts_mobile_container"></div>
+
+    <div id="immersive_reader_mobile_mount_point"></div>
+
+    <div class="mobile-header-space"></div>
+    <button type="button" class="Button Button--icon-action-rev Button--large mobile-header-arrow" aria-label="Navigation Menu">
+      <i class="icon-arrow-open-down" id="mobileHeaderArrowIcon"></i>
+    </button>
+</header>
+<nav id="mobileContextNavContainer"></nav>
+
+<header id="header" class="ic-app-header no-print " aria-label="Global Header">
+  <a href="#content" id="skip_navigation_link">Skip To Content</a>
+  <div role="region" class="ic-app-header__main-navigation" aria-label="Global Navigation">
+      <div class="ic-app-header__logomark-container">
+        <a href="https://elearning.mines.edu/" class="ic-app-header__logomark">
+          <span class="screenreader-only">Dashboard</span>
+        </a>
+      </div>
+    <ul id="menu" class="ic-app-header__menu-list">
+        <li class="menu-item ic-app-header__menu-list-item ">
+          <a id="global_nav_profile_link" role="button" href="/profile/settings" class="ic-app-header__menu-list-link">
+            <div class="menu-item-icon-container">
+              <div aria-hidden="true" class="fs-exclude ic-avatar ">
+                <img src="https://elearning.mines.edu/images/thumbnails/9458358/WmEFVWgm1VrJfHvY3wS5IGyF7ULWJIOUDtQH4dhV" alt="Ari Anaya" />
+              </div>
+              <span class="menu-item__badge"></span>
+            </div>
+            <div class="menu-item__text">
+              Account
+            </div>
+          </a>
+        </li>
+      <li class="ic-app-header__menu-list-item ">
+        <a id="global_nav_dashboard_link" href="https://elearning.mines.edu/" class="ic-app-header__menu-list-link">
+          <div class="menu-item-icon-container" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--dashboard" version="1.1" x="0" y="0" viewBox="0 0 280 200" enable-background="new 0 0 280 200" xml:space="preserve"><path d="M273.09,180.75H197.47V164.47h62.62A122.16,122.16,0,1,0,17.85,142a124,124,0,0,0,2,22.51H90.18v16.29H6.89l-1.5-6.22A138.51,138.51,0,0,1,1.57,142C1.57,65.64,63.67,3.53,140,3.53S278.43,65.64,278.43,142a137.67,137.67,0,0,1-3.84,32.57ZM66.49,87.63,50.24,71.38,61.75,59.86,78,76.12Zm147,0L202,76.12l16.25-16.25,11.51,11.51ZM131.85,53.82v-23h16.29v23Zm15.63,142.3a31.71,31.71,0,0,1-28-16.81c-6.4-12.08-15.73-72.29-17.54-84.25a8.15,8.15,0,0,1,13.58-7.2c8.88,8.21,53.48,49.72,59.88,61.81a31.61,31.61,0,0,1-27.9,46.45ZM121.81,116.2c4.17,24.56,9.23,50.21,12,55.49A15.35,15.35,0,1,0,161,157.3C158.18,152,139.79,133.44,121.81,116.2Z" /></svg>
+
+          </div>
+          <div class="menu-item__text">
+            Dashboard
+          </div>
+        </a>
+      </li>
+        <li class="menu-item ic-app-header__menu-list-item ic-app-header__menu-list-item--active">
+          <a id="global_nav_courses_link" role="button" href="/courses" class="ic-app-header__menu-list-link">
+            <div class="menu-item-icon-container" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--courses" version="1.1" x="0" y="0" viewBox="0 0 280 259" enable-background="new 0 0 280 259" xml:space="preserve"><path d="M73.31,198c-11.93,0-22.22,8-24,18.73a26.67,26.67,0,0,0-.3,3.63v.3a22,22,0,0,0,5.44,14.65,22.47,22.47,0,0,0,17.22,8H200V228.19h-134V213.08H200V198Zm21-105.74h90.64V62H94.3ZM79.19,107.34V46.92H200v60.42Zm7.55,30.21V122.45H192.49v15.11ZM71.65,16.71A22.72,22.72,0,0,0,49,39.36V190.88a41.12,41.12,0,0,1,24.32-8h157V16.71ZM33.88,39.36A37.78,37.78,0,0,1,71.65,1.6H245.36V198H215.15v45.32h22.66V258.4H71.65a37.85,37.85,0,0,1-37.76-37.76Z"/></svg>
+
+            </div>
+            <div class="menu-item__text">
+              Courses
+            </div>
+          </a>
+        </li>
+        <li class="menu-item ic-app-header__menu-list-item ">
+          <a id="global_nav_groups_link" role="button" href="/groups" class="ic-app-header__menu-list-link">
+            <div class="menu-item-icon-container" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--groups" viewBox="0 0 200 135"><path d="M134.5 129.4c0-1.1 0-19.8-6.2-31.1-4.5-8.5-16.4-12.4-35-19.2-1.7-.6-3.4-1.1-5.1-1.7v-8.5c5.6-5.1 8.5-12.4 8.5-20.3V29.4C96.6 13 83.6 0 67.2 0S37.9 13 37.9 29.4v19.2c0 7.3 3.4 14.7 8.5 20.3v8.5c-1.7.6-3.4 1.1-5.1 1.7-18.6 6.2-30.5 10.7-35 19.2C0 109.6 0 128.8 0 129.4c0 3.4 2.3 5.6 5.6 5.6h123.7c3.5 0 5.7-2.3 5.2-5.6zm-123.2-5.7c.6-5.6 1.7-14.7 3.4-19.8C17 98.8 30 94.3 43.5 89.8c2.8-1.1 5.6-2.3 9-3.4 2.3-.6 4-2.8 4-5.1V66.7c0-1.7-.6-3.4-1.7-4.5-4-3.4-6.2-8.5-6.2-13.6V29.4c0-10.2 7.9-18.1 18.1-18.1s18.1 7.9 18.1 18.1v19.2c0 5.1-2.3 10.2-6.2 13.6-1.1 1.1-1.7 2.8-1.7 4.5v14.7c0 2.3 1.7 4.5 4 5.1 2.8 1.1 6.2 2.3 9 3.4 13.6 5.1 26.6 9.6 28.8 14.1 2.8 5.1 4 13.6 4.5 19.8H11.3zM196 79.1c-2.8-6.2-11.3-9.6-22.6-13.6l-1.7-.6v-3.4c4.5-4 6.8-9.6 6.8-15.8V35c0-12.4-9.6-22-22-22s-22 10.2-22 22v10.7c0 6.2 2.3 11.9 6.8 15.8V65l-1.7.6c-7.3 2.8-13 4.5-16.9 7.3-1.7 1.1-2.3 2.8-2.3 5.1.6 1.7 1.7 3.4 3.4 4.5 7.9 4 12.4 7.3 14.1 10.7 2.3 4.5 4 10.2 5.1 18.1.6 2.3 2.8 4.5 5.6 4.5h45.8c3.4 0 5.6-2.8 5.6-5.1 0-3.9 0-24.3-4-31.6zm-42.9 25.4c-1.1-6.8-2.8-12.4-5.1-16.9-1.7-4-5.1-6.8-9.6-10.2 1.7-1.1 3.4-1.7 5.1-2.3l5.6-2.3c1.7-.6 3.4-2.8 3.4-5.1v-9.6c0-1.7-.6-3.4-2.3-4.5-2.8-1.7-4.5-5.1-4.5-8.5V34.5c0-6.2 4.5-10.7 10.7-10.7s10.7 5.1 10.7 10.7v10.7c0 3.4-1.7 6.2-4.5 8.5-1.1 1.1-2.3 2.8-2.3 4.5v10.2c0 2.3 1.1 4.5 3.4 5.1l5.6 2.3c6.8 2.3 15.3 5.6 16.4 7.9 1.7 2.8 2.8 12.4 2.8 20.9h-35.4z"/></svg>
+
+            </div>
+            <div class="menu-item__text">
+              Groups
+            </div>
+          </a>
+        </li>
+      <li class="menu-item ic-app-header__menu-list-item ">
+        <a id="global_nav_calendar_link" href="/calendar" class="ic-app-header__menu-list-link">
+          <div class="menu-item-icon-container" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--calendar" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M197.07,213.38h16.31V197.07H197.07Zm-16.31,16.31V180.76h48.92v48.92Zm-48.92-16.31h16.31V197.07H131.85Zm-16.31,16.31V180.76h48.92v48.92ZM66.62,213.38H82.93V197.07H66.62ZM50.32,229.68V180.76H99.24v48.92Zm146.75-81.53h16.31V131.85H197.07Zm-16.31,16.31V115.54h48.92v48.92Zm-48.92-16.31h16.31V131.85H131.85Zm-16.31,16.31V115.54h48.92v48.92ZM66.62,148.15H82.93V131.85H66.62ZM50.32,164.46V115.54H99.24v48.92ZM34,262.29H246V82.93H34ZM246,66.62V42.16A8.17,8.17,0,0,0,237.84,34H213.38v8.15a8.15,8.15,0,1,1-16.31,0V34H82.93v8.15a8.15,8.15,0,0,1-16.31,0V34H42.16A8.17,8.17,0,0,0,34,42.16V66.62Zm-8.15-48.92a24.49,24.49,0,0,1,24.46,24.46V278.6H17.71V42.16A24.49,24.49,0,0,1,42.16,17.71H66.62V9.55a8.15,8.15,0,0,1,16.31,0v8.15H197.07V9.55a8.15,8.15,0,1,1,16.31,0v8.15Z"/></svg>
+
+          </div>
+          <div class="menu-item__text">
+            Calendar
+          </div>
+        </a>
+      </li>
+      <li class="menu-item ic-app-header__menu-list-item ">
+      <!-- TODO: Add back global search when available -->
+        <a id="global_nav_conversations_link" href="/conversations" class="ic-app-header__menu-list-link">
+          <div class="menu-item-icon-container">
+            <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--inbox" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M91.72,120.75h96.56V104.65H91.72Zm0,48.28h80.47V152.94H91.72Zm0-96.56h80.47V56.37H91.72Zm160.94,34.88H228.52V10.78h-177v96.56H27.34A24.17,24.17,0,0,0,3.2,131.48V244.14a24.17,24.17,0,0,0,24.14,24.14H252.66a24.17,24.17,0,0,0,24.14-24.14V131.48A24.17,24.17,0,0,0,252.66,107.34Zm0,16.09a8.06,8.06,0,0,1,8,8v51.77l-32.19,19.31V123.44ZM67.58,203.91v-177H212.42v177ZM27.34,123.44H51.48v79.13L19.29,183.26V131.48A8.06,8.06,0,0,1,27.34,123.44ZM252.66,252.19H27.34a8.06,8.06,0,0,1-8-8V202l30,18H230.75l30-18v42.12A8.06,8.06,0,0,1,252.66,252.19Z"/></svg>
+</span>
+            <span class="menu-item__badge"></span>
+          </div>
+          <div class="menu-item__text">
+            Inbox
+          </div>
+        </a>
+      </li>
+        <li class="menu-item ic-app-header__menu-list-item" >
+          <a id="global_nav_history_link" role="button" href="#" class="ic-app-header__menu-list-link">
+            <div class="menu-item-icon-container" aria-hidden="true">
+              <svg viewBox="0 0 1920 1920" class="ic-icon-svg menu-item__icon svg-icon-history" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path d="M960 112.941c-467.125 0-847.059 379.934-847.059 847.059 0 467.125 379.934 847.059 847.059 847.059 467.125 0 847.059-379.934 847.059-847.059 0-467.125-379.934-847.059-847.059-847.059M960 1920C430.645 1920 0 1489.355 0 960S430.645 0 960 0s960 430.645 960 960-430.645 960-960 960m417.905-575.955L903.552 988.28V395.34h112.941v536.47l429.177 321.77-67.765 90.465z" stroke="none" stroke-width="1" fill-rule="evenodd"/>
+</svg>
+            </div>
+            <div class="menu-item__text">
+              History
+            </div>
+          </a>
+        </li>
+        
+    <li id="context_external_tool_58191_menu_item" data-tool-id="my-media-58191" class="globalNavExternalTool menu-item ic-app-header__menu-list-item">
+      <a class='ic-app-header__menu-list-link' href="/accounts/1/external_tools/58191?launch_type=global_navigation&amp;toolId=my-media-58191" target="">
+          <img src="https://cdnsecakmi.kaltura.com/content/static/canvas/my_media.png" alt="Mines MediaSpace LTI" class="lti_tool_icon_large"/>
+        <div class="menu-item__text">
+          My Media
+        </div>
+      </a>
+    </li>
+
+      <li class="ic-app-header__menu-list-item">
+        <a id="global_nav_help_link" role="button" class="ic-app-header__menu-list-link" data-track-category="help system" data-track-label="help button" href="#">
+          <div class="menu-item-icon-container" role="presentation">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="ic-icon-svg menu-item__icon svg-icon-information" x="0" y="0" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" fill="currentColor"><path d="M94.42,139h11.15V105.58H94.42ZM83.27,150.19V94.42h33.46v55.76ZM100,72.12A11.15,11.15,0,1,1,111.15,61,11.16,11.16,0,0,1,100,72.12Zm0-33.46A22.31,22.31,0,1,0,122.31,61,22.33,22.33,0,0,0,100,38.66M100,5.2A94.8,94.8,0,1,0,194.8,100,94.91,94.91,0,0,0,100,5.2m0,178.45A83.65,83.65,0,1,1,183.65,100,83.73,83.73,0,0,1,100,183.65"/></svg>
+
+            <span class="menu-item__badge"></span>
+          </div>
+          <div class="menu-item__text">
+            Help &amp; Resources
+          </div>
+</a>      </li>
+    </ul>
+  </div>
+  <div class="ic-app-header__secondary-navigation">
+    <ul class="ic-app-header__menu-list">
+      <li class="menu-item ic-app-header__menu-list-item">
+        <a
+          id="primaryNavToggle"
+          role="button"
+          href="#"
+          class="ic-app-header__menu-list-link ic-app-header__menu-list-link--nav-toggle"
+          aria-label="Minimize global navigation"
+          title="Minimize global navigation"
+        >
+          <div class="menu-item-icon-container" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--navtoggle" version="1.1" x="0" y="0" width="40" height="32" viewBox="0 0 40 32" xml:space="preserve">
+  <path d="M39.5,30.28V2.48H37.18v27.8Zm-4.93-13.9L22.17,4,20.53,5.61l9.61,9.61H.5v2.31H30.14l-9.61,9.61,1.64,1.64Z"/>
+</svg>
+
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="global_nav_tray_container"></div>
+  <div id="global_nav_tour"></div>
+</header>
+
+
+  <div id="instructure_ajax_error_box">
+    <div style="text-align: right; background-color: #fff;"><a href="#" class="close_instructure_ajax_error_box_link">Close</a></div>
+    <iframe id="instructure_ajax_error_result" src="about:blank" style="border: 0;" title="Error"></iframe>
+  </div>
+
+  <div id="wrapper" class="ic-Layout-wrapper">
+        <div class="ic-app-nav-toggle-and-crumbs no-print">
+            <button type="button" id="courseMenuToggle" class="Button Button--link ic-app-course-nav-toggle" aria-live="polite" aria-label="Hide Courses Navigation Menu">
+              <i class="icon-hamburger" aria-hidden="true"></i>
+            </button>
+
+          <div class="ic-app-crumbs ic-app-crumbs-enhanced-rubrics">
+              <nav id="breadcrumbs" role="navigation" aria-label="breadcrumbs"><ol><li class="home"><a href="/"><span class="ellipsible"><i class="icon-home" title="My Dashboard"><span class="screenreader-only">My Dashboard</span></i></span></a></li><li id="crumb_course_81000"><a href="https://elearning.mines.edu/courses/81000"><span class="ellipsible">Fall 2026.MEGN544A.80474</span></a></li><li aria-current="page"><span class="ellipsible">Syllabus</span></li></ol></nav>
+          </div>
+
+
+          <div id="nutrition_facts_container"></div>
+          <div class="right-of-crumbs right-of-crumbs-no-reverse">
+              <div id="immersive_reader_mount_point"></div>
+            <div id="ai-information-mount"></div>
+          </div>
+
+        </div>
+    <div id="main" class="ic-Layout-columns">
+        <div class="ic-Layout-watermark" aria-hidden="true"></div>
+        <div id="left-side"
+          class="ic-app-course-menu ic-sticky-on list-view"
+          style="display: block"
+          >
+          <div id="sticky-container" class="ic-sticky-frame">
+              <span id="section-tabs-header-subtitle" class="ellipsis">Fall 2026</span>
+            <nav role="navigation" aria-label="Courses Navigation Menu"><ul id="section-tabs"><li class="section"><a id="home-link" href="/courses/81000" class="home">Home</a></li><li class="section"><a id="announcements-link" href="/courses/81000/announcements" class="announcements">Announcements</a></li><li class="section"><a id="assignments-link" href="/courses/81000/assignments" class="assignments">Assignments</a></li><li class="section"><a id="quizzes-link" href="/courses/81000/quizzes" class="quizzes">Quizzes</a></li><li class="section"><a id="modules-link" href="/courses/81000/modules" class="modules">Modules</a></li><li class="section"><a id="discussions-link" href="/courses/81000/discussion_topics" class="discussions">Discussions</a></li><li class="section"><a id="grades-link" href="/courses/81000/grades" class="grades">Grades</a></li><li class="section"><a id="people-link" href="/courses/81000/users" class="people">People</a></li><li class="section"><a id="files-link" href="/courses/81000/files" class="files">Files</a></li><li class="section"><a id="syllabus-link" href="/courses/81000/assignments/syllabus" aria-current="page" class="syllabus active">Syllabus</a></li><li class="section"><a id="context_external_tool_29353-link" href="/courses/81000/external_tools/29353?display=borderless" class="context_external_tool_29353" rel="opener" target="_blank">Gradescope 1.0</a></li><li class="section"><a id="context_external_tool_58358-link" href="/courses/81000/external_tools/58358" class="context_external_tool_58358">Submit Grades to Banner</a></li><li class="section"><a id="context_external_tool_58670-link" href="/courses/81000/external_tools/58670" class="context_external_tool_58670">Course Evaluations</a></li><li class="section"><a id="context_external_tool_58929-link" href="/courses/81000/external_tools/58929" class="context_external_tool_58929">Microsoft Education</a></li><li class="section"><a id="context_external_tool_58977-link" href="/courses/81000/external_tools/58977" class="context_external_tool_58977">Google Meet</a></li><li class="section"><a id="context_external_tool_58978-link" href="/courses/81000/external_tools/58978" class="context_external_tool_58978">Google Gemini</a></li><li class="section"><a id="context_external_tool_58982-link" href="/courses/81000/external_tools/58982" class="context_external_tool_58982">Course Readings</a></li><li class="section"><a id="notebook-link" href="/courses/81000/notebook" class="notebook">Notebook</a></li></ul></nav>
+          </div>
+        </div>
+      <div id="not_right_side" class="ic-app-main-content">
+        <div id="content-wrapper" class="ic-Layout-contentWrapper">
+          
+          <div id="content" class="ic-Layout-contentMain" role="main">
+            
+
+
+
+
+<div id="course_home_content">
+    
+<div class="ic-Action-header">
+  <div class="ic-Action-header__Primary">
+    <h1 class="ic-Action-header__Heading">ROBOT MECHANICS: KINEMATICS, DYNAMICS, AND CONTROL-Fall 2026-MEGN544A</h1>
+  </div>
+  <div class="ic-Action-header__Secondary">
+    <a href="#" class="jump_to_today_link">Jump to Today</a>
+  </div>
+</div>
+
+<div id="course_syllabus" style="margin-bottom: 10px;" class="user_content" data-resource-type="syllabus.body" data-resource-id="81000">
+  <h3>MEGN544/ROBO554 Robot Mechanics: Kinematics, Dynamics, and Control</h3>
+<table style="width: 104.016%; height: 215px;" width="100%">
+<tbody>
+<tr style="height: 53px;">
+<td style="width: 24.1231%; height: 53px;" width="33%">
+<p><strong>Instructor</strong></p>
+</td>
+<td style="width: 30.8162%; height: 53px;" width="33%">
+<p><strong>Email</strong></p>
+</td>
+<td style="width: 24.1231%; height: 53px;" width="33%">
+<p><strong>Location &amp; Time</strong></p>
+</td>
+<td style="width: 20.9159%; height: 53px;">
+<p><strong>Office Hours</strong></p>
+</td>
+</tr>
+<tr style="height: 77px;">
+<td style="width: 24.1231%; height: 77px;" width="33%">
+<p><strong>Dr. George Kontoudis</strong></p>
+</td>
+<td style="width: 30.8162%; height: 77px;" width="33%">
+<p><a href="mailto:george.kontoudis@mines.edu">george.kontoudis@mines.edu</a></p>
+</td>
+<td style="width: 24.1231%; height: 77px;" width="33%">
+<p><span>Berthoud Hall 106</span><br>TTh 12:30pm-1:45pm</p>
+</td>
+<td style="width: 20.9159%; height: 77px;">
+<p><span>T 9-10am,<br>Th 4-5pm<br>Room: BB280C&nbsp;</span></p>
+<p><span>TA: M 11:00am-12:30pm<br>Room: 206</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Description</h3>
+<p>Mathematical representation of robot structures. Mechanical analysis including kinematics, dynamics, and design of robot manipulators. Representations for trajectories and path planning for robots. Fundamentals of robot control including, linear, nonlinear, and force control methods. Introduction to off-line programming techniques and simulation. Prerequisites: EENG307 and MEGN441, or grad standing. 3 hours lecture; 3 semester hours.</p>
+<p><strong><em><span class="mark5gbwe9qa5" data-markjs="true" data-ogac="" data-ogab="" data-ogsc="" data-ogsb="" data-olk-copy-source="MessageBody">Robo</span>tics students should register for&nbsp;<span class="mark5gbwe9qa5" data-markjs="true" data-ogac="" data-ogab="" data-ogsc="" data-ogsb="">ROBO</span>554 and all others for MEGN544</em>.</strong></p>
+<h3>Schedule</h3>
+<p>A tentative schedule can be found <a class="instructure_file_link instructure_scribd_file inline_disabled" title="MEGN544_Schedule_Fall26.xlsx" href="/courses/81000/files/9489783?location=course_syllabus_81000&amp;wrap=1" target="_blank">here</a>.</p>
+<h3>Required Textbook</h3>
+<p>Hollerbach, J. (2003). <em>Introduction to Robotics.</em> [<a class="instructure_file_link instructure_scribd_file inline_disabled" title="Hollerbach Course Notes.pdf" href="/courses/81000/files/9489689?location=course_syllabus_81000&amp;wrap=1" target="_blank">pdf</a>]</p>
+<h4>Optional Textbook (used for control part)</h4>
+<p><span style="color: var(--ic-brand-font-color-dark); font-size: 1rem;">Siciliano, B., Sciavicco, L., Villani, L., &amp; Oriolo G. (2009). <em>Robotics: Modelling, Planning and Control</em>. </span><span style="color: var(--ic-brand-font-color-dark); font-size: 1rem;">Springer. </span><span>[available online through <a class="inline_disabled" title="Link" href="https://library.mines.edu/" target="_blank">Arthur Lakes Library</a> with ISBN:&nbsp;1846-28641-7]</span></p>
+<h3>Additional Suggested Resources</h3>
+<p><span class="instructure_file_holder link_holder instructure_file_link_holder">Murray, R. M., Li, Z., &amp; Sastry, S. (2017). <i>A Mathematical Introduction to Robotic Manipulation</i>. CRC Press. [<a class="instructure_file_link instructure_scribd_file inline_disabled" title="Murry Li Sastry - A Mathematical Introduction to Robotic Manipulation.pdf" href="/courses/81000/files/9489653?location=course_syllabus_81000&amp;wrap=1" target="_blank">pdf</a>]</span></p>
+<p><span class="instructure_file_holder link_holder instructure_file_link_holder"><span>Lynch, K. M., &amp; Park, F. C. (2017).&nbsp;<i>Modern Robotics</i>. Cambridge University Press. [<a class="instructure_file_link instructure_scribd_file inline_disabled" title="Lynch and Park - Introduction to Modern Robotics.pdf" href="/courses/81000/files/9489711?location=course_syllabus_81000&amp;wrap=1" target="_blank">pdf</a>]</span></span></p>
+<p><span class="instructure_file_holder link_holder instructure_file_link_holder"><span>Siciliano, B., Khatib, O., &amp; Kröger, T. (Eds.). (2008). </span><i>Handbook of Robotics</i><span>. Berlin: Springer. [<a class="instructure_file_link instructure_scribd_file inline_disabled" title="Handbook of Robotics.pdf" href="/courses/81000/files/9489641?location=course_syllabus_81000&amp;wrap=1" target="_blank">pdf</a>]</span></span></p>
+<p><span class="instructure_file_holder link_holder instructure_file_link_holder"><span>Jia, Y.-B. (2013). <em>Dual quaternions.</em> Iowa State University: Ames, IA, USA. [<a class="instructure_file_link instructure_scribd_file inline_disabled" title="dual-quaternion_Yan-Bin_Jia.pdf" href="/courses/81000/files/9489703?location=course_syllabus_81000&amp;wrap=1" target="_blank">pdf</a>]</span></span><strong></strong></p>
+<h3>Office Hours</h3>
+<ul style="list-style-type: disc;">
+<li>Tuesday 9:00am-10:00am, Brown Hall BB 280C</li>
+<li>Thursday 4:00pm-5:00pm, Brown Hall BB 280C</li>
+<li>Other time in-person or virtual meeting by appointment</li>
+</ul>
+<h3>TA &amp; Office Hours</h3>
+<p>The teaching assistant for this class is Aaron Fanganello &lt;afangane@mines.edu&gt;. Eugene is responsible to grade homeworks and hold office hours to answer questions about homework assignments and grading. TA office hours:</p>
+<ul style="list-style-type: disc;">
+<li>Monday 11:00am-12:30pm, Room 206</li>
+</ul>
+<h3>Grading Policy</h3>
+<p>Grades will be calculated on the student's performance as described in the following table.</p>
+<table style="border-collapse: collapse; width: 97.1391%; height: 202.713px; border-color: #ecf0f1; border-style: none;" border="0">
+<tbody>
+<tr style="height: 28.9915px;">
+<td style="width: 50.8006%; height: 28.9915px;"><strong>Course Activity</strong></td>
+<td style="width: 49.153%; height: 28.9915px;"><strong>Percentage of Grade (102%)</strong></td>
+</tr>
+<tr style="height: 28.8778px;">
+<td style="width: 50.8006%; height: 28.8778px;">Participation (at least 20 out of 25 lectures)</td>
+<td style="width: 49.153%; height: 28.8778px;">2%</td>
+</tr>
+<tr style="height: 28.9915px;">
+<td style="width: 50.8006%; height: 28.9915px;">Homework Assignments (best 8 out of 10)</td>
+<td style="width: 49.153%; height: 28.9915px;">15%</td>
+</tr>
+<tr style="height: 28.9915px;">
+<td style="width: 50.8006%; height: 28.9915px;">Quizzes (best 8 out of 10)</td>
+<td style="width: 49.153%; height: 28.9915px;">15%</td>
+</tr>
+<tr style="height: 28.9915px;">
+<td style="width: 50.8006%; height: 28.9915px;">Programming Assignments</td>
+<td style="width: 49.153%; height: 28.9915px;">20%</td>
+</tr>
+<tr style="height: 28.8778px;">
+<td style="width: 50.8006%; height: 28.8778px;">Mid-term Exam (in class)</td>
+<td style="width: 49.153%; height: 28.8778px;">20%</td>
+</tr>
+<tr style="height: 28.9915px;">
+<td style="width: 50.8006%; height: 28.9915px;">Project (4 deliverables)</td>
+<td style="width: 49.153%; height: 28.9915px;">30%</td>
+</tr>
+</tbody>
+</table>
+<p>Each activity is summarized below, and details of homeworks, quizzes, and the project can be found on our Canvas page.</p>
+<h4><strong>Participation (2%)</strong></h4>
+<p>Active participation is an essential part of this course. To encourage engagement and provide immediate feedback, we will use iClicker during lectures. Participation grades will be based on responding to in-class iClicker questions, <strong><em>regardless of whether the answers are correct</em></strong>. This ensures that you receive credit for being present, attentive, and involved in the learning process. Occasional absences are expected; thus 20% of missed lectures will be automatically excused.</p>
+<h4><strong>Homework Assignments (15%)</strong></h4>
+<p><span>Homework should be prepared with a type-setting program such as LaTeX or Word. Teamwork is allowed with a complementary report from each team member on their contribution to the homework. Your written work will be submitted online through Canvas. Please submit your homework as a PDF. All homework is due by midnight, no exceptions. Note that Canvas will mark your assignment late if you submit at 12:01 am. </span>Your submission should represent the pride and professionalism you wish to demonstrate as a roboticist.&nbsp; Neatness, organization, and clarity are essential skills for graduate students.&nbsp;</p>
+<p>Show <strong>all</strong> work clearly and neatly. Write out each step as if you were explaining your thought process to another person. It is always good practice to include a drawing and a problem statement.&nbsp; A complete solution should include:</p>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li>Statement of your approach to solving the problem</li>
+<li>Governing equations</li>
+<li>Consistent problem-solving steps so your work can be followed</li>
+<li>Boxed or underlined final answers</li>
+<li>Assessment of answer (i.e., does it seem reasonable and why?)</li>
+</ol>
+</li>
+</ol>
+<p><strong><em>You will be assigned 10 homeworks and for your grade I will consider the best eight.</em></strong></p>
+<h4><strong>Quizzes (15%)</strong></h4>
+<p>Quizzes will take place on most Thursdays (see schedule for exact date and topic) at the end of the class. Every Quiz must be done by hand and independently. A calculator is only allowed for scalar arithmetic.&nbsp;</p>
+<p>After you finish your Quiz, you are responsible to: i) take a picture of it; ii) upload it on the Canvas assignment page; and ii) self-grade it. The solution of the Quiz and a rubric will be posted on Canvas after the class. Your grades will be reviewed and adjusted accordingly.&nbsp;</p>
+<p><em><strong>You will be assigned 10 quizzes and I will consider the best eight for your final grade.&nbsp;</strong></em></p>
+<h4><strong>Programming Assignments (20%)</strong></h4>
+<p>There will be four programming assignments throughout the semester, all of which must be completed using MATLAB. These assignments are designed to help you apply course concepts, develop problem-solving skills, and gain proficiency in computational tools commonly used in engineering practice. A testing script will be provided for each assignment to help you verify the correctness and formatting of your solutions before submission. While the testing script is a valuable resource, it is not a substitute for thorough debugging and clear documentation of your code.</p>
+<h4><strong>Mid-term Exam (20%)</strong></h4>
+<p><span>You are allowed a graphing calculator (TI-89 equivalent or less) and 1 sheet (8.5x11") hand-written with notes/equations on both sides. The midterm will be held during our regular class period on October 16th.&nbsp;</span></p>
+<h4><strong>Project (30%)</strong></h4>
+<p>The project is intended to advance your skill set from the in-class activities. You will complete a semester-long project in groups of 3–4. The project is intended to provide hands-on experience in applying course concepts to a larger, open-ended problem. Each group will be responsible for <em><strong>four deliverables</strong></em>:</p>
+<ol style="list-style-type: decimal;">
+<li><em><strong data-start="437" data-end="457">Project Proposal</strong></em> – One-page document (double-column IEEE format) outlining the problem statement, objectives, and approach. [20%]</li>
+<li><em><strong data-start="582" data-end="596">Mid-Review</strong></em> – One-page document (double-column IEEE format) presenting progress and receiving feedback. [15%]</li>
+<li><em><strong data-start="824" data-end="840">Final Report</strong></em> – Four-page document (double-column IEEE format) detailing the project outcomes. [60%]</li>
+<li><em><strong data-start="939" data-end="960">Individual Report</strong> </em>– Summary (not more than one page) describing each team member’s specific contributions and responsibilities. [5%]</li>
+</ol>
+<p>All group members are expected to contribute meaningfully, and both the quality of deliverables and the effectiveness of teamwork will be considered in grading. <span>Late submissions will result in penalty of 1<span class="fontstyle0">0% per (24 hour) day.</span></span></p>
+<h3>Late Submission Policy for Homework Assignments Only</h3>
+<ul>
+<li>1<span class="fontstyle0">0% off per (24 hour) day that the assignment is late. </span></li>
+<li><span class="fontstyle0">Cases 1-3 do not require to give me a prior notice (although I very much appreciate it, when possible)</span></li>
+<li><span class="fontstyle0">Cases 4-6 require to </span><span class="fontstyle2">give me notice at least 1 week in advance</span></li>
+<li><span class="fontstyle0">Case 7 is because sometimes unexpected things happen</span><br>
+<ol style="list-style-type: decimal;">
+<li><span class="fontstyle0">Religious holidays/observances </span></li>
+<li><span class="fontstyle0">Emergencies (crashed car, death in the family, house burned down, etc.) </span></li>
+<li><span class="fontstyle0">Unexpected Illness (note: I will require a note from your doctor if this becomes a frequent occurrence)</span></li>
+<li><span class="fontstyle0">Travel </span></li>
+<li><span class="fontstyle0">Athletic related activities </span></li>
+<li><span class="fontstyle0">Employment related activities</span></li>
+<li><span class="fontstyle0">Every student gets one "no questions asked" extension per semester</span>&nbsp;</li>
+</ol>
+</li>
+</ul>
+<h3>Generative Artificial Intelligence</h3>
+<p>The Office of the Provost encourages the entire University community to explore the uses and impacts of GenAI technologies, whether through critical discussions or creative applications. Based on a review of the most recent <a href="https://www.mines.edu/academic-affairs/genai">Guidelines for Using Generative Artificial Intelligence at Colorado School of Mines</a>, the GenAI policy for this course will be: <em>By submitting work for evaluation in this course, you represent it as your own intellectual product.&nbsp;Submitting content for evaluation (e.g., ideas, text, code, images) that was generated, in whole or in part, by Generative Artificial Intelligence tools (including, but not limited to, ChatGPT and other large language models) would be considered Academic Misconduct in violation of </em><span><a role="link" href="https://www.mines.edu/policy-library/academic-integrity-policy/">Mines Academic Integrity/Misconduct Policy</a></span><span>.</span></p>
+<p><span>GenAI tools are <em><strong>not permitted for solving or completing homework or programming assignments</strong></em> in this course.<br>However, you are encouraged to use them as a resource for <em><strong>practicing problems, reviewing concepts,</strong></em><br><em><strong>or preparing for the mid-term exam</strong></em>, provided the work you submit for evaluation is entirely your own. This<br>distinction ensures that GenAI supports your learning process without compromising academic integrity.<br></span></p>
+<h3>Attendance Policy</h3>
+<p>Attendance is expected and <em><strong>will be rewarded with an additional 2%</strong></em> (see Participation in Grading Policy Section). You are responsible for all information presented in class whether or not you are in attendance. Moreover, it is much more fun for the Instructor to teach a class when all students attend the lectures. Lectures contain active learning moments to benefit students that are attending the lectures.</p>
+<p><span>You are expected to engage in all course activities, tasks, and assignment as a graduate student. On average it is expected to spend between 8 hours for this course each week during out-of-class time, in addition to actively participating during the class-time each week.</span></p>
+<h3>Absences</h3>
+<p>Mines students are expected to fulfill their academic requirements through attendance and/or participation. Class attendance is required of all students unless the student has an excused absence granted by the school or the student’s professor. An excused absence awarded by the school or professor comes after a student's request or initiative. To review the Excused Absence Policy and/or to request an excused absence, please visit&nbsp;<a href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.mines.edu%2Fstudent-life%2Fstudent-absences%2F&amp;data=05%7C02%7Ccartermoulton%40mines.edu%7Cdaadc6b19a7a4b6ae7cb08dc000c8db2%7C997209e009b346239a4d76afa44a675c%7C0%7C0%7C638385301119588312%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=W3LTwmq9Q4XJMvYrBv2rGZIhUiAMAEFPhU%2BO4IgaSP4%3D&amp;reserved=0">https://www.mines.edu/student-life/student-absences/</a>.</p>
+<p><strong><em>Information to provide in email to instructor:</em></strong></p>
+<ol>
+<li><em>Name and CWID</em></li>
+<li><em>Class day missed</em></li>
+<li><em>Do you certify that you are indeed not feeling well and that after submitting this request will be limiting your activity to recover and/or lessen exposure to others as much as possible until you feel better?</em></li>
+</ol>
+<h3>Required Technology</h3>
+<p>MATLAB is available for download to all students, faculty, and researchers. For installation on a personal computer you must first create an account on the <a href="https://www.mathworks.com/academia/tah-portal/colorado-school-of-mines-40579029.html">MATLAB portal</a>. It is the students’ responsibility to download and install MATLAB on their computers.&nbsp;</p>
+<hr>
+<h3>Diversity and Inclusion</h3>
+<p>At Colorado School of Mines, we understand that a diverse and inclusive learning environment inspires creativity and innovation, which are essential to the engineering process. We also know that in order to address current and emerging national and global challenges, it is important to learn with and from people who have different backgrounds, thoughts, and experiences.</p>
+<p>Our students represent every state in the nation and more than 90 countries around the world, and we continue to make progress in the areas of diversity and inclusion by providing <a href="https://www.mines.edu/diversity/">Diversity and Inclusion programs and services</a> to support these efforts.</p>
+<h3>Center for Academic Services and Advising (CASA)</h3>
+<p>CASA provides a variety of services to support students during their time at Mines. Please see <a href="http://www.mines.edu/casa">www.mines.edu/casa</a> for a complete list of current support services.</p>
+<h3>Preferred First Name Project</h3>
+<p>Mines recognizes members of the campus community may prefer to use a first name other than their legal name to identify themselves. Many services on campus, like Canvas, utilize and display preferred first names. Additional information on preferred name, including how to update your preferred name, is available at the <a href="https://www.mines.edu/institutional-equity-title-ix/preferred-first-name/">Office For Institutional Equity website</a>.</p>
+<h3>Pregnant and Parenting</h3>
+<p>If you are a pregnant or parenting student, you have the right to reasonable, non-disability related modifications. Please contact the Title IX Coordinator in the Office for Institutional Equity at <a href="mailto:oie@mines.edu">oie@mines.edu</a> for more information and to request modifications.</p>
+<h3>Sexual Misconduct, Discrimination, and Retaliation</h3>
+<p>Discrimination, Harassment, and Sexual Misconduct of any type, including sex discrimination, sex based harassment (sexual assault, dating violence, domestic violence, and stalking), and discrimination based on protected characteristics l, are prohibited under the Policy Prohibiting Sexual Misconduct, Discrimination, and Retaliation. For more information on prohibited conduct, reporting, and resources, please see the <a href="https://www.mines.edu/policy-library/policy-prohibiting-sexual-misconduct-discrimination-and-retaliation/">Policy Prohibiting Sexual Misconduct, Discrimination, and Retaliation</a> and/or contact the Office for Institutional Equity at <a href="mailto:oie@mines.edu">oie@mines.edu</a>.</p>
+<p>As your instructor, it is my responsibility to foster a learning environment that supports diversity of thoughts, perspectives and experiences, honors your identities, and is free of discrimination. Please feel free to speak to me if the class is not living up to these standards. Please note that I am also a mandatory reporter as an instructor at Mines, and if I receive a disclosure of Discrimination, Harassment, and/or Sexual Misconduct, I am required to report it to the Title IX Coordinator.</p>
+<h3>Academic Integrity</h3>
+<p>Colorado School of Mines affirms the principle that all individuals associated with the Mines academic community have a responsibility for establishing, maintaining, and fostering an understanding and appreciation for academic integrity. In broad terms, this implies protecting the environment of mutual trust within which scholarly exchange occurs, supporting the ability of the faculty to fairly and effectively evaluate every student’s academic achievements, and giving credence to the university’s educational mission, its scholarly objectives, and the substance of the degrees it awards. We desire an environment free of any and all forms of academic misconduct and expects students to act with integrity at all times. Please read the <a href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.mines.edu%2Fpolicy-library%2Facademic-integrity-policy%2F&amp;data=05%7C01%7Ckcallan%40mines.edu%7C46b67f04c769496574f008db89610043%7C997209e009b346239a4d76afa44a675c%7C0%7C0%7C638254821936483524%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=SooTXUpiof9XWpaiHTASlzakGTD6QOlsTQ3h%2BwCcaSM%3D&amp;reserved=0">full academic misconduct/integrity policy</a> for full definitions of academic misconduct. Additionally, please use <a href="https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.mines.edu%2Fstudent-life%2Fcommunity-standards%2Facademic-integrity%2F&amp;data=05%7C01%7Ckcallan%40mines.edu%7C46b67f04c769496574f008db89610043%7C997209e009b346239a4d76afa44a675c%7C0%7C0%7C638254821936483524%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=USar0SFpCt3ixBc3NfMxjc7bu4ZaqvC3TfjXEfDm5bo%3D&amp;reserved=0">resources provided by the Office of Community Standards</a> for guidance should you need to know more about the procedures of the policy for academic misconduct/integrity.</p>
+<h3>Course Issues and Concerns</h3>
+<p>As part of good professional practice, students are encouraged to speak with the faculty directly to raise issues and concerns with regards to the course professionally in compliance with the student code of conduct. Students can also reach out to the course coordinator, Dr. George Kontoudis, or the head of the department, Dr. Anthony Petrella. The department head can investigate and work with the faculty member to resolve course-related concerns. Students’ final point of contact is the college Dean John Berger who can make any final decisions.</p>
+<h3>Disability Support Services</h3>
+<p>Disability Support Services (DSS) works collaboratively with students, faculty, and staff to minimize barriers and support an accessible campus community. When barriers to access occur, Disability Support Services works one-on-one with students to determine accommodations and facilitate access to programs and services. If you've been approved for accommodations through Disability Support Services, please contact your professor to confirm receipt of your accommodation letter and to discuss the implementation of accommodations in this course. Please visit <a href="https://www.mines.edu/disability-support-services/">mines.edu/disability-support-services</a> for more information or to request accommodations.</p>
+<h3>Digital Accessibility</h3>
+<p>The Colorado School of Mines is committed to supporting an accessible digital environment for all members of our community, including students with disabilities. If you have an accessibility concern with Canvas or any digital materials or software used in this course, please contact your professor or request support from Information &amp; Technology Solutions. Please visit <a href="https://www.mines.edu/accessibility/">https://www.mines.edu/accessibility/</a> for more information.</p>
+<h3>Student Outreach &amp; Support (SOS) Resources</h3>
+<p>If you feel overwhelmed, anxious, depressed, distressed, mentally or physically unhealthy, or concerned about your wellbeing overall, there are resources both on- and off-campus available to you. If you need assistance, please ask for help from a trusted faculty or staff member, fellow student, or submit a referral for yours. As a community of care, we can help one another get through difficult times. If you are concerned for another student, offer assistance and/or ask for help on their behalf. Students seeking resources for themselves or others should visit <a href="https://www.mines.edu/student-life/student-outreach-and-support/">mines.edu/sos</a>.</p>
+<p>Student Outreach and Support can help connect you with a variety of resources; some of those might include:</p>
+<ul>
+<li>Counseling Center – <a href="https://www.mines.edu/counseling-center/">https://www.mines.edu/counseling-center/</a> or students may call to make an appointment. There are also online resources for students on the website. Located in the Wellness Center 2nd floor. Located at 1770 Elm St.</li>
+<li>Health Center - <a href="https://www.mines.edu/student-health/">https://www.mines.edu/student-health/</a> or students may call to make an appointment. Located in Wellness Center 1st floor.</li>
+<li>Colorado Crisis Services - For crisis support 24 hrs/7 days, either by phone, text, or in person, Colorado Crisis Services is a great confidential resource, available to anyone. <a href="http://coloradocrisisservices.org">http://coloradocrisisservices.org</a>, 1-844-493-8255, or text “TALK” to 38255. Walk-in location addresses are posted on the website.</li>
+</ul>
+<p>In an emergency, you should call 911, and they will dispatch a Mines or Golden PD officer to assist.</p>
+<h3>The Writing Center</h3>
+<p>The Writing Center is a free academic support service for undergraduate and graduate students. Professional consultants and peer tutors provide support with all forms of communication including technical and scientific reports, academic essays, and oral presentations. Students can make an online or in-person appointment at any stage of their project, from brainstorming to final revisions.</p>
+<p>To learn more about their services and to make an appointment, please visit <a href="https://writing.mines.edu/">writing.mines.edu</a>. For questions, please e-mail <a href="mailto:writing@mines.edu">writing@mines.edu</a>.</p>
+<h3>Expectations of online etiquette or netiquette</h3>
+<p>Here are few do's and don'ts about communicating in your course through emails or in online discussion forums:</p>
+<ul>
+<li>Do…
+<ul>
+<li>Ask questions and engage in conversations as often as possible—feel free to contact the instructor via the discussion forum for questions or via email or other communication.</li>
+<li>Be patient and respectful of others and their ideas and opinions they post online.</li>
+<li>Remember to be thoughtful and use professional language. Keep in mind that things often come across differently in written text, so review your writing before posting.</li>
+<li>Be prepared for some delays in response time, as "virtual" communication tends to be slower than "face-to-face" communication.</li>
+<li>Contact the instructor if you feel that inappropriate content or behavior has occurred as part of the course.</li>
+<li>Check the syllabus and course policies stated by your instructor to know what to expect about your instructor's turnaround time for responding.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Do NOT…
+<ul>
+<li>Use inappropriate language—this includes, but is not limited to, the use of curse words, swearing, or language that is derogatory.</li>
+<li>Post inappropriate materials—for example, accidentally posting/showing a picture that is not appropriate for the course content.</li>
+<li>Post in ALL CAPS, as this is perceived as shouting, and avoid abbreviations and informal language ("I'll C U L8R").</li>
+<li>Send heated messages even if you are provoked. Likewise, if you should happen to receive a heated message, do not respond to it.</li>
+<li>Send an email or post to the entire class, unless you feel that everyone must read it.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="course_syllabus_details" style="display: none;">
+  <p>The syllabus page shows a table-oriented view of the course schedule, and the basics of
+course grading.  You can add any other comments, notes, or thoughts you have about the course
+structure, course policies or anything else.</p>
+
+<p>To add some comments, click the &quot;Edit&quot; link at the top.</p>
+</div>
+<form id="edit_course_syllabus_form" style="display: none; margin-bottom: 10px;" action="/courses/81000" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" /><input type="hidden" name="_method" value="put" autocomplete="off" /><input type="hidden" name="authenticity_token" value="aaPQ980jZYSig4Uz/CuEwVIVzpo1lEHjiS4cVwlYCckAz56u+k1Xz9jntFe6TPOXIkSt4FvWE9vua31mXWl+gQ==" autocomplete="off" />
+    <label for="course_syllabus_body">Syllabus Description:</label>
+  <div class="clear"></div>
+  <textarea style="width: 100%; height: 300px;" id="course_syllabus_body" name="course[syllabus_body]">
+</textarea>
+
+    <div class="ic-Form-control ic-Form-control--checkbox">
+      <input name="course[syllabus_course_summary]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" checked="checked" name="course[syllabus_course_summary]" id="course_syllabus_course_summary" />
+      <label class="ic-Label" for="course_syllabus_course_summary">Show Course Summary</label>
+    </div>
+
+  <div class='form-actions'>
+    <button type="button" class="btn cancel_button">Cancel</button>
+    <button type="submit" class='btn btn-primary'>Update Syllabus</button>
+  </div>
+</form>
+
+<h2>Course Summary:</h2>
+
+<div id="syllabusContainer">
+  <div id="syllabus_links">
+  </div>
+  <table id="syllabus" class="ic-Table ic-Table--condensed">
+    <caption class="screenreader-only">
+      Course Summary
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Details</th>
+        <th scope="col" class='due'>Due</th>
+      </tr>
+    </thead>
+    <tbody id="syllabusTableBody">
+      <tr>
+        <td scope="row" colspan="3">
+          <div id="loading_indicator"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</div>
+<div id="wizard_box"></div>
+
+          </div>
+        </div>
+        <div id="right-side-wrapper" class="ic-app-main-content__secondary">
+          <aside id="right-side">
+                
+<div id="course_show_secondary">
+
+
+  <div class="course-options">
+    
+
+    <a id="view_course_stream_btn" class="btn button-sidebar-wide" href="/courses/81000?view=feed">
+      <i class="icon-stats"></i>
+      View Course Stream
+    </a>
+
+
+
+
+    </div>
+
+
+    <a class="btn button-sidebar-wide" href="https://elearning.mines.edu/calendar?include_contexts=course_81000">
+      <i class="icon-calendar-day"></i>
+      View Course Calendar
+    </a>
+
+    <a id="view_course_notifications_btn" class="btn button-sidebar-wide" href="/courses/81000?view=notifications">
+      <i class="icon-unmuted"></i>
+      View Course Notifications
+    </a>
+
+        <div class="todo-list Sidebar__TodoListContainer"></div>
+
+    
+
+    
+  </div>
+
+      
+<div id="sidebar_content">
+      
+<div class="mini_month">
+  <div class="mini-cal-header">
+    <button class="prev_month_link Button Button--icon-action"><i class="icon-arrow-open-left"></i><span class="screenreader-only">Prev month</span></button>
+    <button class="next_month_link Button Button--icon-action"><i class="icon-arrow-open-right"></i><span class="screenreader-only">Next month</span></button>
+    <span class="mini-cal-month-and-year">
+      <span class="month_name">August</span>
+      <span class="year_number">2026</span>
+    </span>
+  </div>
+  <div style="display: none;">
+    <span class="month_number">8</span>
+  </div>
+  <table class="mini_calendar" cellspacing="0">
+    <caption class="screenreader-only">Calendar</caption>
+    <thead>
+      <tr>
+          <th scope="col">
+            <span class="screenreader-only">
+              Sunday
+            </span>
+          </th>
+          <th scope="col">
+            <span class="screenreader-only">
+              Monday
+            </span>
+          </th>
+          <th scope="col">
+            <span class="screenreader-only">
+              Tuesday
+            </span>
+          </th>
+          <th scope="col">
+            <span class="screenreader-only">
+              Wednesday
+            </span>
+          </th>
+          <th scope="col">
+            <span class="screenreader-only">
+              Thursday
+            </span>
+          </th>
+          <th scope="col">
+            <span class="screenreader-only">
+              Friday
+            </span>
+          </th>
+          <th scope="col">
+            <span class="screenreader-only">
+              Saturday
+            </span>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="mini_calendar_week">
+          <td id="mini_day_2026_07_26" class="mini_calendar_day day other_month previous_month date_07_26_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">26 July 2026</span>
+              <span class="day_number" aria-hidden="true">
+                26
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_07_27" class="mini_calendar_day day other_month previous_month date_07_27_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">27 July 2026</span>
+              <span class="day_number" aria-hidden="true">
+                27
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_07_28" class="mini_calendar_day day other_month previous_month date_07_28_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">28 July 2026</span>
+              <span class="day_number" aria-hidden="true">
+                28
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_07_29" class="mini_calendar_day day other_month previous_month date_07_29_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">29 July 2026</span>
+              <span class="day_number" aria-hidden="true">
+                29
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_07_30" class="mini_calendar_day day other_month previous_month date_07_30_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">30 July 2026</span>
+              <span class="day_number" aria-hidden="true">
+                30
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_07_31" class="mini_calendar_day day other_month previous_month date_07_31_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">31 July 2026</span>
+              <span class="day_number" aria-hidden="true">
+                31
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_01" class="mini_calendar_day day current_month date_08_01_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 1 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                1
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+      </tr>
+      <tr class="mini_calendar_week">
+          <td id="mini_day_2026_08_02" class="mini_calendar_day day current_month date_08_02_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 2 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                2
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_03" class="mini_calendar_day day current_month date_08_03_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 3 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                3
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_04" class="mini_calendar_day day current_month date_08_04_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 4 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                4
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_05" class="mini_calendar_day day current_month date_08_05_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 5 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                5
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_06" class="mini_calendar_day day current_month date_08_06_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 6 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                6
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_07" class="mini_calendar_day day current_month date_08_07_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 7 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                7
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_08" class="mini_calendar_day day current_month date_08_08_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 8 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                8
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+      </tr>
+      <tr class="mini_calendar_week">
+          <td id="mini_day_2026_08_09" class="mini_calendar_day day current_month date_08_09_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 9 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                9
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_10" class="mini_calendar_day day current_month date_08_10_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">10 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                10
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_11" class="mini_calendar_day day current_month date_08_11_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">11 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                11
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_12" class="mini_calendar_day day current_month date_08_12_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">12 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                12
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_13" class="mini_calendar_day day current_month date_08_13_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">13 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                13
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_14" class="mini_calendar_day day current_month date_08_14_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">14 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                14
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_15" class="mini_calendar_day day current_month date_08_15_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">15 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                15
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+      </tr>
+      <tr class="mini_calendar_week">
+          <td id="mini_day_2026_08_16" class="mini_calendar_day day current_month date_08_16_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">16 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                16
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_17" class="mini_calendar_day day current_month date_08_17_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">17 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                17
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_18" class="mini_calendar_day day current_month date_08_18_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">18 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                18
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_19" class="mini_calendar_day day current_month date_08_19_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">19 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                19
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_20" class="mini_calendar_day day current_month date_08_20_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">20 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                20
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_21" class="mini_calendar_day day current_month date_08_21_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">21 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                21
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_22" class="mini_calendar_day day current_month date_08_22_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">22 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                22
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+      </tr>
+      <tr class="mini_calendar_week">
+          <td id="mini_day_2026_08_23" class="mini_calendar_day day current_month date_08_23_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">23 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                23
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_24" class="mini_calendar_day day current_month today date_08_24_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">24 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                24
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_25" class="mini_calendar_day day current_month date_08_25_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">25 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                25
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_26" class="mini_calendar_day day current_month date_08_26_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">26 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                26
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_27" class="mini_calendar_day day current_month date_08_27_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">27 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                27
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_28" class="mini_calendar_day day current_month date_08_28_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">28 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                28
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_29" class="mini_calendar_day day current_month date_08_29_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">29 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                29
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+      </tr>
+      <tr class="mini_calendar_week">
+          <td id="mini_day_2026_08_30" class="mini_calendar_day day current_month date_08_30_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">30 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                30
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_08_31" class="mini_calendar_day day current_month date_08_31_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only">31 August 2026</span>
+              <span class="day_number" aria-hidden="true">
+                31
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_09_01" class="mini_calendar_day day other_month next_month date_09_01_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 1 September 2026</span>
+              <span class="day_number" aria-hidden="true">
+                1
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_09_02" class="mini_calendar_day day other_month next_month date_09_02_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 2 September 2026</span>
+              <span class="day_number" aria-hidden="true">
+                2
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_09_03" class="mini_calendar_day day other_month next_month date_09_03_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 3 September 2026</span>
+              <span class="day_number" aria-hidden="true">
+                3
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_09_04" class="mini_calendar_day day other_month next_month date_09_04_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 4 September 2026</span>
+              <span class="day_number" aria-hidden="true">
+                4
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+          <td id="mini_day_2026_09_05" class="mini_calendar_day day other_month next_month date_09_05_2026">
+            <div class="day_wrapper">
+              <span class="screenreader-only"> 5 September 2026</span>
+              <span class="day_number" aria-hidden="true">
+                5
+              </span>
+              <span class="screenreader-only previous_month_text">Previous month</span>
+              <span class="screenreader-only next_month_text">Next month</span>
+              <span class="screenreader-only today_text">Today</span>
+              <span class="screenreader-only event_link_text">Click to view event details</span>
+            </div>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+      
+<div aria-label="Assignment Weights">
+  <h2>Assignments are weighted by group:</h2>
+
+  <table class="summary">
+    <thead>
+    <tr>
+      <th scope='col'>Group</th>
+      <th scope='col'>Weight</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <th scope='row'>Assignments</th>
+          <td>0%</td>
+        </tr>
+        <tr>
+          <th scope='row'>Participation</th>
+          <td>2%</td>
+        </tr>
+        <tr>
+          <th scope='row'>Homework Assignments</th>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <th scope='row'>Quizzes</th>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <th scope='row'>Programming Assignments</th>
+          <td>20%</td>
+        </tr>
+        <tr>
+          <th scope='row'>Midterm Exam</th>
+          <td>20%</td>
+        </tr>
+        <tr>
+          <th scope='row'>Project</th>
+          <td>30%</td>
+        </tr>
+        <tr>
+          <th scope='row'>Lectures</th>
+          <td>0%</td>
+        </tr>
+      <tr style="font-weight: bold;">
+        <th scope='row'>Total</th>
+        <td>102%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+      
+<div class="events_list
+  recent_feedback"
+>
+  <div class="h2 shared-space">
+    <h2>Recent Feedback</h2>
+  </div>
+  <ul class="right-side-list events">
+    <li>
+      <small>
+          Nothing for now
+      </small>
+    </li>
+  </ul>
+</div>
+
+
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
+        <div id="page_view_id">9dc0ddba-f965-4a94-a987-5cd4e25949b4</div>
+    </div>
+  <div id='aria_alerts' class='hide-text affix' role="alert" aria-live="assertive"></div>
+  <div id='StudentTray__Container'></div>
+  <div id="react-router-portals"></div>
+
+
+  
+
+  <iframe src="https://sso.canvaslms.com/post_message_forwarding?rev=e6aca5e55d-9c856c93fa625037&amp;token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJwYXJlbnRfZG9tYWluIjoiZWxlYXJuaW5nLm1pbmVzLmVkdSJ9.H0SSwPBgng_7AZK9A8qweGNQB6j7mGYLMdHoiP4ewH5-Xm1Tb26fA_4OKkMIh9LQ272NM58oo9wmyXy_qb7RAQ" name="post_message_forwarding" title="post_message_forwarding" id="post_message_forwarding" sandbox="allow-scripts allow-same-origin" style="display:none;"></iframe>
+
+
+  <script>
+    Object.assign(
+      ENV,
+      {}
+    )
+  </script>
+
+<script>
+//<![CDATA[
+(window.deferredBundles || (window.deferredBundles = [])).push('usage_metrics');
+(window.bundles || (window.bundles = [])).push('inst_fs_service_worker');
+//]]>
+</script>
+<script src="https://instructure-uploads.s3.amazonaws.com/account_98020000000000001/attachments/8079008/CanvasTheme_Edited-8-18.js" defer="defer"></script>
+
+
+</div> <!-- #application -->
+</body>
+</html>
