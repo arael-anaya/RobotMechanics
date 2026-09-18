@@ -1,0 +1,166 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{pifont}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{enumitem}
+
+\lstdefinestyle{tex-style} {
+	language=Matlab,                           % Code langugage
+	basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+	%keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+	commentstyle=\color{gray},              % Comments font
+	numbers=none,                           % Line nums position
+	numberstyle=\tiny,                      % Line-numbers fonts
+	stepnumber=1,                           % Step between two line-numbers
+	numbersep=5pt,                          % How far are line-numbers from code
+	%backgroundcolor=\color{gray}, % Choose background color
+	frame=single,                             % A frame around the code
+	tabsize=2,                              % Default tab size
+	captionpos=b,                           % Caption-position = bottom
+	breaklines=true,                        % Automatic line breaking?
+	breakatwhitespace=false,                % Automatic breaks only at whitespace?
+	showspaces=false,                       % Dont make spaces visible
+	showtabs=false,                         % Dont make tabls visible
+	columns=flexible,                       % Column format
+	morekeywords={__global__, __device__}  % CUDA specific keywords
+}
+\lstset{style=tex-style}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+%%%%%%% Table Packages %%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{tabularx,ragged2e,booktabs}
+\newcolumntype{C}[1]{>{\Centering}m{#1}}
+\renewcommand\tabularxcolumn[1]{C{#1}}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{makecell}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark,calc}
+\usepackage{siunitx}
+
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 3}
+\author{MEGN544/ROBO554 Robot Mechanics: Kinematics, Dynamics, and Control  
+\\ 
+Dr. George Kontoudis\\
+Department of Mechanical Engineering\\
+Colorado School of Mines}
+\date{Fall 2026}
+ 
+\maketitle
+\begin{problem}{1}%theorem, exercise, problem, or question 
+Given the following twist $\boldsymbol{\xi}$, what is the homogeneous transformation matrix?
+\begin{enumerate}[label=(\alph*)]
+    \item $\boldsymbol{\xi} = \begin{bmatrix}
+        \boldsymbol{v}^{\intercal} & \boldsymbol{\Omega}^{\intercal}
+        \end{bmatrix}^{\intercal} = \begin{bmatrix}
+        3/\pi & 0 & 0 & \pi/3 & 0 & 0
+        \end{bmatrix}^{\intercal}$.
+    \item $\boldsymbol{\xi} = \begin{bmatrix}
+        \boldsymbol{v}^{\intercal} & \boldsymbol{\Omega}^{\intercal}
+        \end{bmatrix}^{\intercal} = \begin{bmatrix}
+        0 & 0.5 & 0 & 0 & \pi/2 & 0
+        \end{bmatrix}^{\intercal}$.
+    \item $\boldsymbol{\xi} = \begin{bmatrix}
+        \boldsymbol{v}^{\intercal} & \boldsymbol{\Omega}^{\intercal}
+        \end{bmatrix}^{\intercal} = \begin{bmatrix}
+        1 & 0 & 0 & 0 & 0 & \pi/3
+        \end{bmatrix}^{\intercal}$.
+\end{enumerate}
+ 
+\end{problem}
+
+\begin{problem}{2}%theorem, exercise, problem, or question 
+Given the homogeneous transformation matrix, 
+\begin{align*}
+        \boldsymbol{T} = \begin{bmatrix}
+        0.5000 & -0.6124 & 0.6124 & 0.8415 \\
+        0.6124 & 0.7500 & 0.2500 & 0.3251 \\
+        -0.6124 & 0.2500 & 0.7500 & -0.3251\\
+        0 & 0 & 0 & 1
+        \end{bmatrix}
+\end{align*}
+\begin{enumerate}[label=(\alph*)]
+    \item What is the displacement?
+    \item What is the Quaternion that encodes the rotation?
+    \item What is the Angle-Axis that encodes the rotation?
+    \item What is the twist $\boldsymbol{\xi}$ that encodes the full transform?
+\end{enumerate}
+ 
+\end{problem}
+
+\begin{problem}{3}%theorem, exercise, problem, or question 
+For the following give one pro and one con for using it as a representation,
+\begin{enumerate}[label=(\alph*)]
+    \item Rotation and displacement separately.
+    \item Homogeneous transformation matrices.
+    \item Twist coordinates.
+\end{enumerate}
+ 
+\end{problem}
+
+\begin{problem}{4}%theorem, exercise, problem, or question 
+Given the following two homogeneous transformations, use MATLAB to plot a linear
+interpolation between the two. Your plot should contain a minimum of $5$ intermediate points and should have the orthogonal axis (columns of the rotation matrix) drawn at each point. \textit{Hint}: Use the \verb|quiver3| function.
+
+\begin{align*}\boldsymbol{T}_{\textrm{initial}} = \begin{bmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+        \end{bmatrix},~\boldsymbol{T}_{\textrm{final}} = \begin{bmatrix}
+        0.5000 & -0.6124 & 0.6124 & 0.8415 \\
+        0.6124 & 0.7500 & 0.2500 & 0.3251 \\
+        -0.6124 & 0.2500 & 0.7500 & -0.3251\\
+        0 & 0 & 0 & 1
+        \end{bmatrix}
+\end{align*}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Perform the interpolation using ZYZ angles and position.
+    \item Perform the interpolation using Angle-Axis and position.
+    \item Perform the interpolation using Quaternion and position (remember to enforce the length constraint on the quaternion before calculating the intermediate orientations).
+    \item Perform the interpolation using twist.
+    \item Comment on the similarities or differences.
+\end{enumerate}
+
+\end{problem}
+
+
+\end{document}
