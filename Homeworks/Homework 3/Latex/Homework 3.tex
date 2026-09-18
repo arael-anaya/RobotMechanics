@@ -66,7 +66,7 @@
 }
 
 \newcommand{\Name}{Arael Anaya}
-\newcommand{\Assignment}{Homework 2}
+\newcommand{\Assignment}{Homework 3}
 \newcommand{\course}{Robot Mechanics}
 
 % Boxed final-answer environment
@@ -109,6 +109,9 @@
 \newcommand{\framen}[1]{\{#1\}}
 \newcommand{\khat}{\widehat{\bm{k}}}
 \newcommand{\wvec}{\bm{\omega}}
+\newcommand{\xivec}{\bm{\xi}}
+\newcommand{\vvec}{\bm{v}}
+\newcommand{\Omvec}{\bm{\Omega}}
 \newcommand{\Rotx}{\operatorname{Rot}_x}
 \newcommand{\Roty}{\operatorname{Rot}_y}
 \newcommand{\Rotz}{\operatorname{Rot}_z}
@@ -118,21 +121,155 @@
 \begin{document}
 
 % ====================================================
-% APPENDIX A: PYTHON CODE
+% PROBLEM 1
+% ====================================================
+\section*{Problem 1}
+
+\begin{statement}
+Given the following twist $\xivec$, what is the homogeneous transformation matrix?
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=2pt]
+    \item $\xivec = \begin{bmatrix}\vvec^{\intercal} & \Omvec^{\intercal}\end{bmatrix}^{\intercal} = \begin{bmatrix}3/\pi & 0 & 0 & \pi/3 & 0 & 0\end{bmatrix}^{\intercal}$.
+    \item $\xivec = \begin{bmatrix}\vvec^{\intercal} & \Omvec^{\intercal}\end{bmatrix}^{\intercal} = \begin{bmatrix}0 & 0.5 & 0 & 0 & \pi/2 & 0\end{bmatrix}^{\intercal}$.
+    \item $\xivec = \begin{bmatrix}\vvec^{\intercal} & \Omvec^{\intercal}\end{bmatrix}^{\intercal} = \begin{bmatrix}1 & 0 & 0 & 0 & 0 & \pi/3\end{bmatrix}^{\intercal}$.
+\end{enumerate}
+\end{statement}
+
+\subsection*{Part (a)}
+\workplaceholder
+
+\subsection*{Part (b)}
+\workplaceholder
+
+\subsection*{Part (c)}
+\workplaceholder
+
+% ====================================================
+% PROBLEM 2
 % ====================================================
 \newpage
-\section*{Appendix A: Python Code}
+\section*{Problem 2}
 
-\subsection*{Problem 1: Gimbal Degeneracy Sketch}
-\lstinputlisting[caption={Problem 1.py: generates the intermediate-rotation sketch in Fig.~1.}]{"../Code/Problem 1.py"}
+\begin{statement}
+Given the homogeneous transformation matrix,
+\[
+    \T = \begin{bmatrix}
+        0.5000 & -0.6124 & 0.6124 & 0.8415\\
+        0.6124 & 0.7500 & 0.2500 & 0.3251\\
+        -0.6124 & 0.2500 & 0.7500 & -0.3251\\
+        0 & 0 & 0 & 1
+    \end{bmatrix}
+\]
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=2pt]
+    \item What is the displacement?
+    \item What is the Quaternion that encodes the rotation?
+    \item What is the Angle-Axis that encodes the rotation?
+    \item What is the twist $\xivec$ that encodes the full transform?
+\end{enumerate}
+\end{statement}
+
+\subsection*{Part (a): Displacement}
+\workplaceholder
+
+\subsection*{Part (b): Quaternion}
+\workplaceholder
+
+\subsection*{Part (c): Angle-Axis}
+\workplaceholder
+
+\subsection*{Part (d): Twist}
+\workplaceholder
+
+% ====================================================
+% PROBLEM 3
+% ====================================================
+\newpage
+\section*{Problem 3}
+
+\begin{statement}
+For the following give one pro and one con for using it as a representation,
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=2pt]
+    \item Rotation and displacement separately.
+    \item Homogeneous transformation matrices.
+    \item Twist coordinates.
+\end{enumerate}
+\end{statement}
+
+\subsection*{Part (a): Rotation and Displacement Separately}
+\workplaceholder
+
+\subsection*{Part (b): Homogeneous Transformation Matrices}
+\workplaceholder
+
+\subsection*{Part (c): Twist Coordinates}
+\workplaceholder
+
+% ====================================================
+% PROBLEM 4
+% ====================================================
+\newpage
+\section*{Problem 4}
+
+\begin{statement}
+Given the following two homogeneous transformations, use MATLAB to plot a linear interpolation between the two. Your plot should contain a minimum of 5 intermediate points and should have the orthogonal axis (columns of the rotation matrix) drawn at each point. \textit{Hint}: Use the \verb|quiver3| function.
+\[
+    \T_{\text{initial}} = \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+    \end{bmatrix},\qquad
+    \T_{\text{final}} = \begin{bmatrix}
+        0.5000 & -0.6124 & 0.6124 & 0.8415\\
+        0.6124 & 0.7500 & 0.2500 & 0.3251\\
+        -0.6124 & 0.2500 & 0.7500 & -0.3251\\
+        0 & 0 & 0 & 1
+    \end{bmatrix}
+\]
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=2pt]
+    \item Perform the interpolation using ZYZ angles and position.
+    \item Perform the interpolation using Angle-Axis and position.
+    \item Perform the interpolation using Quaternion and position (remember to enforce the length constraint on the quaternion before calculating the intermediate orientations).
+    \item Perform the interpolation using twist.
+    \item Comment on the similarities or differences.
+\end{enumerate}
+\end{statement}
+
+\subsection*{Part (a): ZYZ Interpolation}
+\workplaceholder
+
+\subsection*{Part (b): Angle-Axis Interpolation}
+\workplaceholder
+
+\subsection*{Part (c): Quaternion Interpolation}
+\workplaceholder
+
+\subsection*{Part (d): Twist Interpolation}
+\workplaceholder
+
+\subsection*{Part (e): Comparison}
+\workplaceholder
+
+% ====================================================
+% APPENDIX A: CODE
+% ====================================================
+\newpage
+\section*{Appendix A: Code}
+
+\subsection*{Problem 1}
+\lstinputlisting[caption={Problem 1.py}]{"../Code/Problem 1.py"}
 
 \newpage
-\subsection*{Problem 2: ZYZ Angles, Angle--Axis, and Quaternion}
-\lstinputlisting[caption={Problem 2.py: evaluates the ZYZ angles, angle-axis pair, and quaternion for Problem 2.}]{"../Code/Problem 2.py"}
+\subsection*{Problem 2}
+\lstinputlisting[caption={Problem 2.py}]{"../Code/Problem 2.py"}
 
 \newpage
-\subsection*{Problem 3: Quaternion to Rotation Matrix and Angle--Axis}
-\lstinputlisting[caption={Problem 3.py: converts each quaternion in Problem 3 to a rotation matrix and angle-axis pair.}]{"../Code/Problem 3.py"}
+\subsection*{Problem 3}
+\lstinputlisting[caption={Problem 3.py}]{"../Code/Problem 3.py"}
+
+% Problem 4 uses MATLAB per the assignment; add its listing here once written, e.g.:
+% \newpage
+% \subsection*{Problem 4}
+% \lstinputlisting[caption={Problem 4.m}]{"../Code/Problem 4.m"}
 
 % ====================================================
 % APPENDIX B: HAND CALCULATIONS
@@ -140,14 +277,7 @@
 \newpage
 \section*{Appendix B: Hand Calculations}
 
-\begin{fixnote}
-\textbf{Corrections made when typing up the hand calcs below:}
-\begin{enumerate}[leftmargin=1.2em, itemsep=4pt]
-    \item \textbf{Problem 1(b), page 1:} the boxed yaw formula was written as $\phi = \atantwo\!\left(\frac{r_{21}}{c\theta_{\pm}},\ \frac{r_{12}}{c\theta_{\pm}}\right)$, but $r_{12}$ doesn't show up in the $\phi$ equation. The correct value comes from the first column, $r_{21} = s\phi c\theta$ and $r_{11} = c\phi c\theta$ (the same terms $c\theta = \sqrt{r_{11}^{2}+r_{21}^{2}}$ above it is built from). 
-    \item \textbf{Problem 3(d), page 6:} the $(1,2)$ entry of the rotation matrix was written as $-0.639$. Evaluating $2(q_{1}q_{2}-q_{0}q_{3}) = 2\big((0.5928)(0.08311)-(0.5332)(0.5978)\big)$ gives $-0.539$, matching the neighbouring entries ($0.271$, $0.797$, $0.736$, $-0.418$, $-0.533$, $0.620$, $0.732$, $0.283$) and the boxed axis $\khat = [0.701\ 0.098\ 0.707]^{T}$ exactly.
-\end{enumerate}
-\end{fixnote}
-
-\includepdf[pages=-, pagecommand={\thispagestyle{plain}}, scale=0.9]{../Homework_2_hand_calcs.pdf}
+% Uncomment and point at the scanned hand-calc PDF once it exists:
+% \includepdf[pages=-, pagecommand={\thispagestyle{plain}}, scale=0.9]{../Homework_3_hand_calcs.pdf}
 
 \end{document}
