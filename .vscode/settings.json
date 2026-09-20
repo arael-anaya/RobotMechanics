@@ -1,0 +1,4 @@
+{
+  "files.associations": { "*.m": "matlab" },
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}
