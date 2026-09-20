@@ -12,8 +12,9 @@
 % MEGN544
 % 09/19/2026
 function R = rotY(theta)
-    R = [cos(theta)  0 , sin(theta), 
-            0 ,      1      0,
-        -sin(theta)  0   cos(theta)]
-    return R
+    c = cos(theta);
+    s = sin(theta);
+    R = [ c 0 s;
+          0 1 0;
+         -s 0 c];
 end

@@ -14,5 +14,5 @@
 % MEGN544
 % 09/19/2026
 function R = rpy2Rot(roll, pitch, yaw)
-% TODO: implement
+    R = rotZ(yaw) * rotY(pitch) * rotX(roll);
 end

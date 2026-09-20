@@ -12,9 +12,9 @@
 % MEGN544
 % 09/19/2026
 function R = rotZ(theta)
-    R = [   cos(theta) -sin(theta)  0 , 
-            sin(theta) , cos(theta) 0 ,
-                0           0        1]
-
-    return R
+    c = cos(theta);
+    s = sin(theta);
+    R = [c -s 0;
+         s  c 0;
+         0  0 1];
 end
