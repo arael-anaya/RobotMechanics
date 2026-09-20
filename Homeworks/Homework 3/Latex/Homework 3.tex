@@ -168,16 +168,81 @@ Given the homogeneous transformation matrix,
 \end{statement}
 
 \subsection*{Part (a): Displacement}
-\workplaceholder
+The displacement is the upper-right $3\times1$ block of $\T$:
+\begin{result}
+\[
+    \dvec = \begin{bmatrix} 0.8415\\ 0.3251\\ -0.3251 \end{bmatrix}
+\]
+\end{result}
 
 \subsection*{Part (b): Quaternion}
-\workplaceholder
+With $\operatorname{tr}(\R) = 0.5 + 0.75 + 0.75 = 2$:
+\begin{align*}
+    q_0 &= \sqrt{\frac{1 + \operatorname{tr}(\R)}{4}} = \sqrt{\frac{3}{4}} = 0.866\\[2pt]
+    q_1 &= \frac{r_{32} - r_{23}}{4q_0} = \frac{0.25 - 0.25}{4(0.866)} = 0\\[2pt]
+    q_2 &= \frac{r_{13} - r_{31}}{4q_0} = \frac{0.6124 - (-0.6124)}{4(0.866)} = 0.354\\[2pt]
+    q_3 &= \frac{r_{21} - r_{12}}{4q_0} = \frac{0.6124 - (-0.6124)}{4(0.866)} = 0.354
+\end{align*}
+Check: $q_0^2 + q_1^2 + q_2^2 + q_3^2 = 0.75 + 0 + 0.125 + 0.125 = 1$.
+\begin{result}
+\[
+    Q = 0.866 + \begin{bmatrix} 0\\ 0.354\\ 0.354 \end{bmatrix}
+\]
+\end{result}
 
 \subsection*{Part (c): Angle-Axis}
-\workplaceholder
+The vector of off-diagonal differences is
+\[
+    \begin{bmatrix} r_{32} - r_{23}\\ r_{13} - r_{31}\\ r_{21} - r_{12} \end{bmatrix}
+    = \begin{bmatrix} 0\\ 1.2248\\ 1.2248 \end{bmatrix},
+    \qquad
+    \left\lVert\cdot\right\rVert_2 = \sqrt{0^2 + 1.2248^2 + 1.2248^2} = 1.7321.
+\]
+Then
+\begin{align*}
+    \theta &= \atantwo\!\left(\tfrac{1}{2}\left\lVert\cdot\right\rVert_2,\ \frac{\operatorname{tr}(\R) - 1}{2}\right)
+            = \atantwo(0.866,\ 0.5) = \frac{\pi}{3}\ \text{rad}\\[2pt]
+    \khat &= \frac{1}{2\sin\theta}\begin{bmatrix} 0\\ 1.2248\\ 1.2248 \end{bmatrix}
+            = \frac{1}{1.7321}\begin{bmatrix} 0\\ 1.2248\\ 1.2248 \end{bmatrix}
+            = \begin{bmatrix} 0\\ 0.707\\ 0.707 \end{bmatrix}
+\end{align*}
+\begin{result}
+\[
+    \Omvec = \theta\,\khat = \frac{\pi}{3}\begin{bmatrix} 0\\ 0.707\\ 0.707 \end{bmatrix}
+    = \begin{bmatrix} 0\\ 0.741\\ 0.741 \end{bmatrix}
+\]
+\end{result}
 
 \subsection*{Part (d): Twist}
-\workplaceholder
+The angular part is $\Omvec$ from Part (c). The linear part follows the course's inverse-twist formula (with $\bm{\xi} = [\vvec;\ \theta\khat]$, where $\vvec$ is the linear part per radian):
+\[
+    \vvec = \left(\frac{\sin\theta}{2(1 - \cos\theta)}\,\bm{I}
+    + \frac{2(1 - \cos\theta) - \theta\sin\theta}{2\theta(1 - \cos\theta)}\,\khat\khat^{\intercal}
+    - \frac{1}{2}\skewx{\khat}\right)\dvec .
+\]
+For $\theta = \pi/3$: $\frac{\sin\theta}{2(1 - \cos\theta)} = 0.866$, so
+\[
+    \vvec = \left(0.866\,\bm{I} + 0.0889\,\khat\khat^{\intercal}
+    - \frac{1}{2}\begin{bmatrix} 0 & -0.707 & 0.707\ 0.707 & 0 & 0\ -0.707 & 0 & 0 \end{bmatrix}\right)
+    \begin{bmatrix} 0.8415\ 0.3251\ -0.3251 \end{bmatrix}.
+\]
+Since $\khat^{\intercal}\dvec = 0.707(0.3251) + 0.707(-0.3251) = 0$, the $\khat\khat^{\intercal}$ term drops out, and
+\[
+    \vvec = 0.866\begin{bmatrix} 0.8415\ 0.3251\ -0.3251 \end{bmatrix}
+    - \frac{1}{2}\begin{bmatrix} -0.4597\ 0.5950\ -0.5950 \end{bmatrix}
+    = \begin{bmatrix} 0.9586\ -0.016\ 0.016 \end{bmatrix}.
+\]
+\begin{result}
+\[
+    \xivec = \begin{bmatrix}\vvec\ \Omvec\end{bmatrix}
+    = \begin{bmatrix} 0.959 & -0.016 & 0.016 & 0 & 0.741 & 0.741 \end{bmatrix}^{\intercal}
+\]
+\end{result}
+
+\begin{fixnote}
+\textbf{Correction to the hand calculation.}
+In Part (c) the axis was written as $\khat = [0,\,0.637,\,0.637]^{\intercal}$. It should be $[0,\,0.707,\,0.707]^{\intercal}$, since $\lVert\khat\rVert = 1$. The boxed $\Omvec$ was already correct.
+\end{fixnote}
 
 % ====================================================
 % PROBLEM 3
@@ -195,13 +260,19 @@ For the following give one pro and one con for using it as a representation,
 \end{statement}
 
 \subsection*{Part (a): Rotation and Displacement Separately}
-\workplaceholder
+\textbf{Pro:} Easy to identify what is happening.
+
+\textbf{Con:} Rotation and displacement are separate objects.
 
 \subsection*{Part (b): Homogeneous Transformation Matrices}
-\workplaceholder
+\textbf{Pro:} : composition is a single matrix multiply, so chaining frames is easy.
+
+\textbf{Con:} Does not invert cleanly.
 
 \subsection*{Part (c): Twist Coordinates}
-\workplaceholder
+\textbf{Pro:} Provides velocity of object.
+
+\textbf{Con:} It is singular or ambiguous at θ = 0 and θ = π
 
 % ====================================================
 % PROBLEM 4
@@ -255,16 +326,22 @@ Given the following two homogeneous transformations, use MATLAB to plot a linear
 \newpage
 \section*{Appendix A: Code}
 
+% Listings are skipped until the code file exists, so a missing file cannot break the build.
+\newcommand{\codelisting}[2]{%
+    \IfFileExists{../Code/#1}{\lstinputlisting[language=#2, caption={#1}]{"../Code/#1"}}%
+    {\noindent\textcolor{gray!60}{\itshape [#1 not yet written]}}%
+}
+
 \subsection*{Problem 1}
-\lstinputlisting[caption={Problem 1.py}]{"../Code/Problem 1.py"}
+\codelisting{Problem 1.m}{Matlab}
 
 \newpage
 \subsection*{Problem 2}
-\lstinputlisting[caption={Problem 2.py}]{"../Code/Problem 2.py"}
+\codelisting{Problem 2.py}{Python}
 
 \newpage
 \subsection*{Problem 3}
-\lstinputlisting[caption={Problem 3.py}]{"../Code/Problem 3.py"}
+\codelisting{Problem 3.py}{Python}
 
 % Problem 4 uses MATLAB per the assignment; add its listing here once written, e.g.:
 % \newpage
@@ -277,7 +354,6 @@ Given the following two homogeneous transformations, use MATLAB to plot a linear
 \newpage
 \section*{Appendix B: Hand Calculations}
 
-% Uncomment and point at the scanned hand-calc PDF once it exists:
-% \includepdf[pages=-, pagecommand={\thispagestyle{plain}}, scale=0.9]{../Homework_3_hand_calcs.pdf}
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}}, scale=0.9]{../Homework_3_hand_calcs.pdf}
 
 \end{document}

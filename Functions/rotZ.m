@@ -12,5 +12,9 @@
 % MEGN544
 % 09/19/2026
 function R = rotZ(theta)
-% TODO: implement
+    R = [   cos(theta) -sin(theta)  0 , 
+            sin(theta) , cos(theta) 0 ,
+                0           0        1]
+
+    return R
 end

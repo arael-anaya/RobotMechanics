@@ -12,5 +12,8 @@
 % MEGN544
 % 09/19/2026
 function R = rotY(theta)
-% TODO: implement
+    R = [cos(theta)  0 , sin(theta), 
+            0 ,      1      0,
+        -sin(theta)  0   cos(theta)]
+    return R
 end

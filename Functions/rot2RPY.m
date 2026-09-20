@@ -14,5 +14,7 @@
 % MEGN544
 % 09/19/2026
 function [roll, pitch, yaw] = rot2RPY(R)
-% TODO: implement
+    R = rotZ(yaw) * rotY(pitch) * rotX(roll)
+
+    return R
 end
