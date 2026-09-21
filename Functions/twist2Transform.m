@@ -3,6 +3,10 @@ function T = twist2Transform(t)
     omega = t(4:6);
 
     theta = norm(omega);
+    if theta < 1e-12
+        T = [eye(3), v; 0 0 0 1];
+        return;
+    end
     k = (1/theta) * omega;
 
     R = angleAxis2Rot(omega);

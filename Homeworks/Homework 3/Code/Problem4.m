@@ -1,5 +1,7 @@
 root = fileparts(fileparts(fileparts(fileparts(mfilename('fullpath')))));
 addpath(fullfile(root, 'Functions'));
+figDir = fullfile(fileparts(mfilename('fullpath')), '..', 'Latex', 'Figures');
+if ~exist(figDir, 'dir'), mkdir(figDir); end
 
 T_i = eye(4);
 T_f = [ 0.5000 -0.6124  0.6124  0.8415;
@@ -14,49 +16,63 @@ N = 5;                          % intermediate points (minimum 5)
 s = linspace(0, 1, N + 2);      % includes both endpoints
 
 %% (a) ZYZ angles + position
-% TODO: extract ZYZ angles from R_i and R_f (no helper exists for ZYZ)
-zyz_i = [0; 0; 0];
-zyz_f = [0; 0; 0];
+[phi, theta, psi] = rot2ZYZ(R_i);   zyz_i = [phi(1); theta(1); psi(1)];
+[phi, theta, psi] = rot2ZYZ(R_f);   zyz_f = [phi(1); theta(1); psi(1)];
 Ra = cell(1, numel(s));  pa = zeros(3, numel(s));
 for k = 1:numel(s)
     zyz = zyz_i + s(k) * (zyz_f - zyz_i);
     Ra{k} = rotZ(zyz(1)) * rotY(zyz(2)) * rotZ(zyz(3));
     pa(:,k) = p_i + s(k) * (p_f - p_i);
 end
-plotFrames(Ra, pa, '(a) ZYZ angles + position');
+plotFrames(Ra, pa, '(a) ZYZ angles + position', fullfile(figDir, 'p4a.png'));
 
 %% (b) Angle-axis + position
-% TODO: interpolate the angle-axis vector (rot2AngleAxis / angleAxis2Rot)
+om_i = rot2AngleAxis(R_i);
+om_f = rot2AngleAxis(R_f);
+
 Rb = cell(1, numel(s));  pb = zeros(3, numel(s));
 for k = 1:numel(s)
-    Rb{k} = R_i;   % TODO
+    om = om_i + s(k) * (om_f-om_i);
+    Rb{k} = angleAxis2Rot(om);   % TODO
     pb(:,k) = p_i + s(k) * (p_f - p_i);
 end
-plotFrames(Rb, pb, '(b) Angle-Axis + position');
+plotFrames(Rb, pb, '(b) Angle-Axis + position', fullfile(figDir, 'p4b.png'));
 
 %% (c) Quaternion + position
 % TODO: interpolate quaternions (rot2Quat / quat2Rot), enforce unit length
 %       BEFORE converting each intermediate quaternion to a rotation
 Rc = cell(1, numel(s));  pc = zeros(3, numel(s));
+Q_i = rot2Quat(R_i);
+Q_f = rot2Quat(R_f);
+
+if dot(Q_i , Q_f) < 0
+    Q_f = -Q_f;
+end
+
 for k = 1:numel(s)
-    Rc{k} = R_i;   % TODO
+    Q = Q_i +  s(k) * (Q_f-Q_i);
+    Q = Q / norm(Q);
+    Rc{k} =  quat2Rot(Q);
     pc(:,k) = p_i + s(k) * (p_f - p_i);
 end
-plotFrames(Rc, pc, '(c) Quaternion + position');
+plotFrames(Rc, pc, '(c) Quaternion + position', fullfile(figDir, 'p4c.png'));
 
 %% (d) Twist
-% TODO: xi = transform2Twist(T_f) and T(s) = twist2Transform(s * xi)
+% TODO: 
+x_i = transform2Twist(T_f);
 Rd = cell(1, numel(s));  pd = zeros(3, numel(s));
 for k = 1:numel(s)
-    Rd{k} = R_i;   % TODO
-    pd(:,k) = p_i; % TODO
+    x = [x_i(1:3) ; s(k)* x_i(4:6)];
+    T = twist2Transform(x);
+    Rd{k} = T(1:3,1:3);
+    pd(:,k) = T(1:3, 4); 
 end
-plotFrames(Rd, pd, '(d) Twist');
+plotFrames(Rd, pd, '(d) Twist', fullfile(figDir, 'p4d.png'));
 
 %% (e) Comments
 % TODO: comment on similarities / differences
 
-function plotFrames(Rs, ps, ttl)
+function plotFrames(Rs, ps, ttl, file)
     figure; hold on; grid on; axis equal;
     plot3(ps(1,:), ps(2,:), ps(3,:), 'k--');
     for k = 1:numel(Rs)
@@ -67,4 +83,5 @@ function plotFrames(Rs, ps, ttl)
     end
     xlabel('x'); ylabel('y'); zlabel('z'); title(ttl);
     view(3); hold off;
+    exportgraphics(gcf, file, 'Resolution', 200);
 end

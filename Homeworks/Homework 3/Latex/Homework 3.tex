@@ -266,10 +266,7 @@ Since $\khat^{\intercal}\dvec = 0.707(0.3251) + 0.707(-0.3251) = 0$, the $\khat\
 \]
 \end{result}
 
-\begin{fixnote}
-\textbf{Correction to the hand calculation.}
-In Part (c) the axis was written as $\khat = [0,\,0.637,\,0.637]^{\intercal}$. It should be $[0,\,0.707,\,0.707]^{\intercal}$, since $\lVert\khat\rVert = 1$. The boxed $\Omvec$ was already correct.
-\end{fixnote}
+
 
 % ====================================================
 % PROBLEM 3
@@ -299,7 +296,7 @@ For the following give one pro and one con for using it as a representation,
 \subsection*{Part (c): Twist Coordinates}
 \textbf{Pro:} Provides velocity of object.
 
-\textbf{Con:} It is singular or ambiguous at θ = 0 and θ = π
+\textbf{Con:} It is singular or ambiguous at $\theta = 0$ and $\theta = \pi$
 
 % ====================================================
 % PROBLEM 4
@@ -333,19 +330,43 @@ Given the following two homogeneous transformations, use MATLAB to plot a linear
 \end{statement}
 
 \subsection*{Part (a): ZYZ Interpolation}
-\workplaceholder
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/p4a.png}
+    \caption{ZYZ-angle and linear-position interpolation.}
+\end{figure}
 
 \subsection*{Part (b): Angle-Axis Interpolation}
-\workplaceholder
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/p4b.png}
+    \caption{Angle-axis and linear-position interpolation.}
+\end{figure}
 
 \subsection*{Part (c): Quaternion Interpolation}
-\workplaceholder
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/p4c.png}
+    \caption{Normalized-quaternion and linear-position interpolation.}
+\end{figure}
 
 \subsection*{Part (d): Twist Interpolation}
-\workplaceholder
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/p4d.png}
+    \caption{Twist interpolation.}
+\end{figure}
 
 \subsection*{Part (e): Comparison}
-\workplaceholder
+All four start at the identity and end at $\T_{\text{final}}$, so the only real difference is what happens in between.
+
+Angle-axis, quaternion, and twist all look basically the same for orientation. That makes sense since they all rotate about the same fixed axis $\khat = [0,\ 0.707,\ 0.707]^{\intercal}$ by a total of $\pi/3$. The quaternion one is just a linear interpolation that gets renormalized, so its speed isn't perfectly constant, but for a 60$^\circ$ rotation you can't really tell.
+
+ZYZ is the odd one out for orientation. It interpolates the three angles separately, so the frame doesn't spin about one axis and the intermediate orientations look different from the other three. It's also not the shortest path, and it has the singularity issue when the middle angle is $0$ or $\pi$.
+
+For position, twist is the odd one out. Angle-axis, quaternion, and ZYZ all use linear position, so the origin goes in a straight line. The twist does the rotation and translation together as a screw motion, so the origin curves along a helix instead.
+
+\textbf{Overall:} angle-axis, quaternion, and twist agree on orientation, ZYZ doesn't, and twist is the only one that doesn't move in a straight line.
 
 % ====================================================
 % APPENDIX A: CODE
@@ -370,10 +391,9 @@ Given the following two homogeneous transformations, use MATLAB to plot a linear
 \subsection*{Problem 3}
 \codelisting{Problem 3.py}{Python}
 
-% Problem 4 uses MATLAB per the assignment; add its listing here once written, e.g.:
-% \newpage
-% \subsection*{Problem 4}
-% \lstinputlisting[caption={Problem 4.m}]{"../Code/Problem 4.m"}
+\newpage
+\subsection*{Problem 4}
+\codelisting{Problem4.m}{Matlab}
 
 % ====================================================
 % APPENDIX B: HAND CALCULATIONS
