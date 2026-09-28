@@ -250,19 +250,19 @@ The angular part is $\Omvec$ from Part (c). The linear part follows the course's
 For $\theta = \pi/3$: $\frac{\sin\theta}{2(1 - \cos\theta)} = 0.866$, so
 \[
     \vvec = \left(0.866\,\bm{I} + 0.0889\,\khat\khat^{\intercal}
-    - \frac{1}{2}\begin{bmatrix} 0 & -0.707 & 0.707\ 0.707 & 0 & 0\ -0.707 & 0 & 0 \end{bmatrix}\right)
-    \begin{bmatrix} 0.8415\ 0.3251\ -0.3251 \end{bmatrix}.
+    - \frac{1}{2}\begin{bmatrix} 0 & -0.707 & 0.707\\ 0.707 & 0 & 0\\ -0.707 & 0 & 0 \end{bmatrix}\right)
+    \begin{bmatrix} 0.8415\\ 0.3251\\ -0.3251 \end{bmatrix}.
 \]
 Since $\khat^{\intercal}\dvec = 0.707(0.3251) + 0.707(-0.3251) = 0$, the $\khat\khat^{\intercal}$ term drops out, and
 \[
-    \vvec = 0.866\begin{bmatrix} 0.8415\ 0.3251\ -0.3251 \end{bmatrix}
-    - \frac{1}{2}\begin{bmatrix} -0.4597\ 0.5950\ -0.5950 \end{bmatrix}
-    = \begin{bmatrix} 0.9586\ -0.016\ 0.016 \end{bmatrix}.
+    \vvec = 0.866\begin{bmatrix} 0.8415\\ 0.3251\\ -0.3251 \end{bmatrix}
+    - \frac{1}{2}\begin{bmatrix} -0.4597\\ 0.5950\\ -0.5950 \end{bmatrix}
+    = \begin{bmatrix} 0.9586\\ -0.016\\ 0.016 \end{bmatrix}.
 \]
 \begin{result}
 \[
-    \xivec = \begin{bmatrix}\vvec\ \Omvec\end{bmatrix}
-    = \begin{bmatrix} 0.959 & -0.016 & 0.016 & 0 & 0.741 & 0.741 \end{bmatrix}^{\intercal}
+    \xivec = \begin{bmatrix}\vvec^{\intercal} & \Omvec^{\intercal}\end{bmatrix}^{\intercal}
+    =\begin{bmatrix} 0.959 & -0.016 & 0.016 & 0 & 0.741 & 0.741 \end{bmatrix}^{\intercal}
 \]
 \end{result}
 
@@ -289,14 +289,14 @@ For the following give one pro and one con for using it as a representation,
 \textbf{Con:} Rotation and displacement are separate objects.
 
 \subsection*{Part (b): Homogeneous Transformation Matrices}
-\textbf{Pro:} : composition is a single matrix multiply, so chaining frames is easy.
+\textbf{Pro:} Composition is a single matrix multiply, so chaining frames is easy.
 
-\textbf{Con:} Does not invert cleanly.
+\textbf{Con:} Homogeneous transforms are non-minimal (16 numbers for 6 DOF) and require enforcing orthogonality constraints on $R$ under numerical operations (e.g.\ repeated composition/interpolation).
 
 \subsection*{Part (c): Twist Coordinates}
 \textbf{Pro:} Provides velocity of object.
 
-\textbf{Con:} It is singular or ambiguous at $\theta = 0$ and $\theta = \pi$
+\textbf{Con:} It is singular or ambiguous at $\theta = 0$ and $\theta = \pi$.
 
 % ====================================================
 % PROBLEM 4
@@ -329,44 +329,49 @@ Given the following two homogeneous transformations, use MATLAB to plot a linear
 \end{enumerate}
 \end{statement}
 
-\subsection*{Part (a): ZYZ Interpolation}
+\subsection*{Parts (a)--(d): Interpolation Results}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{Figures/p4a.png}
-    \caption{ZYZ-angle and linear-position interpolation.}
-\end{figure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/p4a.png}
+        \caption{ZYZ-angle and linear-position interpolation.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/p4b.png}
+        \caption{Angle-axis and linear-position interpolation.}
+    \end{subfigure}
 
-\subsection*{Part (b): Angle-Axis Interpolation}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{Figures/p4b.png}
-    \caption{Angle-axis and linear-position interpolation.}
-\end{figure}
+    \vspace{1em}
 
-\subsection*{Part (c): Quaternion Interpolation}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{Figures/p4c.png}
-    \caption{Normalized-quaternion and linear-position interpolation.}
-\end{figure}
-
-\subsection*{Part (d): Twist Interpolation}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{Figures/p4d.png}
-    \caption{Twist interpolation.}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/p4c.png}
+        \caption{Normalized-quaternion and linear-position interpolation.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/p4d.png}
+        \caption{Twist interpolation.}
+    \end{subfigure}
 \end{figure}
 
 \subsection*{Part (e): Comparison}
-All four start at the identity and end at $\T_{\text{final}}$, so the only real difference is what happens in between.
+All four start at the identity and end at $\T_{\text{final}}$, so the only difference is what happens in between.
 
-Angle-axis, quaternion, and twist all look basically the same for orientation. That makes sense since they all rotate about the same fixed axis $\khat = [0,\ 0.707,\ 0.707]^{\intercal}$ by a total of $\pi/3$. The quaternion one is just a linear interpolation that gets renormalized, so its speed isn't perfectly constant, but for a 60$^\circ$ rotation you can't really tell.
+For orientation, angle-axis, quaternion, and twist all rotate about the same fixed axis
+$\khat = [0,\ 0.707,\ 0.707]^{\intercal}$ through a total of $\pi/3$, so they match.
+The quaternion is linearly interpolated and renormalized, so its speed isn't perfectly constant,
+but for only $60^\circ$ you can't tell. ZYZ interpolates the three angles separately, so it isn't a
+single-axis rotation. 
 
-ZYZ is the odd one out for orientation. It interpolates the three angles separately, so the frame doesn't spin about one axis and the intermediate orientations look different from the other three. It's also not the shortest path, and it has the singularity issue when the middle angle is $0$ or $\pi$.
-
-For position, twist is the odd one out. Angle-axis, quaternion, and ZYZ all use linear position, so the origin goes in a straight line. The twist does the rotation and translation together as a screw motion, so the origin curves along a helix instead.
-
-\textbf{Overall:} angle-axis, quaternion, and twist agree on orientation, ZYZ doesn't, and twist is the only one that doesn't move in a straight line.
+For position, ZYZ, angle-axis, and quaternion use linear interpolation, so the origin moves in a straight 
+line.
+Twist does rotation and translation together as a screw motion, so the origin follows a curved 
+(helical) path instead.
 
 % ====================================================
 % APPENDIX A: CODE
@@ -382,14 +387,6 @@ For position, twist is the odd one out. Angle-axis, quaternion, and ZYZ all use 
 
 \subsection*{Problem 1}
 \codelisting{Problem1.m}{Matlab}
-
-\newpage
-\subsection*{Problem 2}
-\codelisting{Problem 2.py}{Python}
-
-\newpage
-\subsection*{Problem 3}
-\codelisting{Problem 3.py}{Python}
 
 \newpage
 \subsection*{Problem 4}

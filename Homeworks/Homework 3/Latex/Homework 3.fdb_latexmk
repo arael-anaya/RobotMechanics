@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1789967266.6132 "c:/Users/pingu/Downloads/School/Fall 2026/RobotMechanics/Homeworks/Homework 3/Latex/Homework 3.tex" "Homework 3.pdf" "Homework 3" 1789967268.90336 0
+["pdflatex"] 1790035793.21609 "c:/Users/pingu/Downloads/School/Fall 2026/RobotMechanics/Homeworks/Homework 3/Latex/Homework 3.tex" "Homework 3.pdf" "Homework 3" 1790035795.85929 0
   "../Code/Problem1.m" 1789883436 411 8c356c897dbab9f418e4bf4405b147f1 ""
-  "../Code/Problem4.m" 1789966267 2857 78811c76eb967a1ca5b486d50924d2cb ""
+  "../Code/Problem4.m" 1790030788 2674 3c7cd737ca47c2d3ec3a1dcae12b5a2f ""
   "../Homework_3_hand_calcs.pdf" 1789883722 2030605 3c6455cb9cf31ec4d23a3bec11c4368c ""
   "C:/Users/pingu/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1789772393 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/pingu/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1779245377 13350272 4af4c2e3b46178c944b2673248d73d61 ""
@@ -226,14 +226,14 @@
   "C:/Users/pingu/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/pingu/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/pingu/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Figures/p4a.png" 1789966467 103285 fca1a56c7e98c196a2360325f65caa13 ""
-  "Figures/p4b.png" 1789966468 103038 bbab5d6f82758f60756699ead3a55de0 ""
-  "Figures/p4c.png" 1789966469 103611 f4bcaca49f9738e66263aee4132caf76 ""
-  "Figures/p4d.png" 1789966470 101682 3ff6ad63125a896c807284e2a42672ec ""
-  "Homework 3.aux" 1789967268 1196 30c9997dc77160f2d87860312102df5e "pdflatex"
-  "Homework 3.out" 1789967267 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Homework 3.tex" 1789967054 13789 bed0c80df7d91a76409fdb00248685ee ""
-  "c:/Users/pingu/Downloads/School/Fall 2026/RobotMechanics/Homeworks/Homework 3/Latex/Homework 3.tex" 1789967054 13789 bed0c80df7d91a76409fdb00248685ee ""
+  "Figures/p4a.png" 1790031106 103285 eccc9a2f2179b36e50dddd99562104eb ""
+  "Figures/p4b.png" 1790031108 103038 01f64893b94aa5eacc8eb4527b87a80f ""
+  "Figures/p4c.png" 1790031109 103611 abc7921235a5e4d7d03f71dd1bd33854 ""
+  "Figures/p4d.png" 1790031110 98989 f01130be8f0af40b03f334869647b82f ""
+  "Homework 3.aux" 1790035795 549 8add2b11b26f0cb99d4ea52b61cb02f7 "pdflatex"
+  "Homework 3.out" 1790035794 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Homework 3.tex" 1790032218 13502 342cd7c42cc17a100d757b577ced6f16 ""
+  "c:/Users/pingu/Downloads/School/Fall 2026/RobotMechanics/Homeworks/Homework 3/Latex/Homework 3.tex" 1790032218 13502 342cd7c42cc17a100d757b577ced6f16 ""
   (generated)
   "Homework 3.aux"
   "Homework 3.log"

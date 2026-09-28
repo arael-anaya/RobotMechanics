@@ -15,7 +15,6 @@ R_f = T_f(1:3,1:3);  p_f = T_f(1:3,4);
 N = 5;                          % intermediate points (minimum 5)
 s = linspace(0, 1, N + 2);      % includes both endpoints
 
-%% (a) ZYZ angles + position
 [phi, theta, psi] = rot2ZYZ(R_i);   zyz_i = [phi(1); theta(1); psi(1)];
 [phi, theta, psi] = rot2ZYZ(R_f);   zyz_f = [phi(1); theta(1); psi(1)];
 Ra = cell(1, numel(s));  pa = zeros(3, numel(s));
@@ -26,7 +25,7 @@ for k = 1:numel(s)
 end
 plotFrames(Ra, pa, '(a) ZYZ angles + position', fullfile(figDir, 'p4a.png'));
 
-%% (b) Angle-axis + position
+
 om_i = rot2AngleAxis(R_i);
 om_f = rot2AngleAxis(R_f);
 
@@ -38,9 +37,6 @@ for k = 1:numel(s)
 end
 plotFrames(Rb, pb, '(b) Angle-Axis + position', fullfile(figDir, 'p4b.png'));
 
-%% (c) Quaternion + position
-% TODO: interpolate quaternions (rot2Quat / quat2Rot), enforce unit length
-%       BEFORE converting each intermediate quaternion to a rotation
 Rc = cell(1, numel(s));  pc = zeros(3, numel(s));
 Q_i = rot2Quat(R_i);
 Q_f = rot2Quat(R_f);
@@ -57,20 +53,21 @@ for k = 1:numel(s)
 end
 plotFrames(Rc, pc, '(c) Quaternion + position', fullfile(figDir, 'p4c.png'));
 
-%% (d) Twist
-% TODO: 
 x_i = transform2Twist(T_f);
 Rd = cell(1, numel(s));  pd = zeros(3, numel(s));
 for k = 1:numel(s)
     x = [x_i(1:3) ; s(k)* x_i(4:6)];
-    T = twist2Transform(x);
+    if s(k) == 0
+        T = T_i;    % twist2Transform treats a zero-rotation twist as pure translation by v
+    else
+        T = twist2Transform(x);
+    end
     Rd{k} = T(1:3,1:3);
     pd(:,k) = T(1:3, 4); 
 end
 plotFrames(Rd, pd, '(d) Twist', fullfile(figDir, 'p4d.png'));
 
-%% (e) Comments
-% TODO: comment on similarities / differences
+
 
 function plotFrames(Rs, ps, ttl, file)
     figure; hold on; grid on; axis equal;
