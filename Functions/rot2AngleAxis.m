@@ -26,8 +26,9 @@ function Omega = rot2AngleAxis(R)
         % General case
         k = v / (2 * s);
     elseif c > 0
-        % theta = 0: axis is arbitrary, no rotation
-        Omega = zeros(3,1);
+        % theta near 0: sin(theta) ~ theta, so v/2 = sin(theta)*k ~ theta*k
+        % directly, avoiding division by the ill-conditioned sin(theta)
+        Omega = v / 2;
         return;
     else
         B = (R + eye(3)) / 2;

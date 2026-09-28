@@ -1,3 +1,16 @@
+% twist2Transform: Homogeneous transform from a twist vector.
+%
+% T = twist2Transform(t)
+% Homogeneous transform from a twist vector.
+%
+% T = [4x4] homogeneous transform
+%
+% t = [6x1] twist stacked [v;w th]
+%
+% Arael Anaya
+% 10920967
+% MEGN544
+% 09/19/2026
 function T = twist2Transform(t)
     v = t(1:3);
     omega = t(4:6);

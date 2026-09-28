@@ -13,7 +13,7 @@
 % 10920967
 % MEGN544
 % 09/19/2026
-function rot2RPY(R)
+function [roll, pitch, yaw] = rot2RPY(R)
     cp = sqrt(R(1,1)^2 + R(2,1)^2);
     if cp < 1e-9
     
