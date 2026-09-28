@@ -12,7 +12,7 @@
 % MEGN544
 % 09/19/2026
 function Q = rot2Quat(R)
-% TODO: implement
+
     q_0 = sqrt((1+ trace(R)) / 4);
 
     q1 = (R(3,2) - R(2 ,3)) / (4 * q_0);

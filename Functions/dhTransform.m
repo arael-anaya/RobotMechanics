@@ -15,5 +15,9 @@
 % MEGN544
 % 09/19/2026
 function H = dhTransform(a, d, alpha, theta)
-% TODO: implement
+    R = rotZ(theta) * rotX(alpha);
+    p = [a*cos(theta); a*sin(theta); d];
+
+    H = [R, p;
+         0, 0, 0, 1];
 end

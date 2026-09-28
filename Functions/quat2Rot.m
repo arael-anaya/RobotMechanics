@@ -18,5 +18,4 @@ function R = quat2Rot(Q)
 
     R = (q_0^2 - dot(q,q))*eye(3) + 2*q_0*skew(q)+2 * q * transpose(q);
 
-% TODO: implement
 end

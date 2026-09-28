@@ -13,5 +13,7 @@
 % MEGN544
 % 09/19/2026
 function dual_quat = multiplyDualQuat(dual_quat_left, dual_quat_right)
-% TODO: implement
+    dual_quat.rot = multiplyQuat(dual_quat_left.rot, dual_quat_right.rot);
+    dual_quat.disp = multiplyQuat(dual_quat_left.rot, dual_quat_right.disp) ...
+                    + multiplyQuat(dual_quat_left.disp, dual_quat_right.rot);
 end

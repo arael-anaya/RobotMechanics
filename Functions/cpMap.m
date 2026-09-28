@@ -12,5 +12,8 @@
 % MEGN544
 % 09/19/2026
 function X = cpMap(w)
-% TODO: implement
+    w = w(:);
+    X = [    0,   -w(3),  w(2);
+           w(3),    0,   -w(1);
+          -w(2),   w(1),   0];
 end

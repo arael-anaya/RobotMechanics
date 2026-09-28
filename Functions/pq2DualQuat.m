@@ -13,5 +13,7 @@
 % MEGN544
 % 09/19/2026
 function dual_quat = pq2DualQuat(pos, quat)
-% TODO: implement
+    dual_quat.rot = quat;
+
+    dual_quat.disp = 0.5 * multiplyQuat([0; pos(:)], dual_quat.rot);
 end

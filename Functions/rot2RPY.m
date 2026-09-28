@@ -14,16 +14,16 @@
 % MEGN544
 % 09/19/2026
 function rot2RPY(R)
-    % cp = sqrt(R(1,1)^2 + R(2,1)^2);
-    % if cp < 1e-9
+    cp = sqrt(R(1,1)^2 + R(2,1)^2);
+    if cp < 1e-9
     
-    %     pitch = atan2(-R(3,1), 0) * [1; 1];
-    %     roll = atan2(-R(2,3), R(2,2)) * [1; 1];
-    %     yaw = [0; 0];
-    % else
-    %     cps = [cp; -cp];
-    %     pitch = atan2(-R(3,1), cps);
-    %     roll = atan2(R(3,2) ./ cps, R(3,3) ./ cps);
-    %     yaw = atan2(R(2,1) ./ cps, R(1,1) ./ cps);
-    % end
+        pitch = atan2(-R(3,1), 0) * [1; 1];
+        roll = atan2(-R(2,3), R(2,2)) * [1; 1];
+        yaw = [0; 0];
+    else
+        cps = [cp; -cp];
+        pitch = atan2(-R(3,1), cps);
+        roll = atan2(R(3,2) ./ cps, R(3,3) ./ cps);
+        yaw = atan2(R(2,1) ./ cps, R(1,1) ./ cps);
+    end
 end
