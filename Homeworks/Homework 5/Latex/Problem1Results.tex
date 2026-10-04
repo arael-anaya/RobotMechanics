@@ -1,0 +1,16 @@
+\begin{tabular}{l r}
+\hline
+Random test cases & 100 \\
+All 8 solutions reproduce target pose & 100 / 100 \\
+True joint angles found among solutions & 100 / 100 \\
+8 distinct solutions (min pairwise distance $>10^{-6}$ rad) & 100 / 100 \\
+Smallest pairwise solution distance (rad) & $4.40e-04$ \\
+Worst position error (m) & $4.48e-16$ \\
+Worst rotation error (Frobenius norm) & $2.05e-15$ \\
+Wrist singularity $\theta_5=0$, all 8 solutions reach pose & true \\
+Wrist singularity $\theta_5=\pi$, all 8 solutions reach pose & true \\
+Shoulder singularity ($P_{5x}=P_{5y}=0$), all 8 solutions reach pose & true \\
+Elbow singularity ($D=a_2+L$), all 8 solutions reach pose & true \\
+Unreachable pose returns a $6\times0$ matrix & true \\
+\hline
+\end{tabular}

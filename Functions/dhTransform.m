@@ -13,7 +13,7 @@
 % Arael Anaya
 % 10920967
 % MEGN544
-% 09/19/2026
+% 09/28/2026
 function H = dhTransform(a, d, alpha, theta)
     R = rotZ(theta) * rotX(alpha);
     p = [a*cos(theta); a*sin(theta); d];

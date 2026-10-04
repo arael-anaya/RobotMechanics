@@ -131,7 +131,22 @@ equations for the twist parameterization in the special case of parallel displac
 rotation axis $\khat$.
 \end{statement}
 
-\workplaceholder
+\begin{align}
+\dvec &= \big((\bm{I}-\R)\skewx{\khat} + \theta\khat\khat^{\mathsf{T}}\big)\vvec, \label{eq:p1-forward}\\[4pt]
+\vvec &= \Bigg(\frac{\sin\theta}{2(1-\cos\theta)}\bm{I} + \frac{2(1-\cos\theta)-\theta\sin\theta}{2\theta(1-\cos\theta)}\khat\khat^{\mathsf{T}} \notag\\
+&\qquad{}- \tfrac{1}{2}\skewx{\khat}\Bigg)\dvec, \label{eq:p1-inverse}\\[4pt]
+\R\khat&=\khat,\quad \R^{\mathsf T}\khat=\khat \ \Rightarrow\ \khat^{\mathsf T}(\bm I-\R)=\bm 0, \label{eq:p1-krot}\\[2pt]
+\text{Since } \khat^{\mathsf T}(\bm I-\R)=\bm 0\ \text{by \eqref{eq:p1-krot}, } (\bm I-\R)\bm w&\perp\khat\ \ \forall\bm w \ \Rightarrow\ (\bm I-\R)\skewx{\khat}\vvec \perp \khat, \label{eq:p1-perp}\\[4pt]
+\dvec\parallel\khat &\ \Rightarrow\ (\bm I-\R)\skewx{\khat}\vvec = \bm 0, \label{eq:p1-dpar}\\[2pt]
+\text{With \eqref{eq:p1-dpar}, }\theta\neq0\ (\mathrm{mod}\ 2\pi)&:\ (\bm I-\R)\ \text{invertible on}\ \khat^{\perp},\ \text{and}\ \skewx{\khat}\vvec\in\khat^{\perp}\notag\\
+&\ \Rightarrow\ \khat\times\vvec=\bm 0 \ \Rightarrow\ \vvec\parallel\khat, \label{eq:p1-vpar}\\[6pt]
+\vvec&=v\khat,\quad \dvec=d\khat,\\[4pt]
+d\khat &= \theta\khat\khat^{\mathsf T}(v\khat) = \theta v\khat,\\[2pt]
+&\boxed{d=\theta v,} \label{eq:p1-fwd-final}\\[8pt]
+v\khat &= \left[\frac{\sin\theta}{2(1-\cos\theta)}+\frac{2(1-\cos\theta)-\theta\sin\theta}{2\theta(1-\cos\theta)}\right]d\khat,\\[4pt]
+\frac{\theta\sin\theta+2(1-\cos\theta)-\theta\sin\theta}{2\theta(1-\cos\theta)}&=\frac{2(1-\cos\theta)}{2\theta(1-\cos\theta)}=\frac{1}{\theta},\\[4pt]
+&\boxed{v=\dfrac{d}{\theta}.} \label{eq:p1-inv-final}
+\end{align}
 
 % ====================================================
 % PROBLEM 2
@@ -155,7 +170,10 @@ Sketch the zero-angle configuration from the following DH table.
 \end{center}
 \end{statement}
 
-\workplaceholder
+\begin{center}
+    \includegraphics[width=.7\columnwidth]{Figures/Problem2Figure.png}
+    \captionof{figure}{Zero-angle configuration for the manipulator of Problem 2. Frames $2$ and $3$ share an origin, and frames $4$, $5$, and $6$ share one, so their axes overlap in the plot.}
+\end{center}
 
 % ====================================================
 % PROBLEM 3
@@ -176,7 +194,10 @@ Sketch the zero-angle configuration from the following DH table.
 \end{center}
 \end{statement}
 
-\workplaceholder
+\begin{center}
+    \includegraphics[width=.7\columnwidth]{Figures/Problem3Figure.png}
+    \captionof{figure}{Zero-angle configuration for the manipulator of Problem 3.}
+\end{center}
 
 % ====================================================
 % PROBLEM 4
@@ -193,10 +214,28 @@ For the manipulator of Problem 2:
 \end{statement}
 
 \subsection*{Part (a)}
-\workplaceholder
+Evaluating the DH table of Problem 2 with all $\theta_i = 0$ (see \hyperref[app:code:problem4]{\texttt{Problem4.m}, Appendix A}):
+\[
+\prescript{0}{}{\T}_6 =
+\begin{bmatrix}
+1 & 0 & 0 & 2.5 \\
+0 & 0 & -1 & -1 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\]
 
 \subsection*{Part (b)}
-\workplaceholder
+Evaluating the same DH table with all $\theta_i = \pi/6$ (see \hyperref[app:code:problem4]{\texttt{Problem4.m}, Appendix A}):
+\[
+\prescript{0}{}{\T}_6 =
+\begin{bmatrix}
+-0.6808 & -0.3460 & 0.6456 & 1.6830 \\
+0.6456 & -0.6998 & 0.3058 & 0.8170 \\
+0.3460 & 0.6250 & 0.6998 & 1.5000 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\]
 
 % ====================================================
 % PROBLEM 5
@@ -214,13 +253,40 @@ For the manipulator of Problem 3:
 \end{statement}
 
 \subsection*{Part (a)}
-\workplaceholder
+Evaluating the DH table of Problem 3 with $d_1 = 1$, $d_2 = d_3 = 0$ (see \hyperref[app:code:problem5]{\texttt{Problem5.m}, Appendix A}):
+\[
+\prescript{0}{}{\T}_3 =
+\begin{bmatrix}
+0 & 0 & 1 & 1 \\
+0 & -1 & 0 & 0 \\
+1 & 0 & 0 & 3 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\]
 
 \subsection*{Part (b)}
-\workplaceholder
+Evaluating the same DH table with $d_2 = 1$, $d_1 = d_3 = 0$ (see \hyperref[app:code:problem5]{\texttt{Problem5.m}, Appendix A}):
+\[
+\prescript{0}{}{\T}_3 =
+\begin{bmatrix}
+0 & 0 & 1 & 1 \\
+0 & -1 & 0 & -1 \\
+1 & 0 & 0 & 2 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\]
 
 \subsection*{Part (c)}
-\workplaceholder
+Evaluating the same DH table with $d_3 = 1$, $d_1 = d_2 = 0$ (see \hyperref[app:code:problem5]{\texttt{Problem5.m}, Appendix A}):
+\[
+\prescript{0}{}{\T}_3 =
+\begin{bmatrix}
+0 & 0 & 1 & 2 \\
+0 & -1 & 0 & 0 \\
+1 & 0 & 0 & 2 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\]
 
 % ====================================================
 % PROBLEM 6
@@ -236,18 +302,83 @@ Derive the DH parameters for the RRPR manipulator shown in the figure below.
 \end{center}
 \end{statement}
 
-\workplaceholder
+\textbf{Frame assignment:}
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt]
+    \item Frame 0: $z_0$ up along the joint 1 axis; origin at arm height.
+    \item Frame 1: $z_1$ up along the joint 2 axis (parallel to $z_0$); $x_1$ along link 1, from joint 1 to joint 2.
+    \item Frame 2: $z_2$ down along the joint 3 (prismatic) axis; $x_2$ along link 2, from joint 2 to joint 3.
+    \item Frame 3: $z_3$ down along the joint 4 axis (parallel to $z_2$); $x_3$ along $x_2$, since $a_3 = 0$.
+    \item Frame 4: end-effector frame at the tip, $z_4$ down along $z_3$.
+\end{itemize}
+
+\textbf{Parameter definitions:}
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt]
+    \item $a_1$: link 1 length, horizontal offset from the joint 1 axis to the joint 2 axis.
+    \item $a_2$: link 2 length, horizontal offset from the joint 2 axis to the joint 3 axis.
+    \item $d_1$: vertical offset from frame 0 to frame 1. We take frame 0 at arm height (not the base plate), so $d_1 = 0$, matching the standard textbook version of this manipulator.
+    \item $d_4$: fixed vertical offset from frame 3 to the end-effector tip.
+    \item $\alpha_2 = \pi$: $z_2$ (prismatic axis, pointing down) is antiparallel to $z_1$ (pointing up), a $\pi$ twist about $x_2$.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{c | c | c | c | c}
+\hline
+ Link & $a$ & $d$ & $\alpha$ & $\theta$\\  \hline
+ $1$ & $a_1$ & $0$  & 0 & $\star$ \\
+ $2$ & $a_2$ & 0 & $\pi$ & $\star$ \\
+ $3$ & 0 & $\star$ & 0 & 0 \\
+ $4$ & 0 & $d_4$ & 0 & $\star$ \\ \hline
+\end{tabular}
+\end{center}
 
 % ====================================================
-% APPENDIX A: HAND CALCULATIONS
+% APPENDIX A: CODE
 % ====================================================
 \newpage
-\section*{Appendix A: Hand Calculations}
+\section*{Appendix A: Code}
 
-\IfFileExists{../Homework_4_hand_calcs.pdf}{%
-    \includepdf[pages=-, pagecommand={\thispagestyle{plain}}, scale=0.9]{../Homework_4_hand_calcs.pdf}%
-}{%
-    \noindent\textcolor{gray!60}{\itshape [Homework\_4\_hand\_calcs.pdf not yet added]}%
+% Listings are skipped until the code file exists, so a missing file cannot break the build.
+\newcommand{\codelisting}[2]{%
+    \IfFileExists{../Code/#1}{\lstinputlisting[language=#2, caption={#1}]{"../Code/#1"}}%
+    {\noindent\textcolor{gray!60}{\itshape [#1 not yet written]}}%
 }
+\newcommand{\funclisting}[2]{%
+    \IfFileExists{../../../Functions/#1}{\lstinputlisting[language=#2, caption={#1}]{"../../../Functions/#1"}}%
+    {\noindent\textcolor{gray!60}{\itshape [#1 not yet written]}}%
+}
+
+\subsection*{Problem 2}\label{app:code:problem2}
+\codelisting{Problem2.m}{Matlab}
+
+\newpage
+\subsection*{Problem 3}\label{app:code:problem3}
+\codelisting{Problem3.m}{Matlab}
+
+\newpage
+\subsection*{Problem 4}\label{app:code:problem4}
+\codelisting{Problem4.m}{Matlab}
+
+\newpage
+\subsection*{Problem 5}\label{app:code:problem5}
+\codelisting{Problem5.m}{Matlab}
+
+\newpage
+\subsection*{dhTransform.m}
+\noindent\textit{dhTransform.m calls the custom \texttt{rotZ} and \texttt{rotX} functions below (both take radians), not MATLAB's built-in \texttt{rotz}/\texttt{rotx} (which take degrees).}
+\funclisting{dhTransform.m}{Matlab}
+
+\newpage
+\subsection*{rotZ.m}
+\funclisting{rotZ.m}{Matlab}
+
+\newpage
+\subsection*{rotX.m}
+\funclisting{rotX.m}{Matlab}
+
+\newpage
+\subsection*{fkChain.m}
+\funclisting{fkChain.m}{Matlab}
+
+
 
 \end{document}
