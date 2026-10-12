@@ -1,0 +1,169 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{pifont}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{enumitem}
+
+\lstdefinestyle{tex-style} {
+	language=Matlab,                           % Code langugage
+	basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+	%keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+	commentstyle=\color{gray},              % Comments font
+	numbers=none,                           % Line nums position
+	numberstyle=\tiny,                      % Line-numbers fonts
+	stepnumber=1,                           % Step between two line-numbers
+	numbersep=5pt,                          % How far are line-numbers from code
+	%backgroundcolor=\color{gray}, % Choose background color
+	frame=single,                             % A frame around the code
+	tabsize=2,                              % Default tab size
+	captionpos=b,                           % Caption-position = bottom
+	breaklines=true,                        % Automatic line breaking?
+	breakatwhitespace=false,                % Automatic breaks only at whitespace?
+	showspaces=false,                       % Dont make spaces visible
+	showtabs=false,                         % Dont make tabls visible
+	columns=flexible,                       % Column format
+	morekeywords={__global__, __device__}  % CUDA specific keywords
+}
+\lstset{style=tex-style}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+%%%%%%% Table Packages %%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{tabularx,ragged2e,booktabs}
+\newcolumntype{C}[1]{>{\Centering}m{#1}}
+\renewcommand\tabularxcolumn[1]{C{#1}}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{makecell}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark,calc}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 6}
+\author{MEGN 544/ROBO 554 Robot Mechanics: Kinematics, Dynamics, and Control  
+\\ 
+Dr. George Kontoudis\\
+Department of Mechanical Engineering\\
+Colorado School of Mines}
+\date{Fall 2026}
+ 
+\maketitle
+\begin{problem}{1}%theorem, exercise, problem, or question 
+Let a manipulator with one prismatic and five rotational joints to be characterized by the following DH table.
+\begin{table}[!h]
+\centering
+\begin{tabular}{c | c | c | c | c}
+\hline 
+ {Link} & $a$   & $d$      & $\alpha$ & $\theta$\\  \hline
+ $1$    & $a_1$ & $0$      & $0$      & $\star$ \\ 
+ $2$    & $a_2$ & $0$      & $0$      & $\star$ \\ 
+ $3$    & $0$   & $\star$  & $0$      & $0$ \\ 
+ $4$    & $0$   & $0$      & $\pi/2$  & $\star$ \\ 
+ $5$    & $0$   & $0$      & $-\pi/2$ & $\star$ \\ 
+ $6$    & $0$   & $0$      & $0$      & $\star$ \\ \hline
+\end{tabular}\label{tab:part_1_ii}
+\end{table}
+
+The forward kinematics is given by,
+\begin{align*}
+    \prescript{0}{}{\boldsymbol{T}}_6 = \begin{bmatrix}
+        c_{124}c_5c_6-s_{124}s_6 & -s_{124}c_6-c_{124}c_5s_6 & -c_{124}s_5 & c_{12}a_2+c_1a_1 \\
+        s_{124}c_5c_6+c_{124}s_6 & c_{124}c_6-s_{124}c_5s_6  & -s_{124}s_5 & s_{12}a_2+s_1a_1 \\
+        c_6s_5                   & -s_5s_6                   & c_5         & d_3              \\
+        0                        & 0                         & 0           & 1
+    \end{bmatrix},
+\end{align*}
+where $c_{124} = \cos(\theta_1 + \theta_2 + \theta_4)$. Given the homogeneous transformation, 
+\begin{align*}
+    \prescript{0}{}{\boldsymbol{T}}_6 = \begin{bmatrix}
+        r_{11} & r_{12} & r_{13} & p_x \\
+        r_{21} & r_{22} & r_{23} & p_y \\
+        r_{31} & r_{32} & r_{33} & p_z \\
+        0      & 0      & 0      & 1
+    \end{bmatrix},
+\end{align*}
+the inverse kinematics solution becomes,
+\begin{align*}
+    \theta_2 & = \pm 2\mathrm{atan} \left( \sqrt{\frac{(a_1+a_2)^2-(p_x^2+p_y^2)}{(p_x^2+p_y^2)-(a_1-a_2)^2}}  \right)\\
+    \theta_1 & = \mathrm{atan2}(p_y,p_x) - \mathrm{atan2}(a_2 \sin \theta_2, a_1+a_2 \cos \theta_2)\\
+    d_3 & = p_z
+\end{align*}
+\begin{align*}
+    \theta_5 & = \mathrm{atan2} \left( \pm \sqrt{r_{13}^2+r_{23}^2}, r_{33}  \right)\\
+    \theta_4 & = \mathrm{atan2} \left(-\frac{r_{23}}{\sin \theta_5}, -\frac{r_{13}}{\sin \theta_5}  \right) - \theta_1 - \theta_2\\
+    \theta_6 & = \mathrm{atan2} \left(-\frac{r_{32}}{\sin \theta_5}, \frac{r_{31}}{\sin \theta_5}  \right)
+\end{align*}
+
+Let the link lengths $a_1 =1$ and $a_2=0.5$, the initial manipulator pose at $t=0$~seconds,
+\begin{align*}
+    \prescript{0}{}{\boldsymbol{T}}_6(0) = \begin{bmatrix}
+        1 & 0 & 0  & 1.00 \\
+        0 & 0 & -1 & 0.25 \\
+        0 & 1 & 0  & 0.25 \\
+        0 & 0 & 0  & 1
+    \end{bmatrix},
+\end{align*}
+and the final manipulator pose at $t=2$~seconds,
+\begin{align*}
+    \prescript{0}{}{\boldsymbol{T}}_6(2) = \begin{bmatrix}
+        0 & -1 & 0 & 0.50  \\
+        1 & 0  & 0 & -0.50 \\
+        0 & 0  & 1 & 0     \\
+        0 & 0  & 0 & 1
+    \end{bmatrix}.
+\end{align*}
+
+
+\begin{enumerate}[label=(\alph*)]
+    \item Write a MATLAB function to generate the coefficients for cubic interpolation between two points given zero initial and final velocity. Comment in the script as in the project. and provide a print-out of the code.
+    \item Generate a MATLAB function to interpolate between two vectors, given cubic interpolation coefficients, an initial time, and a list of times for evaluation. Comment the script as in the project and provide a print-out of the code.
+    \item For the following parameterizations, generate a figure that shows the path in joint variable space from the initial configuration to the final configuration and a figure that shows the Cartesian path from the initial configuration to the final configuration. Provide a descriptive title, label all axis, and use different line types (with a legend) for plots with more than one trace. Also write a script using the provided \verb|drawArm.m| file to play the motion in a movie. Discuss the differences and similarities. \textit{Hint: Use pause function within a for loop.}
+    \begin{enumerate}[label=\roman*.]
+        \item In parameter space ($\theta$,$d$) from initial joint values to final.
+        \item In Cartesian/angle-axis space.
+        \item In Cartesian/quaternion space (make sure you normalize the interpolated quaternion at each sub point).
+        \item In twist space.
+    \end{enumerate}
+\end{enumerate}
+ 
+\end{problem}
+
+\end{document}
