@@ -128,23 +128,81 @@
 \section*{Problem 1}
 
 \begin{statement}
-[Paste problem statement here.]
+A manipulator with one prismatic and five rotational joints has link lengths $a_1 = 1$ and $a_2 = 0.5$ and the DH table below ($\star$ marks a joint variable).
+\begin{center}
+\begin{tabular}{c|cccc}
+Link & $a$ & $d$ & $\alpha$ & $\theta$ \\ \hline
+1 & $a_1$ & 0 & 0 & $\star$ \\
+2 & $a_2$ & 0 & 0 & $\star$ \\
+3 & 0 & $\star$ & 0 & 0 \\
+4 & 0 & 0 & $\pi/2$ & $\star$ \\
+5 & 0 & 0 & $-\pi/2$ & $\star$ \\
+6 & 0 & 0 & 0 & $\star$
+\end{tabular}
+\end{center}
+The initial pose at $t=0$\,s and final pose at $t=2$\,s are
+\[
+{}^0\T_6(0)=\begin{bmatrix}1&0&0&1.00\\0&0&-1&0.25\\0&1&0&0.25\\0&0&0&1\end{bmatrix},\qquad
+{}^0\T_6(2)=\begin{bmatrix}0&-1&0&0.50\\1&0&0&-0.50\\0&0&1&0\\0&0&0&1\end{bmatrix}.
+\]
+\begin{enumerate}[label=(\alph*), nosep]
+\item Write a MATLAB function to generate the coefficients for cubic interpolation between two points given zero initial and final velocity.
+\item Write a MATLAB function to interpolate between two vectors, given cubic interpolation coefficients, an initial time, and a list of times for evaluation.
+\item For each parameterization below, generate a figure of the path in joint variable space and a figure of the Cartesian path, and play the motion as a movie using \texttt{drawArm.m}. Discuss the differences and similarities.
+\begin{enumerate}[label=\roman*., nosep]
+\item Parameter space $(\theta, d)$ from initial joint values to final.
+\item Cartesian/angle-axis space.
+\item Cartesian/quaternion space (normalize the interpolated quaternion at each sub point).
+\item Twist space.
+\end{enumerate}
+\end{enumerate}
 \end{statement}
 
-\subsection*{Part (a)}
-\workplaceholder
+% ----------------------------------------------------
+\subsection*{Parts (a) and (b)}
 
-\subsection*{Part (b)}
-\workplaceholder
+\texttt{cubicCoeffs} returns the rest-to-rest cubic $q(t)=c_0+c_1\tau+c_2\tau^2+c_3\tau^3$, $\tau=t-t_0$, with $c_0=q_0$, $c_1=0$, $c_2=3(q_f-q_0)/T^2$, $c_3=-2(q_f-q_0)/T^3$, one row per element of $q$. \texttt{cubicInterp} evaluates these at a list of times, returning an $n\times m$ matrix. Code is in Appendix~A.
 
 \subsection*{Part (c)}
+
+The inverse kinematics of the supplied closed-form solution is implemented in \texttt{ik\_hw6}. The final pose has $r_{13}=r_{23}=0$ and $r_{33}=1$, so $\theta_5=0$ and the pose is a wrist singularity. In that case \texttt{ik\_hw6} sets $\theta_6=0$ and solves $\theta_4 = \operatorname{atan2}(r_{21}, r_{11}) - \theta_1 - \theta_2$. Each trajectory is interpolated in its own space with a rest-to-rest cubic over $0\le t\le2$\,s (50 samples), converted back to a pose at every sample, and passed through the inverse kinematics. End-effector positions for the Cartesian figures come from forward kinematics (\texttt{armPositions}). All four trajectories start and end at the specified poses to machine precision.
+
+\newcommand{\trajfigs}[2]{%
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[t]{0.49\textwidth}
+            \centering
+            \includegraphics[width=0.85\linewidth]{Figures/P1_joint_#1.png}
+            \caption{Joint variables vs.\ time}
+        \end{subfigure}\hfill
+        \begin{subfigure}[t]{0.49\textwidth}
+            \centering
+            \includegraphics[width=0.85\linewidth]{Figures/P1_cartesian_#1.png}
+            \caption{Cartesian end-effector path}
+        \end{subfigure}
+        \caption{#2}
+    \end{figure}%
+}
+
+\subsubsection*{i. Parameter space}
+\trajfigs{jointspace}{Joint-space interpolation.}
+
+\subsubsection*{ii. Cartesian/angle-axis space}
+\trajfigs{angleaxis}{Cartesian/angle-axis interpolation.}
+
+\subsubsection*{iii. Cartesian/quaternion space}
+\trajfigs{quaternion}{Cartesian/quaternion interpolation.}
+
+\subsubsection*{iv. Twist space}
+\trajfigs{twist}{Twist-space interpolation.}
+
+\subsubsection*{Discussion}
+
 \begin{result}
-[Final answer.]
+Analyzing the four different interpolation methods, I found it interesting to note the difference in curvature over time between them. Angle-axis and quaternion both created a straight line from the start to the end pose. I believe this is because position is interpolated linearly in Cartesian space, independent of the rotation. We see that joint space and twist both create a much smoother, curved path that gradually gets to the end. However, only the joint-space method also has smooth joint curves, as is clear from the joint variables vs.\ time graphs I created. In parameter space, the joints have much smoother curves, implying a much smoother velocity and acceleration profile. The angle-axis, quaternion, and twist methods all show an abrupt jump in $\theta_4$ and $\theta_6$ in the final sample, because the final pose is a wrist singularity ($\theta_5 = 0$).
 \end{result}
-\workplaceholder
 
-
-
+\bigskip
 % ====================================================
 % APPENDIX A: CODE
 % ====================================================
@@ -153,7 +211,7 @@
 
 % Listings are skipped until the code file exists, so a missing file cannot break the build.
 \newcommand{\codelisting}[2]{%
-    \IfFileExists{../Code/#1}{\lstinputlisting[language=#2, caption={#1}]{"../Code/#1"}}%
+    \IfFileExists{../Code/#1}{\lstinputlisting[language=#2, caption={\detokenize{#1}}]{"../Code/#1"}}%
     {\noindent\textcolor{gray!60}{\itshape [#1 not yet written]}}%
 }
 \newcommand{\funclisting}[2]{%
@@ -161,17 +219,32 @@
     {\noindent\textcolor{gray!60}{\itshape [#1 not yet written]}}%
 }
 
-\subsection*{Problem1.m}\label{app:code:problem1}
+\subsection*{cubicCoeffs.m (Part a)}\label{app:code:cubicCoeffs}
+\codelisting{cubicCoeffs.m}{Matlab}
+
+\subsection*{cubicInterp.m (Part b)}\label{app:code:cubicInterp}
+\codelisting{cubicInterp.m}{Matlab}
+
+\subsection*{ik\_hw6.m}\label{app:code:ik}
+\codelisting{ik_hw6.m}{Matlab}
+
+\subsection*{armPositions.m}\label{app:code:armPositions}
+\codelisting{armPositions.m}{Matlab}
+
+\subsection*{plotTrajectory.m}\label{app:code:plotTrajectory}
+\codelisting{plotTrajectory.m}{Matlab}
+
+\subsection*{Problem1.m (Part c)}\label{app:code:problem1}
 \codelisting{Problem1.m}{Matlab}
 
 % ====================================================
 % APPENDIX B: HAND CALCULATIONS
 % ====================================================
 \newpage
-\section*{Appendix B: Hand Calculations}\label{app:hand}
+% \section*{Appendix B: Hand Calculations}\label{app:hand}
 
-\IfFileExists{../Homework_6_hand_calcs.pdf}{%
-    \includepdf[pages=-, pagecommand={\thispagestyle{plain}}, scale=0.9]{../Homework_6_hand_calcs.pdf}%
-}{\noindent\textcolor{gray!60}{\itshape [Homework\_6\_hand\_calcs.pdf not yet added]}}
+% \IfFileExists{../Homework_6_hand_calcs.pdf}{%
+%     \includepdf[pages=-, pagecommand={\thispagestyle{plain}}, scale=0.9]{../Homework_6_hand_calcs.pdf}%
+% }{\noindent\textcolor{gray!60}{\itshape [Homework\_6\_hand\_calcs.pdf not yet added]}}
 
 \end{document}
