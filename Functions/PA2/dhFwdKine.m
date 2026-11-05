@@ -1,11 +1,15 @@
-% angleAxis2Rot: Rotation matrix from an angle-times-axis vector.
+% dhFwdKine: Forward kinematics of a serial arm using DH parameters.
 %
-% R = angleAxis2Rot(omega)
-% Rotation matrix from an angle-times-axis vector.
+% H = dhFwdKine(linkList, paramList)
+% Multiplies the DH transform of each link, in order, to get the pose of
+% the end effector in the base frame. Each joint variable in paramList is
+% used as theta if the link's theta is empty (revolute), otherwise as d
+% (prismatic).
 %
-% R = [3x3] rotation matrix
+% H = [4x4] homogeneous transform from the base frame to the end effector
 %
-% omega = [3x1] theta*k (rad)
+% linkList = cell array of links, each created with createLink
+% paramList = joint variable for each link (rad or m)
 %
 % Arael Anaya
 % 10920967
@@ -14,14 +18,16 @@
 function H = dhFwdKine(linkList, paramList)
     H = eye(4);
     for i = 1:numel(linkList)
-        link = linkList{i};
+        link = linkList(i);
         param = paramList(i);
-        if isempty(list(4))
-            linkTransform = dhTransform(link(1), link(2), link(3), param);
+        if link.isRotary == 1
+            linkTransform = dhTransform(link.a, link.d, link.alpha, param - link.offset);
+        elseif link.isRotary == 0
+            linkTransform = dhTransform(link.a, param - link.offset, link.alpha, link.theta);
         else
-            linkTransform = dhTransform(link(1), param, link(3), link(4));
+             linkTransform = dhTransform(link.a, link.d, link.alpha, link.theta);            
         end
-            H = finalTransform * linkTransform;
+        H = H * linkTransform;
     end
 
 end

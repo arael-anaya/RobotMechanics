@@ -1,11 +1,18 @@
-% angleAxis2Rot: Rotation matrix from an angle-times-axis vector.
+% constAccelInterp: Constant-acceleration (parabolic blend) interpolation
+% through a set of trajectory points.
 %
-% R = angleAxis2Rot(omega)
-% Rotation matrix from an angle-times-axis vector.
+% [p, v, a] = constAccelInterp(t, trajectory, transPercent)
+% Interpolates linearly between the trajectory points, blending between
+% segments with constant-acceleration (parabolic) transitions, and returns
+% the position, velocity, and acceleration at time t.
 %
-% R = [3x3] rotation matrix
+% p = position at time t
+% v = velocity at time t
+% a = acceleration at time t
 %
-% omega = [3x1] theta*k (rad)
+% t = time at which to evaluate the trajectory
+% trajectory = trajectory points (times and positions) to interpolate
+% transPercent = percentage of each segment spent in the blend transition
 %
 % Arael Anaya
 % 10920967
