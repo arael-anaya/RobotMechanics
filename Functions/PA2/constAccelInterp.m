@@ -20,7 +20,7 @@
 % 09/19/2026
 function [p, v, a] = constAccelInterp(t, trajectory, transPercent)
 
-    
+        
     
 
 end
