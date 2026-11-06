@@ -1,19 +1,24 @@
-% createLink: Package a robot link's DH and dynamic parameters into one row.
+% createLink: Package a robot link's DH and dynamic parameters in a struct.
 %
 % L = createLink(a, d, alpha, theta, offset, centOfMass, mass, inertia)
 % Builds a link description from its Denavit-Hartenberg parameters and its
-% mass properties. Leave theta (or d) empty to mark that joint variable.
+% mass properties. Pass an empty array ([]) for the joint variable that
+% changes: theta for a rotary joint, or d for a prismatic joint. If both
+% theta and d are given the link is static.
 %
-% L = link parameter vector [a, d, alpha, theta, offset, centOfMass, mass, inertia]
+% L = struct with the members a, d, alpha, theta, offset, centOfMass, com
+%     (a copy of centOfMass), mass, inertia, and isRotary. isRotary is 1 if
+%     the joint is rotary, 0 if it is prismatic, and -1 if the link is static
 %
-% a = link length (m)
-% d = link offset (m)
-% alpha = link twist (rad)
-% theta = joint angle (rad)
-% offset = joint variable offset
-% centOfMass = center of mass of the link
+% a = DH parameter a, link length (m)
+% d = DH parameter d, link offset (m), [] if the joint is prismatic
+% alpha = DH parameter alpha, link twist (rad)
+% theta = joint angle from the encoder (rad), [] if the joint is rotary
+% offset = radians (or meters for prismatic) between the encoder zero and
+%          the DH zero, thetaDH = Theta - offset
+% centOfMass = 3x1 position of the link center of mass in the link frame (m)
 % mass = mass of the link (kg)
-% inertia = inertia of the link
+% inertia = 3x3 moment of inertia of the link in the link frame (kg m^2)
 %
 % Arael Anaya
 % 10920967
@@ -28,6 +33,7 @@ function L = createLink(a, d, alpha, theta, offset, centOfMass, mass, inertia)
     L.alpha = alpha;
     L.offset = offset;
     L.centOfMass = centOfMass;
+    L.com = centOfMass;
     L.theta = theta;
     L.mass = mass;
     L.inertia = inertia;
