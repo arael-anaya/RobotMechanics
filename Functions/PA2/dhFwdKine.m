@@ -8,7 +8,7 @@
 %
 % H = [4x4] homogeneous transform from the base frame to the end effector
 %
-% linkList = cell array of links, each created with createLink
+% linkList = array of links (struct array), each created with createLink
 % paramList = joint variable for each link (rad or m)
 %
 % Arael Anaya
