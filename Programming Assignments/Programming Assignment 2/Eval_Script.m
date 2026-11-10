@@ -8,7 +8,12 @@ if ~exist('dontTime','var')
     dontTime = false;
 end
 
-load('Test_Cases.mat');
+% Add the function folders (relative to this script) so the functions are found
+scriptDir = fileparts(mfilename('fullpath'));
+addpath(fullfile(scriptDir,'..','..','Functions','PA1'));
+addpath(fullfile(scriptDir,'..','..','Functions','PA2'));
+
+load(fullfile(scriptDir,'Test_Cases.mat'));
 
 fun_list{1} = {'rotX';'rotY';'rotZ';'rpy2Rot';'rot2RPY';'cpMap';'angleAxis2Rot';'rot2AngleAxis';'rot2Quat';'quat2Rot';'twist2Transform';'transform2Twist';'multiplyQuat';'pq2DualQuat';'dualQuat2PQ';'multiplyDualQuat';'dhTransform';};
 %fun_list{2} = {'createLink';'dhFwdKine';'invKineWidowXArm'};

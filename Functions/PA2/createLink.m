@@ -1,33 +1,24 @@
-% createLink: Package a robot link's DH and dynamic parameters into one row.
+% createLink: Package a robot link's DH and dynamic parameters in a struct.
 %
 % L = createLink(a, d, alpha, theta, offset, com, mass, inertia)
 % Builds a link description from its Denavit-Hartenberg parameters and its
-% mass properties. Leave theta (or d) empty to mark that joint variable.
+% mass properties. Pass an empty array ([]) for the joint variable that
+% changes: theta for a rotary joint, or d for a prismatic joint. If both
+% theta and d are given the link is static.
 %
-% L = link parameter vector [a, d, alpha, theta, offset, com, mass, inertia]
+% L = struct with the members a, d, alpha, theta, offset, centOfMass, com
+%     (a copy of centOfMass), mass, inertia, and isRotary. isRotary is 1 if
+%     the joint is rotary, 0 if it is prismatic, and -1 if the link is static
 %
-% a = link length (m)
-% d = link offset (m)
-% alpha = link twist (rad)
-% theta = joint angle (rad)
-% offset = joint variable offset
-% com = center of mass of the link (3x1 vector in the link frame, m); stored in L.com
+% a = DH parameter a, link length (m)
+% d = DH parameter d, link offset (m), [] if the joint is prismatic
+% alpha = DH parameter alpha, link twist (rad)
+% theta = joint angle from the encoder (rad), [] if the joint is rotary
+% offset = radians (or meters for prismatic) between the encoder zero and
+%          the DH zero, thetaDH = Theta - offset
+% centOfMass = 3x1 position of the link center of mass in the link frame (m)
 % mass = mass of the link (kg)
-% inertia = inertia of the link (3x3 matrix about the center of mass, kg*m^2)
-%
-% Joint type is stored in L.isRotary and is determined by which of theta or d
-% is left empty:
-%   theta empty -> rotary (revolute) joint, L.isRotary = 1
-%   d empty     -> prismatic joint,         L.isRotary = 0
-%   neither     -> static (fixed) link,     L.isRotary = -1
-%
-% The returned struct L has the fields: a, d, alpha, offset, com, theta,
-% mass, inertia, and isRotary. The optional arguments com, mass, and inertia
-% default to [], 0, and [] respectively when they are not supplied.
-%
-% Example:
-%   L = createLink(0.5, 0.1, pi/2, [], 0, [0.25;0;0], 2.0, eye(3)*0.01);
-%   % L.isRotary is 1 because theta was left empty (rotary joint).
+% inertia = 3x3 moment of inertia of the link in the link frame (kg m^2)
 %
 % Arael Anaya
 % 10920967
@@ -41,7 +32,8 @@ function L = createLink(a, d, alpha, theta, offset, com, mass, inertia)
     L.d = d;
     L.alpha = alpha;
     L.offset = offset;
-    L.com = com;
+    L.centOfMass = centOfMass;
+    L.com = centOfMass;
     L.theta = theta;
     L.mass = mass;
     L.inertia = inertia;
