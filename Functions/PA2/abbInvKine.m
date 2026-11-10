@@ -13,7 +13,6 @@
 %
 % T_des = [4x4] desired homogeneous transform of the end effector
 % th_last = [6x1] previous joint angles (rad), used to select among solutions
-%   (optional)
 %
 % Arael Anaya
 % 10920967

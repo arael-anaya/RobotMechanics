@@ -1,6 +1,6 @@
 % createLink: Package a robot link's DH and dynamic parameters in a struct.
 %
-% L = createLink(a, d, alpha, theta, offset, com, mass, inertia)
+% L = createLink(a, d, alpha, theta, offset, centOfMass, mass, inertia)
 % Builds a link description from its Denavit-Hartenberg parameters and its
 % mass properties. Pass an empty array ([]) for the joint variable that
 % changes: theta for a rotary joint, or d for a prismatic joint. If both
@@ -24,8 +24,8 @@
 % 10920967
 % MEGN544
 % 09/19/2026
-function L = createLink(a, d, alpha, theta, offset, com, mass, inertia)
-    if nargin < 6, com = []; end
+function L = createLink(a, d, alpha, theta, offset, centOfMass, mass, inertia)
+    if nargin < 6, centOfMass = []; end
     if nargin < 7, mass = 0; end
     if nargin < 8, inertia = []; end
     L.a = a;
