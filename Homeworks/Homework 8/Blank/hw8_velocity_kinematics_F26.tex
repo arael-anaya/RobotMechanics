@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{pifont}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{enumitem}
+
+\lstdefinestyle{tex-style} {
+	language=Matlab,                           % Code langugage
+	basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+	%keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+	commentstyle=\color{gray},              % Comments font
+	numbers=none,                           % Line nums position
+	numberstyle=\tiny,                      % Line-numbers fonts
+	stepnumber=1,                           % Step between two line-numbers
+	numbersep=5pt,                          % How far are line-numbers from code
+	%backgroundcolor=\color{gray}, % Choose background color
+	frame=single,                             % A frame around the code
+	tabsize=2,                              % Default tab size
+	captionpos=b,                           % Caption-position = bottom
+	breaklines=true,                        % Automatic line breaking?
+	breakatwhitespace=false,                % Automatic breaks only at whitespace?
+	showspaces=false,                       % Dont make spaces visible
+	showtabs=false,                         % Dont make tabls visible
+	columns=flexible,                       % Column format
+	morekeywords={__global__, __device__}  % CUDA specific keywords
+}
+\lstset{style=tex-style}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+%%%%%%% Table Packages %%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{tabularx,ragged2e,booktabs}
+\newcolumntype{C}[1]{>{\Centering}m{#1}}
+\renewcommand\tabularxcolumn[1]{C{#1}}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{makecell}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark,calc}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 8}
+\author{MEGN544/ROBO554 Robot Mechanics: Kinematics, Dynamics, and Control  
+\\ 
+Dr. George Kontoudis\\
+Department of Mechanical Engineering\\
+Colorado School of Mines}
+\date{Fall 2026}
+ 
+\maketitle
+
+\begin{problem}{1}%theorem, exercise, problem, or question 
+Consider a three-link manipulator with the following DH-table.
+\begin{table}[!h]
+\centering
+\begin{tabular}{c | c | c | c | c}
+\hline 
+ {Link} & $a$   & $d$  & $\alpha$ & $\theta$\\  \hline
+ $1$    & $0$   & $L_1$  & $\pi/2$  & $\star$ \\ 
+ $2$    & $L_2$ & $0$  & $0$      & $\star$ \\ 
+ $3$    & $L_3$ & $0$  & $0$      & $\star$ \\  \hline
+\end{tabular}\label{tab:part_1_ii}
+\end{table}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Derive the forward kinematic equations symbolically for the position of the tool in the base frame as a function of $\theta_1$, $\theta_2$, and $\theta_3$.
+    \item Symbolically differentiate these kinematic equations to construct a symbolic representation of the position rows of the velocity Jacobian.
+    \item Using the method outlined in class, calculate $\prescript{0}{}{\boldsymbol{z}}_{k-1}$ and $\prescript{0}{}{\boldsymbol{d}}_{k-1,N}$ for all $k=1,\hdots,N$ symbolically and construct the position rows of the velocity Jacobian.
+    \item For $L_1 = 1$\,m, $L_2 = 0.5$\,m, $L_3 = 0.3$\,m, $\theta_1 = 0$\,rad, $\theta_2 = \pi/4$\,rad, and $\theta_3 = \pi/4$\,rad numerically evaluate your results from (b) and (c). \textit{Hint: They should match!}
+\end{enumerate}
+
+
+\end{problem}
+
+\end{document}
