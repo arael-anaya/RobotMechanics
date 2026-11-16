@@ -1,5 +1,10 @@
 %% Evaluation Script
 function Eval_Script(projectNumber,functionName,N, dontTime)
+
+scriptDir = fileparts(mfilename('fullpath'));
+addpath(scriptDir);
+addpath(genpath(fullfile(scriptDir, '..', '..', 'Functions')));
+
 if ~exist('functionName','var')
     functionName = {'all'};
 end

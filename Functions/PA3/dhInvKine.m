@@ -19,4 +19,32 @@
 % 11/13/2026
 function [paramList, error] = dhInvKine(linkList, desTransform, paramListGuess)
     % YOUR FUNCTION CODE GOES HERE
+    
+    iter = 1;
+    TOL = 1e-10;
+    Tc = dhFwdKine(linkList, paramListGuess);
+    err = calculate_error(desTransform, Tc);
+    paramList = paramListGuess;
+    while norm(err) > TOL && iter < 100
+        Jv = velocityJacobian(linkList, paramList);
+        paramList = paramList + pinv(Jv) * err;
+        Tc = dhFwdKine(linkList, paramList);
+        err = calculate_error(desTransform, Tc);
+        iter = iter + 1;
+    end
+    
+    for i = 1:numel(linkList)
+        if linkList(i).isRotary == 1
+            paramList(i) = atan2(sin(paramList(i)), cos(paramList(i)));
+        end
+    end
+
+    error = norm(err);
+
+    function errr = calculate_error(Td, Tc)
+        p_error = Td(1:3,4) - Tc(1:3,4);
+        R_error = Td(1:3,1:3)* (Tc(1:3,1:3))';
+
+        errr = [p_error; rot2AngleAxis(R_error)];
+    end
 end
